@@ -1,2 +1,2 @@
-# madolucette-theme
-Theme Wordpress pour le site Madeleine et Lucette
+# Thème pour le site de Madeleine de Lucette
+**Surcharge du theme storefront**
