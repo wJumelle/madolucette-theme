@@ -8,3 +8,8 @@ Version:      	0.0.1
 /*
  * Add your own custom css below this text.
  */
+
+/* Gestion de la grille */
+.col-full {
+    max-width: 100%;
+}
