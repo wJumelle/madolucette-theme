@@ -9,7 +9,204 @@ Version:      	0.0.1
  * Add your own custom css below this text.
  */
 
-/* Gestion de la grille */
-.col-full {
-    max-width: 100%;
+/* Déclaration des variables */
+:root {
+    --site-width: 1512px;
+    --clr-primary-1: #A86233;
+    --clr-primary-2: #C1A875;
+    --clr-primary-3: #E5CFBF;
+    --clr-primary-4: #D1A490;
+    --clr-secondary-1: #32A08D;
+    --clr-secondary-2: #62A095;
+    --clr-secondary-3: #87A09C;
+    --clr-secondary-4: #70A098;
+    --anim-duration: .25s;
+    --anim-fillMode: ease-in-out;
+    --spacer: 8px;
 }
+
+/*font-family: 'Libre Baskerville', serif;
+font-family: 'Poppins', sans-serif;*/
+
+
+/*************
+Reset - Debut
+*************/
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.mel--paragraph {
+    max-width: 70ch;
+}
+
+/* Header */
+.site-header {
+    padding-top: 0;
+}
+.woocommerce-active .site-header .site-branding {
+    width: auto;
+    margin-bottom: 0;
+}
+.site-header > .col-full::before,
+.site-header > .col-full::after {
+    content: none;
+}
+.woocommerce-active .site-header .main-navigation {
+    width: initial;
+    float: initial;
+    margin-right: 0;
+}
+.main-navigation::before,
+.main-navigation::after {
+    content: none;
+}
+
+/* Home page */
+.page-template-template-homepage .entry-content {
+    text-align: initial;
+}
+.page-template-template-homepage .type-page,
+.page-template-template-homepage:not(.has-post-thumbnail) .site-main{
+    padding-top: 0;
+}
+/***********
+Reset - Fin
+***********/
+
+
+/****************************
+Gestion de la grille - Debut
+****************************/
+.col-full,
+.page-template-template-homepage .entry-content,
+.page-template-template-homepage .entry-header {
+    max-width: var(--site-width);
+}
+
+.site-main > .page > .col-full {
+    padding: 0;
+}
+/**************************
+Gestion de la grille - Fin
+**************************/
+
+
+/****************
+Helpers - Debut
+****************/
+.flex {
+    display: flex;
+}
+
+.flex-row {
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-align-center {
+    align-items: center;
+}
+
+.flex-justify-spaceBetween {
+    justify-content: space-between;
+}
+/**************
+Helpers - Fin
+**************/
+
+
+/**************
+Header - Debut
+**************/
+.site-header > .col-full {
+    width: 100%;
+}
+/************
+Header - Fin
+************/
+
+/*****************
+Home page - Debut
+*****************/
+/* Global */
+.mel-hero--title,
+.mel--title-2 {
+    font-family: 'Libre Baskerville', serif;
+}
+
+/* Cover hero */
+.wp-block-cover,
+.wp-block-cover-image {
+    padding: 0;
+    justify-content: flex-start;
+}
+
+.hentry .entry-content .wp-block-cover .wp-block-cover__inner-container,
+.editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
+    width: 100%;
+    max-width: 952px;
+    padding-top: 24.3rem;
+    padding-right: 9.6rem;
+    padding-bottom: 27rem;
+    padding-left: 9.6rem;
+}
+.hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 {
+    font-size: 5.6rem !important;
+    line-height: 1.25em;
+}
+.hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 + p {
+    margin-bottom: 4.8rem;
+    font-size: 2.0rem !important;
+    line-height: 1.5em;
+}
+.hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link {
+    border: 2px solid var(--clr-primary-3);
+    background-color: var(--clr-primary-3) !important;
+    color: #000 !important;
+    transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+}
+.hentry .entry-content .wp-block-button .wp-block-button__link {
+    padding: 1.3rem 6.4rem;
+}
+.hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:hover,
+.hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:focus {
+    background: none !important;
+    color: var(--clr-primary-3) !important;
+}
+.mel-hero {
+    margin-bottom: calc(var(--spacer) * 18);
+}
+
+/* Notre catalogue */
+.mel-catalogue {
+    margin-bottom: calc(var(--spacer) * 18);
+}
+.mel-catalogue--button-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: calc(var(--spacer) * 2.5)
+}
+.hentry .entry-content .mel-catalogue--button-list .wp-block-button__link {
+    border: 2px solid var(--clr-secondary-1);
+    background-color: var(--clr-secondary-1) !important;
+    color: #000 !important;
+    transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+}
+.hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:hover,
+.hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:focus {
+    background: none !important;
+}
+
+/***************
+Home page - Fin
+***************/
