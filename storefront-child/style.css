@@ -83,9 +83,12 @@ Reset - Fin
 /****************************
 Gestion de la grille - Debut
 ****************************/
+.col-full {
+    padding: 0;
+}
+
 .col-full,
-.page-template-template-homepage .entry-content,
-.page-template-template-homepage .entry-header {
+.page-template-template-homepage .entry-content {
     max-width: var(--site-width);
 }
 

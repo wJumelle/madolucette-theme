@@ -65,6 +65,12 @@ function storefront_primary_navigation() {
 function storefront_homepage_header() {
     edit_post_link( __( 'Edit this section', 'storefront' ), '', '', '', 'button storefront-hero__button-edit' );
 }
+function storefront_product_categories() {}
+function storefront_recent_products() {}
+function storefront_featured_products() {}
+function storefront_popular_products() {}
+function storefront_on_sale_products() {}
+function storefront_best_selling_products() {}
 
 
 /**
