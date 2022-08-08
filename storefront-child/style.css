@@ -39,6 +39,7 @@ html {
 body {
     font-size: 1.8rem;
     font-family: 'Poppins', sans-serif;
+    color: #000;
 }
 
 .mel--paragraph {
@@ -75,6 +76,10 @@ body {
 .page-template-template-homepage:not(.has-post-thumbnail) .site-main{
     padding-top: 0;
 }
+.page-template-template-homepage .entry-content {
+    font-size: 1.8rem;
+    color: #000;
+}
 /***********
 Reset - Fin
 ***********/
@@ -85,6 +90,7 @@ Gestion de la grille - Debut
 ****************************/
 .col-full {
     padding: 0;
+    margin: 0;
 }
 
 .col-full,
@@ -178,6 +184,11 @@ Home page - Debut
     font-family: 'Libre Baskerville', serif;
 }
 
+.mel--title-2 {
+    font-size: 4.8rem;
+    line-height: 2em;
+}
+
 /* Cover hero */
 .wp-block-cover,
 .wp-block-cover-image {
@@ -216,6 +227,7 @@ Home page - Debut
 }
 .hentry .entry-content .wp-block-button .wp-block-button__link {
     padding: 1.3rem 6.4rem;
+    font-size: 2.4rem;
 }
 .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:hover,
 .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:focus {
@@ -253,6 +265,7 @@ Home page - Debut
 
 .mel-catalogue--featured-products > * {
     margin: 0 !important;
+    padding: 0 !important;
 }
 
 .wc-block-featured-product {
@@ -345,3 +358,120 @@ Home page - Debut
 /***************
 Home page - Fin
 ***************/
+
+
+/*****************
+Responsive - Début
+*****************/
+/* Basé sur Tailwind */
+@media (max-width: 640px), (min-width: 640px) {
+    :root {
+        --site-width: calc(100% - calc(var(--spacer) * 6));
+    }
+
+    .page-template-template-homepage .type-page {
+        padding-bottom: 0;
+        margin-bottom: 0;
+    }
+
+    .site-header {
+        padding: calc(var(--spacer) * 3) 0;
+    }
+
+    .site-header > .col-full {
+        margin: 0 auto;
+    }
+
+    .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container,
+    .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
+        padding: 10rem 0;
+    }
+
+    .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 {
+        font-size: 3rem !important;
+    }
+
+    .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 + p {
+        font-size: 1.8rem !important;
+    }
+
+    .hentry .entry-content .wp-block-button .wp-block-button__link {
+        font-size: 1.8rem !important
+    }
+
+    .mel--title-2 {
+        font-size: 3rem;
+    }
+
+    .page-template-template-homepage .entry-content {
+        font-size: 1.6rem;
+    }
+
+    .mel-hero {
+        margin-bottom: 10rem;
+    }
+
+    .hentry .entry-content .mel-catalogue--button-list .wp-block-button .wp-block-button__link {
+        font-size: 1.4rem !important;
+    }
+
+    .hentry .entry-content .wp-block-button {
+        margin-bottom: 0;
+    }
+
+    .mel-catalogue--button-list {
+        margin-bottom: 1.41575em;
+    }
+
+    .mel-catalogue--button-list > * {
+        flex: 0 1 calc(50% - 20px);
+    }
+
+    .mel-catalogue--button-list > * > a {
+        width: 100%;
+    }
+
+    .mel-catalogue--featured-products {
+        gap: calc(var(--spacer) * 6.5);
+    }
+
+    .hentry .entry-content .mel-catalogue--featured-products .wp-block-button .wp-block-button__link {
+        font-size: 1.4rem !important;
+    }
+
+    .mel-catalogue {
+        margin-bottom: calc(var(--spacer) * 12);
+    }
+
+    .mel-team--image {
+        display: none;
+    }
+
+    .mel-team--profils.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
+        flex-basis: calc(50% - calc(var(--spacer) * 2.5)) !important;
+        padding: 0 !important;
+    }
+}
+@media (min-width: 768px) {
+    :root {
+        --site-width: calc(100% - calc(var(--spacer) * 6));
+    }
+}
+@media (min-width: 1024px) {
+    :root {
+        --site-width: calc(100% - calc(var(--spacer) * 6));
+    }
+}
+@media (min-width: 1280px) {
+    :root {
+        --site-width: calc(100% - calc(var(--spacer) * 6));
+    }
+}
+@media (min-width: 1536px) {
+    :root {
+        --site-width: 1512px;
+    }
+}
+/****************
+Responsive - Fin
+****************/
