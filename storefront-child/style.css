@@ -89,7 +89,17 @@ Gestion de la grille - Debut
 
 .col-full,
 .page-template-template-homepage .entry-content {
+    max-width: 100%;
+}
+
+.page-template-template-homepage .entry-content > * {
     max-width: var(--site-width);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-template-template-homepage .entry-content > .mel-hero {
+    max-width: 100%;
 }
 
 .site-main > .page > .col-full {
@@ -132,9 +142,31 @@ Header - Debut
 **************/
 .site-header > .col-full {
     width: 100%;
+    max-width: var(--site-width);
+}
+
+.primary-navigation > ul > li:last-child > a {
+    background-image: url(./assets/images/png/instagram.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -9999px;
 }
 /************
 Header - Fin
+************/
+
+/**************
+Footer - Debut
+**************/
+.site-footer {
+    padding: calc(var(--spacer) * 3);
+}
+.site-footer > .col-full {
+    width: 100%;
+    max-width: var(--site-width);
+}
+/************
+Footer - Fin
 ************/
 
 /*****************
@@ -156,20 +188,25 @@ Home page - Debut
 .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container,
 .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
     width: 100%;
-    max-width: 952px;
+    max-width: var(--site-width);
     padding-top: 24.3rem;
-    padding-right: 9.6rem;
     padding-bottom: 27rem;
-    padding-left: 9.6rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 {
     font-size: 5.6rem !important;
     line-height: 1.25em;
+    max-width: 25ch;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: calc(var(--spacer) * 3);
 }
 .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 + p {
-    margin-bottom: 4.8rem;
     font-size: 2.0rem !important;
     line-height: 1.5em;
+    max-width: 65ch;
+    margin-bottom: calc(var(--spacer) * 8);
 }
 .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link {
     border: 2px solid var(--clr-primary-3);
@@ -208,6 +245,101 @@ Home page - Debut
 .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:hover,
 .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:focus {
     background: none !important;
+}
+
+.mel-catalogue--featured-products {
+    gap: calc(var(--spacer) * 2.5);
+}
+
+.mel-catalogue--featured-products > * {
+    margin: 0 !important;
+}
+
+.wc-block-featured-product {
+    min-height: 356px !important;
+    border-radius: 20px;
+}
+
+.hentry .wc-block-featured-product {
+    overflow: visible;
+}
+
+.wc-block-featured-product .background-dim__overlay {
+    display: none;
+}
+
+.wc-block-featured-product__background-image {
+    border-radius: 20px;
+}
+
+.wc-block-featured-product .wc-block-featured-product__title {
+    position: absolute;
+    bottom: 0;
+    padding: calc(var(--spacer) * 3) calc(var(--spacer) * 2);
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    overflow: hidden;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.wc-block-featured-product .wc-block-featured-product__title::before {
+    content: '';
+    left: 0;
+    bottom: 0;
+    top: 0;
+    position: absolute;
+    right: 0;
+    display: block;
+    z-index: -1;
+    background: linear-gradient(360deg, rgba(45, 58, 56, 0.8) 0%, rgba(27, 35, 34, 0) 153.57%);
+    backdrop-filter: blur(10px);
+}
+
+.wc-block-featured-product__link {
+    position: absolute;
+    padding: 0;
+    bottom: 0;
+    transform: translateY(100%);
+}
+
+.hentry .entry-content .wc-block-featured-product .wp-block-button {
+    margin-bottom: 0;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.hentry .wc-block-featured-product .wp-block-buttons>.wp-block-button {
+    display: block;
+    text-align: right;
+}
+
+.hentry .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link {
+    padding: 0;
+    margin-top: var(--spacer);
+    background: none;
+}
+
+.hentry .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link:hover,
+.hentry .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link:focus {
+    text-decoration: underline;
+}
+
+.hentry .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link::after {
+    content: '>';
+    margin-left: var(--spacer);
+}
+
+/* Notre équipe */
+.mel-team--profils {
+    gap: calc(var(--spacer) * 2.5);
+}
+
+.mel-team--profils > * {
+    margin: 0 !important;
 }
 
 /***************
