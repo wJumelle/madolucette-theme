@@ -72,6 +72,21 @@ function storefront_popular_products() {}
 function storefront_on_sale_products() {}
 function storefront_best_selling_products() {}
 
+/**
+ * Surcharge des fonctions Storefront
+ */
+function storefront_before_content() {
+    ?>
+		<div id="primary" class="content-area">
+			<main id="main" class="site-main mel-template-others" role="main">
+		<?php
+}
+/**
+ * ToDo Sidebar
+ */
+function storefront_get_sidebar() {
+    get_sidebar('shop');
+}
 
 /**
  * Surcharge de la fonction permettant d'afficher la sticky bar
