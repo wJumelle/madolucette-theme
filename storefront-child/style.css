@@ -42,6 +42,10 @@ body {
     color: #000;
 }
 
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
 .mel--paragraph {
     max-width: 70ch;
 }
@@ -120,6 +124,14 @@ Responsive - Début
 @media (max-width: 640px), (min-width: 640px) {
     :root {
         --site-width: calc(100% - calc(var(--spacer) * 6));
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: calc(var(--spacer) * 3) !important;
+    }
+
+    p {
+        margin-bottom: calc(var(--spacer) * 6);
     }
 
     /****************************
@@ -211,6 +223,15 @@ Responsive - Début
         font-size: 1.6rem;
     }
 
+    .page-template-template-fullwidth-php .content-area,
+    .page-template-template-homepage-php .content-area {
+        margin-bottom: 0;
+    }
+
+    .site-main {
+        margin-bottom: calc(var(--spacer) * 10);
+    }
+
     /* Cover hero */
     .wp-block-cover,
     .wp-block-cover-image {
@@ -229,7 +250,6 @@ Responsive - Début
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 {
         margin-left: 0;
         margin-right: 0;
-        margin-bottom: calc(var(--spacer) * 3);
         font-size: 3rem !important;
         line-height: 1.25em;
         max-width: 25ch;
@@ -276,7 +296,7 @@ Responsive - Début
         flex-direction: row;
         flex-wrap: wrap;
         gap: calc(var(--spacer) * 2.5);
-        margin-bottom: 1.41575em;
+        margin-bottom: calc(var(--spacer) * 6);
     }
 
     .mel-catalogue--button-list > * {
@@ -334,6 +354,7 @@ Responsive - Début
         position: absolute;
         bottom: 0;
         padding: calc(var(--spacer) * 3) calc(var(--spacer) * 2);
+        margin-bottom: 0 !important;
         border-bottom-right-radius: 20px;
         border-bottom-left-radius: 20px;
         overflow: hidden;
@@ -404,6 +425,10 @@ Responsive - Début
         margin: 0 !important;
     }
 
+    .mel-team .wp-block-columns:last-child {
+        margin-bottom: 0;
+    }
+
     .mel-team--image {
         display: none;
     }
@@ -411,6 +436,11 @@ Responsive - Début
     .mel-team--profils.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
         flex-basis: calc(50% - calc(var(--spacer) * 2.5)) !important;
         padding: 0 !important;
+    }
+
+    .hentry .entry-content figure.wp-block-image,
+    .editor-styles-wrapper figure.wp-block-image {
+        margin-bottom: 0;
     }
 
     /***************
@@ -426,6 +456,10 @@ Responsive - Début
     Home page - Debut
     *****************/
     /* Global */
+    .site-main {
+        margin-bottom: calc(var(--spacer) * 18);
+    }
+
     .page-template-template-homepage .entry-content {
         font-size: 1.8rem;
     }
