@@ -449,6 +449,44 @@ Responsive - Début
 }
 @media (min-width: 768px) {
     :root {
+        --site-width: calc(100% - calc(var(--spacer) * 12));
+    }
+
+    /*****************
+    Home page - Debut
+    *****************/
+    /* Global */
+    body,
+    .page-template-template-homepage .entry-content {
+        font-size: 1.6rem;
+    }
+
+    .mel--title-2 {
+        font-size: 4.8rem;
+    }
+
+    /* Hero */
+    .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 {
+        font-size: 4.5rem !important;
+    }
+
+    /* Notre catalogue */
+    .mel-catalogue--button-list > * {
+        flex: 0 1 auto;
+    }
+
+    .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product__link .wp-block-button .wp-block-button__link {
+        font-size: 1.6rem !important;
+    }
+
+    /* Notre équipe */
+
+    /***************
+    Home page - Fin
+    ***************/
+}
+@media (min-width: 1024px) {
+    :root {
         --site-width: calc(100% - calc(var(--spacer) * 6));
     }
 
@@ -462,10 +500,6 @@ Responsive - Début
 
     .page-template-template-homepage .entry-content {
         font-size: 1.8rem;
-    }
-
-    .mel--title-2 {
-        font-size: 4.8rem;
     }
 
     /* Hero */
@@ -496,14 +530,6 @@ Responsive - Début
         gap: calc(var(--spacer) * 2.5);
     }
 
-    .mel-catalogue--button-list > * {
-        flex: 0 1 auto;
-    }
-
-    .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product__link .wp-block-button .wp-block-button__link {
-        font-size: 1.6rem !important;
-    }
-
     /* Notre équipe */
     .mel-team--image {
         display: block;
@@ -512,11 +538,6 @@ Responsive - Début
     /***************
     Home page - Fin
     ***************/
-}
-@media (min-width: 1024px) {
-    :root {
-        --site-width: calc(100% - calc(var(--spacer) * 6));
-    }
 }
 @media (min-width: 1280px) {
     :root {
