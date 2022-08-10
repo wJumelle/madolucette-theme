@@ -65,12 +65,16 @@ function storefront_primary_navigation() {
 function storefront_homepage_header() {
     edit_post_link( __( 'Edit this section', 'storefront' ), '', '', '', 'button storefront-hero__button-edit' );
 }
-function storefront_product_categories() {}
-function storefront_recent_products() {}
-function storefront_featured_products() {}
-function storefront_popular_products() {}
-function storefront_on_sale_products() {}
-function storefront_best_selling_products() {}
+add_action( 'init', 'remove_actions_from_storefront_homepage');
+function remove_actions_from_storefront_homepage() {
+    // Retire les sections non voulues de la homepage
+    remove_action( 'homepage', 'storefront_product_categories', 20 );
+    remove_action( 'homepage', 'storefront_recent_products', 30 );
+    remove_action( 'homepage', 'storefront_featured_products', 40 );
+    remove_action( 'homepage', 'storefront_popular_products', 50 );
+    remove_action( 'homepage', 'storefront_on_sale_products', 60 );
+    remove_action( 'homepage', 'storefront_best_selling_products', 70 );
+}
 
 /**
  * Surcharge des fonctions Storefront
@@ -81,11 +85,22 @@ function storefront_before_content() {
 			<main id="main" class="site-main mel-template-others" role="main">
 		<?php
 }
+
 /**
  * ToDo Sidebar
  */
 function storefront_get_sidebar() {
     get_sidebar('shop');
+}
+
+/**
+ * Surcharge des fonctions des pages Catégories
+ */
+add_action( 'init', 'remove_actions_from_storefront_categories');
+function remove_actions_from_storefront_categories() {
+    // Retire le filtrage du bas + résultats
+    remove_action( 'woocommerce_after_shop_loop','woocommerce_catalog_ordering', 10);
+    remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
 }
 
 /**
