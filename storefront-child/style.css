@@ -72,6 +72,44 @@ h1, h2, h3, h4, h5, h6 {
     content: none;
 }
 
+.main-navigation ul.menu ul.sub-menu {
+    background-color: #FFF;
+    width: 200px;
+    padding-left: var(--spacer);
+    padding-right: var(--spacer);
+}
+
+.main-navigation ul.menu ul li:hover>a,
+.main-navigation ul.menu ul li.focus,
+.main-navigation ul.nav-menu ul li:hover>a,
+.main-navigation ul.nav-menu ul li.focus {
+    background: none;
+}
+
+.main-navigation ul.menu ul li a,
+.main-navigation ul.nav-menu ul li a {
+    display: inline-block;
+    width: auto;
+    padding: calc(var(--spacer) * 1.5) 0;
+    transition: background-size .75s ease-in-out;
+    background-image: url('https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/jpg/underline.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 0 0;
+}
+
+.main-navigation ul ul li, .secondary-navigation ul ul li {
+    text-align: center;
+    border-bottom: 1px solid #87A09C;
+}
+
+.main-navigation ul.menu ul li a:hover,
+.main-navigation ul.menu ul li a:focus,
+.main-navigation ul.nav-menu ul li a:hover,
+.main-navigation ul.nav-menu ul li a:focus {
+    background-size: 100% 1px;
+}
+
 /* Home page */
 .page-template-template-homepage .entry-content {
     text-align: initial;
