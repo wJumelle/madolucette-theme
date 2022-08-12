@@ -20,6 +20,7 @@ Version:      	0.0.1
     --clr-secondary-2: #62A095;
     --clr-secondary-3: #87A09C;
     --clr-secondary-4: #70A098;
+    --clr-dark: #1B2322;
     --anim-duration: .25s;
     --anim-fillMode: ease-in-out;
     --spacer: 8px;
@@ -39,7 +40,7 @@ html {
 body {
     font-size: 1.8rem;
     font-family: 'Poppins', sans-serif;
-    color: #000;
+    color: var(--clr-dark);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -72,48 +73,21 @@ h1, h2, h3, h4, h5, h6 {
     content: none;
 }
 
-.main-navigation ul.menu ul.sub-menu {
-    background-color: #FFF;
-    width: 200px;
-    padding-left: var(--spacer);
-    padding-right: var(--spacer);
-}
-
-.main-navigation ul.menu ul li:hover>a,
-.main-navigation ul.menu ul li.focus,
-.main-navigation ul.nav-menu ul li:hover>a,
-.main-navigation ul.nav-menu ul li.focus {
-    background: none;
-}
-
-.main-navigation ul.menu ul li a,
-.main-navigation ul.nav-menu ul li a {
-    display: inline-block;
-    width: auto;
-    padding: calc(var(--spacer) * 1.5) 0;
-    transition: background-size .75s ease-in-out;
-    background-image: url('https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/jpg/underline.jpg');
-    background-repeat: no-repeat;
-    background-position: bottom left;
-    background-size: 0 0;
-}
-
-.main-navigation ul ul li, .secondary-navigation ul ul li {
-    text-align: center;
-    border-bottom: 1px solid #87A09C;
-}
-
-.main-navigation ul.menu ul li a:hover,
-.main-navigation ul.menu ul li a:focus,
-.main-navigation ul.nav-menu ul li a:hover,
-.main-navigation ul.nav-menu ul li a:focus {
-    background-size: 100% 1px;
+.main-navigation ul li a,
+.site-title a,
+ul.menu li a,
+.site-branding h1 a,
+button.menu-toggle,
+button.menu-toggle:hover,
+.handheld-navigation .dropdown-toggle,
+.main-navigation ul li:hover > a {
+    color: var(--clr-dark);
 }
 
 /* Home page */
 .page-template-template-homepage .entry-content {
     text-align: initial;
-    color: #000;
+    color: var(--clr-dark);
 }
 .page-template-template-homepage .type-page,
 .page-template-template-homepage:not(.has-post-thumbnail) .site-main{
@@ -224,6 +198,71 @@ Responsive - Début
         background-position: center;
         text-indent: -9999px;
     }
+
+    .main-navigation ul.menu ul.sub-menu {
+        background-color: #FFF;
+        width: 200px;
+        padding-left: var(--spacer);
+        padding-right: var(--spacer);
+    }
+    
+    .main-navigation ul.menu ul li.focus,
+    .main-navigation ul.nav-menu ul li.focus {
+        background: none;
+    }
+    
+    .main-navigation .primary-navigation > ul > li {
+        padding: calc(var(--spacer) * 2.5) calc(var(--spacer) * 5);
+    }
+
+    .main-navigation .primary-navigation > ul > li:hover a {
+
+    }
+
+    .main-navigation .primary-navigation > ul > li > a {
+        padding: 0;
+        transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        background-image: url('https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/jpg/underline.jpg');
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-size: 0 1px;
+    }
+
+    .main-navigation .primary-navigation > ul > li > a:hover,
+    .main-navigation .primary-navigation > ul > li > a:focus {
+        background-color: transparent;
+        background-size: 100% 1px;
+        color: var(--clr-secondary-1);
+    }
+    
+    .main-navigation ul.menu ul li a,
+    .main-navigation ul.nav-menu ul li a {
+        display: inline-block;
+        width: auto;
+        padding: calc(var(--spacer) * 1.5) 0;
+        transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        background-image: url('https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/jpg/underline.jpg');
+        background-repeat: no-repeat;
+        background-position: bottom 10px left;
+        background-size: 0 1px;
+    }
+    
+    .main-navigation ul ul li,
+    .secondary-navigation ul ul li {
+        text-align: center;
+        border-bottom: 1px solid var(--clr-secondary-3);
+    }
+    
+    .main-navigation ul.menu ul li:hover a,
+    .main-navigation ul.menu ul li a:hover,
+    .main-navigation ul.menu ul li a:focus,
+    .main-navigation ul.nav-menu ul li:hover a,
+    .main-navigation ul.nav-menu ul li a:hover,
+    .main-navigation ul.nav-menu ul li a:focus {
+        background-color: transparent;
+        background-size: 100% 1px;
+        color: var(--clr-secondary-1);
+    }
     /************
     Header - Fin
     ************/
@@ -309,7 +348,7 @@ Responsive - Début
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link {
         border: 2px solid var(--clr-primary-3);
         background-color: var(--clr-primary-3) !important;
-        color: #000 !important;
+        color: var(--clr-dark) !important;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
     }
     .hentry .entry-content .wp-block-button .wp-block-button__link {
@@ -350,7 +389,7 @@ Responsive - Début
     .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link {
         border: 2px solid var(--clr-secondary-1);
         background-color: var(--clr-secondary-1) !important;
-        color: #000 !important;
+        color: var(--clr-dark) !important;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
     }
 
@@ -440,11 +479,19 @@ Responsive - Début
         padding: 0;
         margin-top: var(--spacer);
         background: none;
+        transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        background-image: url('https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/jpg/underline.jpg');
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-size: 0 1px;
     }
+
     
     .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link:hover,
     .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link:focus {
-        text-decoration: underline;
+        background-color: transparent;
+        background-size: 100% 1px;
+        color: var(--clr-secondary-1);
     }
     
     .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link::after {
