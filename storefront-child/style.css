@@ -192,13 +192,6 @@ Responsive - Début
         margin: 0 auto;
     }
 
-    .primary-navigation > ul > li:last-child > a {
-        background-image: url(./assets/images/png/instagram.png);
-        background-repeat: no-repeat;
-        background-position: center;
-        text-indent: -9999px;
-    }
-
     .main-navigation ul.menu ul.sub-menu {
         background-color: #FFF;
         width: 200px;
@@ -210,13 +203,22 @@ Responsive - Début
     .main-navigation ul.nav-menu ul li.focus {
         background: none;
     }
+
+    .main-navigation .primary-navigation > ul {
+        display: flex;
+        align-items: center;
+    }
     
     .main-navigation .primary-navigation > ul > li {
         padding: calc(var(--spacer) * 2.5) calc(var(--spacer) * 5);
     }
 
-    .main-navigation .primary-navigation > ul > li:hover a {
+    .main-navigation .primary-navigation > ul > li:first-child {
+        padding-left: 0;
+    }
 
+    .main-navigation .primary-navigation > ul > li:last-child {
+        padding-right: 0;
     }
 
     .main-navigation .primary-navigation > ul > li > a {
@@ -262,6 +264,16 @@ Responsive - Début
         background-color: transparent;
         background-size: 100% 1px;
         color: var(--clr-secondary-1);
+    }
+
+    .primary-navigation > ul > li:last-child > a {
+        width: 16px;
+        height: 16px;
+        background-image: url(./assets/images/png/instagram.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        text-indent: -9999px;
     }
     /************
     Header - Fin
