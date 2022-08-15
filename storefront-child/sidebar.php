@@ -10,7 +10,11 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
+
+// On affiche une sidebar vide si aucun élément n'est présent dans le devis
 ?>
+
+
 
 <div id="secondary" class="widget-area mel-sidebar" role="complementary">
 	<?php 

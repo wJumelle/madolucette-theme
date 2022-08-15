@@ -51,6 +51,25 @@ h1, h2, h3, h4, h5, h6 {
     max-width: 70ch;
 }
 
+a:focus,
+button:focus,
+.button.alt:focus {
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus {
+    outline-color: var(--clr-secondary-1);
+}
+
 /* Header */
 .site-header {
     padding-top: 0;
