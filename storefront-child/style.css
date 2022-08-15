@@ -45,6 +45,7 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
+    color: var(--clr-dark);
 }
 
 .mel--paragraph {
@@ -68,6 +69,11 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus {
     outline-color: var(--clr-secondary-1);
+}
+
+a,
+a:visited {
+    color: var(--clr-dark);
 }
 
 /* Header */
@@ -180,7 +186,8 @@ Responsive - Début
 
     .page-template-template-homepage .entry-content > *,
     .storefront-breadcrumb > .col-full,
-    .archive .site-content > .col-full {
+    .archive .site-content > .col-full,
+    .product-template-default .site-content > .col-full {
         max-width: var(--site-width);
         margin-left: auto;
         margin-right: auto;
@@ -338,26 +345,30 @@ Responsive - Début
         border-bottom: 0;
     }
 
-    .mel-devis--product figure {
-        margin-bottom: var(--spacer);
-    }
-
     .mel-devis--product a {
         display: flex;
+        align-items: flex-start;
         gap: calc(var(--spacer) * 2.5);
+        margin-bottom: var(--spacer);
     }
     
-    .mel-devis--product figure img {
+    .mel-devis--product img {
         max-width: 100px;
     }
     
-    .mel-devis--product figcaption.mel-devis--product-title {
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        max-height: 58px;
-        text-overflow: ellipsis;
-        overflow: hidden;
+    .mel-devis--product .mel-devis--product-title {
+        transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        background-image: linear-gradient(var(--clr-secondary-1), var(--clr-secondary-1));
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-size: 0 1px;
+        line-height: 1.5em;
+    }
+
+    .mel-devis--product a:hover .mel-devis--product-title,
+    .mel-devis--product a:focus .mel-devis--product-title {
+        background-size: 100% 1px;
+        color: var(--clr-secondary-1);
     }
 
     /*************

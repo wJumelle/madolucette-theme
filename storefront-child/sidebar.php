@@ -46,7 +46,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				if ( $_product->get_sku() !== '' && get_option( 'ywraq_show_sku' ) === 'yes' ) {
 					$product_title .= ' ' . apply_filters( 'ywraq_sku_label', __( ' SKU:', 'yith-woocommerce-request-a-quote' ) ) . $_product->get_sku();
 				}
-				$content .= "<figure><a href=" . esc_url( $_product->get_permalink() ) . ">" . $thumbnail . "<figcaption class='mel-devis--product-title'>" . wp_kses_post( $product_title ) . "</figcaption></a></figure>";
+				$content .= "<a href=" . esc_url( $_product->get_permalink() ) . ">" . $thumbnail . "<p><span class='mel-devis--product-title'>" . wp_kses_post( $product_title ) . "</span></p></a>";
 				
 				// On récupère la quantité
 				// Si jamais on veut que la sidebar puisse mettre à jour le devis
