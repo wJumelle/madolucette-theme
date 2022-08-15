@@ -314,6 +314,56 @@ Responsive - Début
     Footer - Fin
     ************/
 
+    /***************
+    Sidebar - Début
+    ***************/
+
+    .mel-devis--products-list {
+        margin-left: 0;
+        list-style-type: none;
+    }
+
+    .mel-devis--products-list .mel-devis--product {
+        border-bottom: 1px solid var(--clr-secondary-3);
+        padding-top: calc(var(--spacer) * 4);
+        padding-bottom: calc(var(--spacer) * 4);
+    }
+    
+    .mel-devis--products-list .mel-devis--product:first-child {
+        padding-top: 0;
+    }
+    
+    .mel-devis--products-list .mel-devis--product:last-child {
+        padding-bottom: 0;
+        border-bottom: 0;
+    }
+
+    .mel-devis--product figure {
+        margin-bottom: var(--spacer);
+    }
+
+    .mel-devis--product a {
+        display: flex;
+        gap: calc(var(--spacer) * 2.5);
+    }
+    
+    .mel-devis--product figure img {
+        max-width: 100px;
+    }
+    
+    .mel-devis--product figcaption.mel-devis--product-title {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        max-height: 58px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    /*************
+    Sidebar - Fin
+    *************/
+
 
     /*****************
     Home page - Debut

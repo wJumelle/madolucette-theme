@@ -10,11 +10,7 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
-
-// On affiche une sidebar vide si aucun élément n'est présent dans le devis
 ?>
-
-
 
 <div id="secondary" class="widget-area mel-sidebar" role="complementary">
 	<?php 
@@ -22,11 +18,17 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		$raqSidebar = YITH_Request_Quote()->get_raq_return();
 		//var_dump($raqSidebar);
 
+		$nbProduitsDevis = count($raqSidebar);
+
 		// Si le devis est vide, alors on affiche un message + potentiellement d'autre contenu ?
 		// Sinon on affiche les éléments qui compose le devis
-		if ( count( $raqSidebar ) === 0 ) { ?>
+		if ( $nbProduitsDevis === 0 ) { ?>
 			<p><?php esc_html_e( 'No products in list', 'yith-woocommerce-request-a-quote' ); ?></p>
 		<?php } else { 
+			// On prépare la variable à afficher
+			$content = "<h3 class='mel-devis--title'>Composition de votre devis</h3>";
+			$content .= ($nbProduitsDevis > 1) ? "<ul class='mel-devis--products-list'>" : "";
+
 			foreach ( $raqSidebar as $key => $raq ) {
 				// On récupère toutes les informations autour du produit
 				$product_id = ( isset( $raq['variation_id'] ) && '' !== $raq['variation_id'] ) ? $raq['variation_id'] : $raq['product_id'];
@@ -35,21 +37,17 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 					continue;
 				}
 
-				// On récupère l'image du produit 
-				$thumbnail = $_product->get_image();
-				if ( ! $_product->is_visible() ) {
-					echo $thumbnail; //phpcs:ignore
-				} else {
-					printf( '<a href="%s">%s</a>', $_product->get_permalink(), $thumbnail ); //phpcs:ignore
-				}
+				// On encapsule dans une <li> ou une <div> en fonction du nombre de produits dans le devis
+				$content .= ($nbProduitsDevis > 1) ? "<li data-productId=" . $product_id . " class='mel-devis--product'>" : "<div data-productId=" . $product_id . " class='mel-devis--product'>";
 
-				// On récupère le nom du produit
+				// On récupère l'image et le nom du produit
+				$thumbnail = $_product->get_image();
 				$product_title = $_product->get_title();
 				if ( $_product->get_sku() !== '' && get_option( 'ywraq_show_sku' ) === 'yes' ) {
 					$product_title .= ' ' . apply_filters( 'ywraq_sku_label', __( ' SKU:', 'yith-woocommerce-request-a-quote' ) ) . $_product->get_sku();
 				}
-				echo $product_title;
-
+				$content .= "<figure><a href=" . esc_url( $_product->get_permalink() ) . ">" . $thumbnail . "<figcaption class='mel-devis--product-title'>" . wp_kses_post( $product_title ) . "</figcaption></a></figure>";
+				
 				// On récupère la quantité
 				// Si jamais on veut que la sidebar puisse mettre à jour le devis
 				// $product_quantity = woocommerce_quantity_input(
@@ -65,9 +63,16 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				// );
 				//Sinon plus simplement on peut juste echo la quantité du produit
 				$product_quantity = $raq['quantity'];
+				$content .= "<span class='mel-devis--product-quantity'> Qté : " . $product_quantity . "</span>";
 
-				echo $product_quantity;
+				$content .= ($nbProduitsDevis > 1) ? "</li>" : "</div>";
 			}
+
+			// On ferme l'élément liste
+			$content .= ($nbProduitsDevis > 1) ? "</ul>" : "";
+
+			// On affiche le contenu
+			echo $content;
 		}
 	?>
 </div><!-- #secondary -->
