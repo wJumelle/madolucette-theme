@@ -23,10 +23,15 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		// Si le devis est vide, alors on affiche un message + potentiellement d'autre contenu ?
 		// Sinon on affiche les éléments qui compose le devis
 		if ( $nbProduitsDevis === 0 ) { ?>
-			<p><?php esc_html_e( 'No products in list', 'yith-woocommerce-request-a-quote' ); ?></p>
+			<h3 class='mel-devis--title'>Votre devis</h3>
+			<p>Ho-ho il n’y a rien pour l’instant ☹</p>
 		<?php } else { 
 			// On prépare la variable à afficher
-			$content = "<h3 class='mel-devis--title'>Composition de votre devis</h3>";
+			$content = "<h3 class='mel-devis--title'>Votre devis</h3>";
+
+			// On encapsule à l'intérieur d'un formulaire pour pouvoir update les produits
+			$content .= "<form id='yith-ywraq-form' name='yith-ywraq-form' action='" . esc_url( YITH_Request_Quote()->get_raq_page_url( 'update' ) ) . " method='post'>";
+
 			$content .= ($nbProduitsDevis > 1) ? "<ul class='mel-devis--products-list'>" : "";
 
 			foreach ( $raqSidebar as $key => $raq ) {
@@ -40,36 +45,56 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				// On encapsule dans une <li> ou une <div> en fonction du nombre de produits dans le devis
 				$content .= ($nbProduitsDevis > 1) ? "<li data-productId=" . $product_id . " class='mel-devis--product'>" : "<div data-productId=" . $product_id . " class='mel-devis--product'>";
 
+				// ----------------- Affichage du produit --- début
 				// On récupère l'image et le nom du produit
 				$thumbnail = $_product->get_image();
 				$product_title = $_product->get_title();
 				if ( $_product->get_sku() !== '' && get_option( 'ywraq_show_sku' ) === 'yes' ) {
 					$product_title .= ' ' . apply_filters( 'ywraq_sku_label', __( ' SKU:', 'yith-woocommerce-request-a-quote' ) ) . $_product->get_sku();
 				}
-				$content .= "<a href=" . esc_url( $_product->get_permalink() ) . ">" . $thumbnail . "<p><span class='mel-devis--product-title'>" . wp_kses_post( $product_title ) . "</span></p></a>";
+				$content .= "<a href=" . esc_url( $_product->get_permalink() ) . ">" . $thumbnail . "</a><div><h4 class='mel-devis--product-title'><a href=" . esc_url( $_product->get_permalink() ) . ">" . wp_kses_post( $product_title ) . "</a></h4>";
+				// ----------------- Affichage du produit --- fin
 				
+				// ----------------- Mise à jour du produit --- début
+				// On affiche les éléments de mise à jour du produit dans le devis
 				// On récupère la quantité
-				// Si jamais on veut que la sidebar puisse mettre à jour le devis
-				// $product_quantity = woocommerce_quantity_input(
-				// 	array(
-				// 		'input_name'  => "raq[{$key}][qty]",
-				// 		'input_value' => apply_filters( 'ywraq_quantity_input_value', $raq['quantity'] ),
-				// 		'max_value'   => apply_filters( 'ywraq_quantity_max_value', $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(), $_product ),
-				// 		'min_value'   => apply_filters( 'ywraq_quantity_min_value', 0, $_product ),
-				// 		'step'        => apply_filters( 'ywraq_quantity_step_value', 1, $_product ),
-				// 	),
-				// 	$_product,
-				// 	false
-				// );
+				$product_quantity = woocommerce_quantity_input(
+					array(
+						'input_name'  => "raq[{$key}][qty]",
+						'input_value' => apply_filters( 'ywraq_quantity_input_value', $raq['quantity'] ),
+						'max_value'   => apply_filters( 'ywraq_quantity_max_value', $_product->backorders_allowed() ? '' : $_product->get_stock_quantity(), $_product ),
+						'min_value'   => apply_filters( 'ywraq_quantity_min_value', 0, $_product ),
+						'step'        => apply_filters( 'ywraq_quantity_step_value', 1, $_product ),
+					),
+					$_product,
+					false
+				);
 				//Sinon plus simplement on peut juste echo la quantité du produit
-				$product_quantity = $raq['quantity'];
-				$content .= "<span class='mel-devis--product-quantity'> Qté : " . $product_quantity . "</span>";
+				//$product_quantity = $raq['quantity'];
+				$content .= "<div class='mel-devis--product-update'><span class='mel-devis--product-quantity'>" . $product_quantity . "</span>";
+				// Bouton de suppression du produit du devis
+				$content .= apply_filters( 'yith_ywraq_item_remove_link', sprintf( '<a href="#" data-buttonType="removeProductionFrom" data-remove-item="%s" data-wp_nonce="%s" data-product_id="%d" class="yith-ywraq-item-remove remove mel-devis--remove-product" title="%s">' . esc_attr__( 'Remove this item', 'yith-woocommerce-request-a-quote' ) . '</a>', esc_attr( $key ), esc_attr( wp_create_nonce( 'remove-request-quote-' . $product_id ) ), esc_attr( $product_id ), esc_attr__( 'Remove this item', 'yith-woocommerce-request-a-quote' ) ), $key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$content .= "</div>";
+				// ----------------- Mise à jour du produit --- fin
+
+				// On ferme la balise div qui encadre la partie droite du récap
+				$content .= "</div>";
 
 				$content .= ($nbProduitsDevis > 1) ? "</li>" : "</div>";
 			}
 
 			// On ferme l'élément liste
 			$content .= ($nbProduitsDevis > 1) ? "</ul>" : "";
+
+			// On affiche le prix total du devis
+			$total = wp_kses_post( apply_filters( 'yith_ywraq_hide_price_template', wp_kses_post( WC()->cart->get_product_subtotal( $_product, $raq['quantity'] ) ), $product_id ) );
+			$content .= "<p class='mel-devis--total'>Prix total : <span>" . $total . "</span></p>";
+
+			// On affiche le bouton de mise à jour du devis
+			$content .= "<input type='submit' class='button mel-devis--submit' name='update_raq' value='" . esc_attr( get_option( 'ywraq_update_list_label', __( 'Update List', 'yith-woocommerce-request-a-quote' ) ) ) . "'><input type='hidden' id='update_raq_wpnonce' name='update_raq_wpnonce' value='" . esc_attr( wp_create_nonce( 'update-request-quote-quantity' ) ) . "'>";
+
+			// On ferme le formulaire 
+			$content .= "</form>";
 
 			// On affiche le contenu
 			echo $content;
