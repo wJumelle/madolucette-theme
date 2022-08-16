@@ -43,6 +43,11 @@ body {
     color: var(--clr-dark);
 }
 
+body > #page {
+    position: relative;
+    overflow-x: initial;
+}
+
 h1, h2, h3, h4, h5, h6 {
     margin: 0;
     color: var(--clr-dark);
@@ -209,7 +214,10 @@ Responsive - Début
     Header - Debut
     **************/
     .site-header {
-        padding: calc(var(--spacer) * 3) 0;
+        position: sticky;
+        top: 0;
+        left: 0;
+        padding: var(--spacer) 0;
     }
 
     .site-header > .col-full {
@@ -295,11 +303,17 @@ Responsive - Début
     .primary-navigation > ul > li:last-child > a {
         width: 16px;
         height: 16px;
-        background-image: url(./assets/images/png/instagram.png);
+        background-image: url("./assets/images/svg/instagram.svg");
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
         text-indent: -9999px;
+        transition: background-image var(--anim-duration) var(--anim-fillMode);
+    }
+    .primary-navigation > ul > li:last-child > a:hover,
+    .primary-navigation > ul > li:last-child > a:focus {
+        background-image: url("./assets/images/svg/instagram-hover.svg");
+        background-size: cover;
     }
     /************
     Header - Fin
