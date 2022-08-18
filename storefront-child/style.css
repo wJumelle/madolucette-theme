@@ -28,6 +28,7 @@ Version:      	0.0.1
     --clr-secondary-3-explosed: 135, 160, 156;
     --clr-secondary-4-explosed: 112, 160, 152;
     --clr-dark: #1B2322;
+    --clr-light: #D9D9D9;
     --anim-duration: .25s;
     --anim-fillMode: ease-in-out;
 }
@@ -93,6 +94,16 @@ input[type=number] {
 a,
 a:visited {
     color: var(--clr-dark);
+}
+
+.col-full::before,
+.col-full::after {
+    content: none;
+}
+
+ul {
+    margin-left: 0;
+    list-style-type: none;
 }
 
 /* Header */
@@ -167,6 +178,10 @@ Helpers - Debut
 
 .flex-justify-spaceBetween {
     justify-content: space-between;
+}
+
+.grid {
+    display: grid;
 }
 /**************
 Helpers - Fin
@@ -357,12 +372,59 @@ Responsive - Début
     Footer - Debut
     **************/
     .site-footer {
-        padding: calc(var(--spacer) * 3);
+        padding: calc(var(--spacer) * 7) 0;
+    }
+    .mel-footer {
+        background-color: var(--clr-dark);
+        background-image: url(./assets/images/svg/footer-decoration.svg);
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        font-size: 1.6rem;
     }
     .site-footer > .col-full {
+        
         width: 100%;
         max-width: var(--site-width);
         margin: 0 auto;
+        row-gap: calc(var(--spacer) * 3);
+    }
+    .mel-footer .grid-empty {
+        display: none;
+    }
+    .mel-footer,
+    .mel-footer a:not(.button):not(.components-button),
+    .mel-footer h3 {
+        color: var(--clr-light);
+    }
+    .mel-footer h3 {
+        margin-bottom: 0 !important;
+        font-family: 'Libre Baskerville', serif;
+        font-size: 2.4rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    .mel-footer p,
+    .mel-footer ul {
+        margin-bottom: 0;
+    }
+    .mel-footer a {
+        transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        background-image: linear-gradient(var(--clr-light), var(--clr-light));
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-size: 0 1px;
+        text-decoration: none;
+    }
+    .mel-footer a:hover, 
+    .mel-footer a:focus {
+        background-size: 100% 1px;
+    }
+    .mel-footer--more-about ul li::before {
+        content: '>';
+        padding-right: .5em;
+    }
+    .mel-footer .mel-footer--copyright {
+        color: var(--clr-secondary-3);
     }
     /************
     Footer - Fin
@@ -804,6 +866,15 @@ Responsive - Début
 @media (min-width: 1024px) {
     :root {}
 
+    /* Footer */
+    .mel-footer {
+        --grid-column-width: calc(calc(100% - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+    }
+    .mel-footer .grid {
+        grid-template-columns: repeat(2, calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5)));
+        column-gap: var(--grid-gutter);
+    }
+
     /*****************
     Home page - Debut
     *****************/
@@ -831,13 +902,17 @@ Responsive - Début
     .mel-team--image {
         display: block;
     }
-
     /***************
     Home page - Fin
     ***************/
 }
 @media (min-width: 1280px) {
     :root {}
+
+    /* Footer */
+    .mel-footer .grid {
+        grid-template-columns: repeat(3, calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)));
+    }
 
     /*****************
     Home page - Debut
@@ -858,6 +933,11 @@ Responsive - Début
 @media (min-width: 1536px) {
     :root {
         --site-width: 1512px;
+    }
+
+    /* Footer */
+    .mel-footer .grid-empty {
+        display: block;
     }
 
     /*****************
