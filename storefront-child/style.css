@@ -872,6 +872,22 @@ Responsive - Début
         left: 50%;
         transform: translate(-50%);
     }
+
+    /* Titre de la page */
+    .mel-header--archive-product h1 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3.2rem;
+        margin-bottom: calc(var(--spacer) * 4) !important;
+    }
+
+    /* Sorting et pagination */
+    .storefront-sorting:empty {
+        display: none;
+    }
+    .storefront-sorting::before,
+    .storefront-sorting::after {
+        content: none;
+    }
     /***************
     Catégories - Fin
     ***************/

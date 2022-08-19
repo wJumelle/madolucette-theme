@@ -87,7 +87,7 @@ function storefront_before_content() {
 }
 
 /**
- * ToDo Sidebar
+ * Sidebar
  */
 function storefront_get_sidebar() {
     get_sidebar('shop');
@@ -98,6 +98,12 @@ function storefront_get_sidebar() {
  */
 add_action( 'init', 'remove_actions_from_storefront_categories');
 function remove_actions_from_storefront_categories() {
+    // Retire le filtrage du haut + résultats
+    remove_action( 'woocommerce_before_shop_loop', 'storefront_sorting_wrapper', 9 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 10 );
+    remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+    remove_action( 'woocommerce_before_shop_loop', 'storefront_woocommerce_pagination', 30 );
+    remove_action( 'woocommerce_before_shop_loop', 'storefront_sorting_wrapper_close', 31 );
     // Retire le filtrage du bas + résultats
     remove_action( 'woocommerce_after_shop_loop','woocommerce_catalog_ordering', 10);
     remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
