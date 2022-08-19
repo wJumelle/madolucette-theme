@@ -135,6 +135,7 @@ ul {
 }
 
 .main-navigation ul li a,
+.site-header ul.menu li.current-menu-item > a,
 .site-title a,
 ul.menu li a,
 .site-branding h1 a,
@@ -885,7 +886,7 @@ Responsive - Début
     .storefront-sorting:empty {
         display: none;
     }
-    
+
     /* Liste des produits */
     .mel-category--products-list {
         grid-template-columns: repeat(4, calc(calc(var(--grid-column-width) * 2) + var(--grid-gutter)));
