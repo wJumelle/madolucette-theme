@@ -10,7 +10,9 @@ Version:      	0.0.1
  */
 
 /* Déclaration des variables */
-:root {
+:root,
+*::before,
+*::after {
     --site-width: 1512px;
     --grid-gutter: 20px;
     --grid-nbColumns: 12;
@@ -32,7 +34,6 @@ Version:      	0.0.1
     --anim-duration: .25s;
     --anim-fillMode: ease-in-out;
 }
-
 
 /*************
 Reset - Debut
@@ -104,6 +105,11 @@ a:visited {
 ul {
     margin-left: 0;
     list-style-type: none;
+}
+
+.storefront-breadcrumb {
+    padding: 0;
+    margin: 0;
 }
 
 /* Header */
@@ -550,7 +556,6 @@ Responsive - Début
         background: none !important;
         color: var(--clr-secondary-3) !important;
     }
-
     /*************
     Sidebar - Fin
     *************/
@@ -801,7 +806,6 @@ Responsive - Début
     .editor-styles-wrapper figure.wp-block-image {
         margin-bottom: 0;
     }
-
     /***************
     Home page - Fin
     ***************/
@@ -810,7 +814,64 @@ Responsive - Début
     /*****************
     Catégories - Debut
     *****************/
-
+    .storefront-breadcrumb .woocommerce-breadcrumb {
+        margin-top: calc(var(--spacer) * 8);
+        margin-bottom: calc(var(--spacer) * 5);
+        font-size: 1.6rem;
+    }
+    .storefront-breadcrumb .woocommerce-breadcrumb {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .storefront-breadcrumb .woocommerce-breadcrumb::before {
+        content: '';
+        width: 24px;
+        height: 24px;
+        margin-right: var(--spacer);
+        background-image: url(./assets/images/svg/breadcrumb.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .woocommerce-breadcrumb a {
+        transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        background-image: linear-gradient(var(--clr-dark), var(--clr-dark));
+        background-repeat: no-repeat;
+        background-position: bottom left;
+        background-size: 0 1px;
+        color: var(--clr-dark);
+        text-decoration: none;
+    }
+    .storefront-breadcrumb .woocommerce-breadcrumb a:first-of-type::before {
+        content: none;
+        width: 24px;
+        height: 24px;
+        background-image: url(./assets/images/svg/breadcrumb.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .woocommerce-breadcrumb a:hover, 
+    .woocommerce-breadcrumb a:focus {
+        background-size: 100% 1px;
+    }
+    .woocommerce-breadcrumb .breadcrumb-separator {
+        padding: 0;
+        width: 9px;
+        height: 25px;
+        margin-left: var(--spacer);
+        margin-right: var(--spacer);
+    }
+    .woocommerce-breadcrumb .breadcrumb-separator::after {
+        content: '>';
+        font-family: "Poppins", sans-serif;
+        color: var(--clr-dark);
+        opacity: 1;
+        font-size: 1.6rem;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%);
+    }
     /***************
     Catégories - Fin
     ***************/
