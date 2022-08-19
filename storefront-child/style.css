@@ -326,6 +326,15 @@ Responsive - Début
         background-size: 100% 1px;
         color: var(--clr-secondary-1);
     }
+
+    .main-navigation ul li.current-menu-ancestor > a,
+    .main-navigation ul li.current-menu-parent > a,
+    .main-navigation ul li.current_page_parent > a,
+    .main-navigation ul li.current_page_ancestor > a,
+    .main-navigation ul.menu li.current-menu-item > a,
+    .site-header ul.menu li.current-menu-item > a {
+        color: var(--clr-secondary-1);
+    }
     
     .main-navigation ul.menu ul li a,
     .main-navigation ul.nav-menu ul li a {
