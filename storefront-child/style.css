@@ -945,10 +945,49 @@ Responsive - Début
         background-color: #E1E6E5;
         color: var(--clr-dark);
     }
-
     /***************
     Catégories - Fin
     ***************/
+
+    /***************
+    Produit - Début
+    ***************/
+    .product_title.entry-title {
+        margin-bottom: var(--spacer) !important;
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3.2rem;
+    }
+    .stock.in-stock::before {
+        content: none;
+    }
+    .stock.in-stock {
+        margin-bottom: calc(var(--spacer) * 4);
+        font-size: 1.2rem;
+        font-weight: 300;
+        color: var(--clr-dark);
+    }
+    .mel-product--description h2 {
+        margin-bottom: var(--spacer) !important;
+        font-family: 'Libre Baskerville', serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+    }
+    .mel-product--description p {
+        font-size: 1.2rem;
+    }
+    .mel-product--description p:last-child {
+        margin-bottom: 0px;
+    }
+    .single-product div.product p.price {
+        display: inline-block;
+        margin-top: 0;
+        margin-bottom: calc(var(--spacer) * 2.5);
+        padding: var(--spacer) calc(var(--spacer) * 3);
+        background-color: rgba(218, 164, 154, .2);
+    }
+    /*************
+    Produit - Fin
+    *************/
 }
 @media (min-width: 768px) {
     :root {
