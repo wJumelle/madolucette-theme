@@ -1,0 +1,52 @@
+window.onload = () => {
+    // Ajout des boutons + et - autour des inputs number woocommerce
+    if(document.querySelectorAll('input[type=number].qty').length > 0) {
+        document.querySelectorAll('input[type=number].qty').forEach((e) => {
+            const parent = e.parentElement;
+            const btnAdd = document.createElement('button');
+            btnAdd.classList.add('mel-gui--qty', 'mel-gui--qty-add');
+            btnAdd.innerText = '+';
+            const btnRemove = document.createElement('button');
+            btnRemove.classList.add('mel-gui--qty', 'mel-gui--qty-remove');
+            btnRemove.innerText = '-';
+
+            btnAdd.addEventListener('click', (e) => {
+                e.preventDefault();
+                const button = e.target;
+                const input = button.parentElement.querySelector('.qty');
+                const value = parseInt(input.value);
+                if(value + 1 <= parseInt(input.max)) input.value = value + 1;
+                
+                // On vérifie l'état des boutons
+                checkBtnsStateInputNumber(button.parentElement);
+            });
+
+            btnRemove.addEventListener('click', (e) => {
+                e.preventDefault();
+                const button = e.target;
+                const input = button.parentElement.querySelector('.qty');
+                const value = parseInt(input.value);
+                if(value - 1 >= parseInt(input.min)) input.value = value - 1;
+                
+                // On vérifie l'état des boutons
+                checkBtnsStateInputNumber(button.parentElement);
+            });
+
+            parent.prepend(btnRemove);
+            parent.append(btnAdd);
+
+            // On initialise l'état des boutons
+            checkBtnsStateInputNumber(parent);
+        });
+    }
+}
+
+// Fonction de gestion des états des boutons de type number
+function checkBtnsStateInputNumber(btnsContainer) {
+    const btnAdd = btnsContainer.querySelector('.mel-gui--qty-add');
+    const btnRemove = btnsContainer.querySelector('.mel-gui--qty-remove');
+    const input = btnsContainer.querySelector('.qty');
+
+    (input.value === input.max) ? btnAdd.classList.add('mel-gui--disabled') : btnAdd.classList.remove('mel-gui--disabled');
+    (input.value === input.min) ? btnRemove.parentElement.querySelector('.mel-gui--qty-remove').classList.add('mel-gui--disabled') : btnRemove.parentElement.querySelector('.mel-gui--qty-remove').classList.remove('mel-gui--disabled');
+}

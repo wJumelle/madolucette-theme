@@ -28,6 +28,8 @@
 <link rel="mask-icon" href="/wp/wp-content/themes/storefront-child/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
+<!-- JavaScript -->
+<script src="/wp/wp-content/themes/storefront-child/assets/js/scripts-mel.js"></script>
 </head>
 
 <body <?php body_class(); ?>>

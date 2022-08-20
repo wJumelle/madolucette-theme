@@ -154,7 +154,7 @@ if ( ! function_exists( 'woocommerce_template_single_stock' ) ) {
 }
 if ( ! function_exists( 'woocommerce_template_single_add_to_cart_before' ) ) {
     function woocommerce_template_single_add_to_cart_before() {
-        echo '<div class="mel-product--price-container">';
+        echo '<div class="mel-product--quantity-container">';
     }
 }
 if ( ! function_exists( 'woocommerce_template_single_add_to_cart_after' ) ) {
