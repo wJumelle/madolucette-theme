@@ -131,6 +131,9 @@ function remove_actions_from_storefront_product() {
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
     remove_action( 'woocommerce_after_single_product_summary', 'storefront_upsell_display', 15 );
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
+
+    // Suppression de la navigation storefront entre les produits 
+    remove_action( 'woocommerce_after_single_product_summary', 'storefront_single_product_pagination', 30 );
 }
 if( ! function_exists( 'woocommerce_product_description_tab' )) {
     /**

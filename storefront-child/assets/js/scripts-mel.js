@@ -1,7 +1,13 @@
 window.onload = () => {
-    // Ajout des boutons + et - autour des inputs number woocommerce
+    /**
+     * Page produit / Page Catégories
+     */
+    // Ajout des boutons + et - autour des inputs number woocommerce*
+    console.log('Wesh', document.querySelectorAll('.input[type=number].qty'));
     if(document.querySelectorAll('input[type=number].qty').length > 0) {
+        console.log('Hello');
         document.querySelectorAll('input[type=number].qty').forEach((e) => {
+            console.log('there');
             const parent = e.parentElement;
             const btnAdd = document.createElement('button');
             btnAdd.classList.add('mel-gui--qty', 'mel-gui--qty-add');
@@ -38,6 +44,14 @@ window.onload = () => {
             // On initialise l'état des boutons
             checkBtnsStateInputNumber(parent);
         });
+    }
+
+    // Positionnement des boutons en fonction de la hauteur de l'image
+    if(document.querySelector('.single-product .woocommerce-product-gallery__wrapper img') !== null) {
+        const firstGalleryImg = document.querySelector('.woocommerce-product-gallery__wrapper img');
+        const summary = document.querySelector('.mel-product--summary');
+
+        summary.style.height = firstGalleryImg.offsetHeight + 'px';
     }
 }
 

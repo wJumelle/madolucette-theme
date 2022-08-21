@@ -116,7 +116,12 @@ ul.products::after,
 .main-navigation::before,
 .main-navigation::after,
 .storefront-sorting::before,
-.storefront-sorting::after {
+.storefront-sorting::after,
+.single-product div.product::before,
+.single-product div.product::after,
+.single-product div.product .woocommerce-product-gallery .flex-control-thumbs::before,
+.single-product div.product .woocommerce-product-gallery .flex-control-thumbs::after,
+.single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger::before {
     content: none;
 }
 
@@ -254,7 +259,7 @@ Responsive - Début
 
     .product-template-default,
     .archive {
-        --grid-column-width: calc(calc(100% - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+        --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
     }
 
     .product-template-default .content-area,
@@ -1012,16 +1017,81 @@ Responsive - Début
     /***************
     Produit - Début
     ***************/
+    /* Global */  
+    .woocommerce .mel-product {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        gap: var(--grid-gutter);
+    }
+
+    /* Gallery */
+    .single-product .product.mel-product .woocommerce-product-gallery {
+        margin-bottom: 0;
+        margin-right: 0;
+        width: calc(calc(var(--grid-column-width) * 4) + calc(calc(var(--grid-gutter) * 3)));
+    }
+    .mel-product img.wp-post-image {
+        width: 100%;
+        max-height: 430px;
+        object-fit: cover;
+        object-position: center;
+        border-radius: 0;
+    }
+    .single-product div.product .woocommerce-product-gallery .flex-viewport {
+        margin-bottom: var(--grid-gutter);
+    }
+    ol.flex-control-nav.flex-control-thumbs {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: var(--grid-gutter);
+    }
+    ol.flex-control-nav.flex-control-thumbs > li {
+        flex: 1 1 var(--grid-column-width);
+        margin: 0 !important;
+    }
+    ol.flex-control-nav.flex-control-thumbs > li img {
+        border-radius: 0;
+    }    
+    .single-product div.product .woocommerce-product-gallery .flex-control-thumbs li img {
+        opacity: 1;
+    }
+    .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
+        width: 32px;
+        height: 32px;
+        top: var(--grid-gutter);
+        right: var(--grid-gutter);
+        background-color: transparent !important;
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/product-gallery-zoom.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        transition: filter var(--anim-duration) var(--anim-fillMode);
+    }    
+    .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:hover,
+    .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger:focus {
+        filter: invert(1);
+    }
+
+    /* Summary */
+    .single-product div.product .summary.mel-product--summary {
+        display: flex;
+        flex-direction: column;
+        width: calc(calc(var(--grid-column-width) * 5) + calc(calc(var(--grid-gutter) * 4)));
+    }
     .product_title.entry-title {
         margin-bottom: var(--spacer) !important;
         font-family: 'Libre Baskerville', serif;
         font-size: 3.2rem;
     }
+    .mel-product--availabilty {
+        margin-bottom: calc(var(--spacer) * 4);
+    }
     .stock.in-stock::before {
         content: none;
     }
     .stock.in-stock {
-        margin-bottom: calc(var(--spacer) * 4);
+        margin-bottom: 0;
         font-size: 1.2rem;
         font-weight: 300;
         color: var(--clr-dark);
@@ -1038,9 +1108,11 @@ Responsive - Début
     .mel-product--description p:last-child {
         margin-bottom: 0px;
     }
-    .single-product div.product p.price {
+    .single-product .mel-product.product p.price {
         display: inline-block;
-        margin-top: 0;
+        width: fit-content;
+        width: -moz-fit-content;
+        margin-top: auto;
         margin-bottom: calc(var(--spacer) * 2.5);
         padding: var(--spacer) calc(var(--spacer) * 3);
         background-color: rgba(218, 164, 154, .2);
@@ -1109,6 +1181,12 @@ Responsive - Début
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button:focus::after {
         filter: invert(1);
     }
+
+    .woocommerce .mel-product .edit-link {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
     /*************
     Produit - Fin
     *************/
@@ -1171,7 +1249,7 @@ Responsive - Début
 
     /* Footer */
     .mel-footer {
-        --grid-column-width: calc(calc(100% - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+        --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
     }
     .mel-footer .grid {
         grid-template-columns: repeat(2, calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5)));
