@@ -17,10 +17,10 @@ Version:      	0.0.1
     --grid-gutter: 20px;
     --grid-nbColumns: 12;
     --spacer: 8px;
-    --clr-primary-1: #A86233;
-    --clr-primary-2: #C1A875;
+    --clr-primary-1: #D08B86;
+    --clr-primary-2: #DAA49A;
     --clr-primary-3: #E5CFBF;
-    --clr-primary-4: #D1A490;
+    --clr-primary-4: #F7EBE9;
     --clr-secondary-1: #32A08D;
     --clr-secondary-2: #62a095;
     --clr-secondary-3: #87a09c; /* vert p */
@@ -90,6 +90,16 @@ input[type=number] {
     box-shadow: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+}
+
+/* Masquage des flèches des types number */
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 a,
@@ -504,6 +514,56 @@ Responsive - Début
         display: flex;
         align-items: center;
         gap: var(--spacer);
+    }
+    
+    .quantity {
+        position: relative;
+    }
+
+    .mel-gui--qty {
+        position: absolute;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: 2px solid var(--clr-primary-1);
+        border-radius: 50%;
+        background-color: var(--clr-primary-4);
+        color: var(--clr-primary-1);
+        font-family: 'Poppins';
+        font-weight: 400;
+        font-size: 2rem;
+        transition: background-color var(--anim-duration) var(--anim-fillMode);
+    }
+
+    .mel-gui--qty:hover,
+    .mel-gui--qty:focus {
+        border: 2px solid var(--clr-primary-1);
+        border-radius: 50%;
+        background-color: var(--clr-secondary-4);
+        color: var(--clr-primary-1);
+    }
+    
+    .mel-gui--qty-remove {
+        left: 0;
+        transform: translateX(-50%);
+    }
+    
+    .mel-gui--qty-add {
+        right: 0;
+        transform: translateX(50%);
+    }
+
+    input[type=number].qty {
+        width: 80px;
+        height: 40px;
+        background-color: var(--clr-primary-1);
+        font-size: 2rem;
+        text-align: center;
+        line-height: 40px;
+    }
+
+    input[type=number].qty:focus {
+        outline: none;
     }
 
     .mel-devis--product-quantity input[type=number] {
@@ -984,6 +1044,70 @@ Responsive - Début
         margin-bottom: calc(var(--spacer) * 2.5);
         padding: var(--spacer) calc(var(--spacer) * 3);
         background-color: rgba(218, 164, 154, .2);
+    }
+    .mel-product--quantity-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: var(--grid-gutter);
+        padding-left: 20px;
+    }
+    .single-product div.product .mel-product--quantity-container form.cart {
+        margin: 0;
+        padding: 0;
+    }
+    .mel-product--quantity-container .clear {
+        display: none;
+    }
+    .woocommerce.single-product .product .mel-product--quantity-container .yith-ywraq-add-to-quote {
+        margin: 0;
+    }
+    
+    .mel-product--quantity-container .yith-ywraq-add-button.show {
+        min-height: 100%;
+        display: flex !important;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: stretch;
+    }
+    
+    .woocommerce .mel-product--quantity-container .add-request-quote-button.button {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0 calc(var(--spacer) * 2);
+        background-color: var(--clr-dark) !important;
+        color: var(--clr-light) !important;
+        line-height: 36px;
+        border: 2px solid var(--clr-dark);
+        border-radius: 50px;
+        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+    }
+    
+    .woocommerce .mel-product--quantity-container .add-request-quote-button.button:hover,
+    .woocommerce .mel-product--quantity-container .add-request-quote-button.button:focus {
+        background-color: var(--clr-light) !important;
+        color: var(--clr-dark) !important;
+    }
+    
+    .woocommerce .mel-product--quantity-container .add-request-quote-button.button::after {
+        content: '';
+        display: inline-block;
+        margin-left: calc(var(--spacer) * 2);
+        width: 32px;
+        height: 36px;
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: filter var(--anim-duration) var(--anim-fillMode);
+    }
+    
+    .woocommerce .mel-product--quantity-container .add-request-quote-button.button:hover::after,
+    .woocommerce .mel-product--quantity-container .add-request-quote-button.button:focus::after {
+        filter: invert(1);
     }
     /*************
     Produit - Fin
