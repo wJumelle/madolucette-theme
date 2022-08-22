@@ -272,7 +272,7 @@ Responsive - Début
     .archive .widget-area {
         width: 100%;
         padding-top: var(--grid-gutter);
-        border-top: 1px solid var(--clr-dark);
+        border-top: 1px solid var(--clr-primary-1);
     }
     /**************************
     Gestion de la grille - Fin
@@ -1117,6 +1117,13 @@ Responsive - Début
         padding: var(--spacer) calc(var(--spacer) * 3);
         background-color: rgba(218, 164, 154, .2);
     }
+    .woocommerce-Price-currencySymbol::after {
+        content: 'pièce';
+        margin-left: var(--spacer);
+        font-family: 'Poppins', sans-serif;
+        color: var(--clr-dark);
+        font-size: 1.6rem;
+    }
     .mel-product--quantity-container {
         display: flex;
         flex-direction: row;
@@ -1341,7 +1348,7 @@ Responsive - Début
         width: calc(calc(var(--grid-column-width) * 3) + calc(calc(var(--grid-gutter) * 2)));
         padding-left: var(--grid-gutter);
         padding-top: 0;
-        border-left: 1px solid var(--clr-dark);
+        border-left: 1px solid var(--clr-primary-1);
         border-top: 0;
     }
 
