@@ -29,8 +29,8 @@ Version:      	0.0.1
     --clr-secondary-2-explosed: 98, 160, 149;
     --clr-secondary-3-explosed: 135, 160, 156;
     --clr-secondary-4-explosed: 112, 160, 152;
-    --clr-dark: #1B2322;
-    --clr-light: #D9D9D9;
+    --clr-dark: #302C2C;
+    --clr-light: #F7EBE9;
     --anim-duration: .25s;
     --anim-fillMode: ease-in-out;
 }
@@ -410,6 +410,7 @@ Responsive - Début
         background-image: url(./assets/images/svg/footer-decoration.svg);
         background-position: right bottom;
         background-repeat: no-repeat;
+        background-size: 248px;
         font-size: 1.6rem;
     }
     .site-footer > .col-full {
@@ -455,7 +456,7 @@ Responsive - Début
         padding-right: .5em;
     }
     .mel-footer .mel-footer--copyright {
-        color: var(--clr-secondary-3);
+        color: var(--clr-primary-1);
     }
     /************
     Footer - Fin

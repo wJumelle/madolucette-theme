@@ -1,13 +1,24 @@
 window.onload = () => {
+    /** 
+     * Global
+     */
+    // Positionnement de l'image dans le footer
+    if(document.querySelector('.mel-footer > .col-full') !== null) {
+        const footer = document.querySelector('.mel-footer');
+        const rightSpace = document.querySelector('.mel-footer > .col-full').offsetLeft;
+        const topSpace = parseInt(getComputedStyle(footer).paddingTop);
+
+        console.log({footer}, {rightSpace}, {topSpace}, footer.style.backgroundPosition);
+        footer.style.backgroundPosition = `right ${rightSpace}px bottom ${topSpace}px`;
+    }
+
+
     /**
      * Page produit / Page Catégories
      */
-    // Ajout des boutons + et - autour des inputs number woocommerce*
-    console.log('Wesh', document.querySelectorAll('.input[type=number].qty'));
+    // Ajout des boutons + et - autour des inputs number woocommerce
     if(document.querySelectorAll('input[type=number].qty').length > 0) {
-        console.log('Hello');
         document.querySelectorAll('input[type=number].qty').forEach((e) => {
-            console.log('there');
             const parent = e.parentElement;
             const btnAdd = document.createElement('button');
             btnAdd.classList.add('mel-gui--qty', 'mel-gui--qty-add');
@@ -54,6 +65,21 @@ window.onload = () => {
         summary.style.height = firstGalleryImg.offsetHeight + 'px';
     }
 }
+
+windonw.addEventListener('resize', () => {
+    /** 
+     * Global
+     */
+    // Positionnement de l'image dans le footer
+    if(document.querySelector('.mel-footer > .col-full') !== null) {
+        const footer = document.querySelector('.mel-footer');
+        const rightSpace = document.querySelector('.mel-footer > .col-full').offsetLeft;
+        const topSpace = parseInt(getComputedStyle(footer).paddingTop);
+
+        console.log({footer}, {rightSpace}, {topSpace}, footer.style.backgroundPosition);
+        footer.style.backgroundPosition = `right ${rightSpace}px bottom ${topSpace}px`;
+    }
+})
 
 // Fonction de gestion des états des boutons de type number
 function checkBtnsStateInputNumber(btnsContainer) {
