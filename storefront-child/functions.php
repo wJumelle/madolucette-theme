@@ -58,6 +58,30 @@ function storefront_primary_navigation() {
 		</nav><!-- #site-navigation -->
 		<?php
 }
+// On ajoute le menu de contact
+add_action('init', 'add_action_storefront_header');
+function add_action_storefront_header() {
+    add_action( 'storefront_header', 'mel_primary_navigation', 69);
+}
+if( ! function_exists( 'mel_primary_navigation' )) {
+    /**
+	 * Output the description tab content.
+	 */
+	function mel_primary_navigation() {
+        ?>
+        <div class='mel-secondary-navigation'>
+            <nav aria-label='Navigation secondaire'>
+                <ul>
+                    <li><a href='tel:06-28-07-09-96' class='mel-secondary-navigation--tel' aria-label='Nous appeler'></a></li>
+                    <li><a href='mailto:madeleineetlucette@gmail.com' class='mel-secondary-navigation--mail' aria-label='Nous écrire'></a></li>
+                    <li><a target='_blank' href='https://www.instagram.com/madeleineetlucette/' class='mel-secondary-navigation--instagram' aria-label='Nous rejoindre sur Instagram'></a></li>
+                </ul>
+            </nav>
+        </div> <?php
+	}
+}
+
+
 
 /**
  * Surcharge des fonctions de la homepage
@@ -76,6 +100,8 @@ function remove_actions_from_storefront_homepage() {
     remove_action( 'homepage', 'storefront_best_selling_products', 70 );
 }
 
+
+
 /**
  * Surcharge des fonctions Storefront
  */
@@ -86,12 +112,16 @@ function storefront_before_content() {
 		<?php
 }
 
+
+
 /**
  * Sidebar
  */
 function storefront_get_sidebar() {
     get_sidebar('shop');
 }
+
+
 
 /**
  * Surcharge pour la page catégorie
@@ -108,6 +138,8 @@ function remove_actions_from_storefront_categories() {
     remove_action( 'woocommerce_after_shop_loop','woocommerce_catalog_ordering', 10);
     remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
 }
+
+
 
 /**
  * Surcharge pour la page produit
