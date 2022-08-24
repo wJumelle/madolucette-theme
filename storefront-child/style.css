@@ -17,10 +17,14 @@ Version:      	0.0.1
     --grid-gutter: 20px;
     --grid-nbColumns: 12;
     --spacer: 8px;
-    --clr-primary-1: #D08B86;
-    --clr-primary-2: #DAA49A;
-    --clr-primary-3: #E5CFBF;
-    --clr-primary-4: #F7EBE9;
+    --clr-primary-1: #d08b86;
+    --clr-primary-2: #daa49a;
+    --clr-primary-3: #e5cfbf;
+    --clr-primary-4: #f7ebe9;
+    --clr-primary-1-explosed: 208, 139, 134;
+    --clr-primary-2-explosed: 218, 164, 154;
+    --clr-primary-3-explosed: 229, 207, 191;
+    --clr-primary-4-explosed: 247, 235, 233;
     --clr-secondary-1: #32A08D;
     --clr-secondary-2: #62a095;
     --clr-secondary-3: #87a09c; /* vert p */
@@ -305,11 +309,16 @@ Responsive - Début
         margin: 0 auto;
     }
 
+    .main-navigation ul li.menu-item-has-children:hover>ul,
+    .main-navigation ul.menu li.menu-item-has-children > a:hover + ul.sub-menu,
+    .main-navigation ul.menu li.menu-item-has-children > a:focus + ul.sub-menu {
+        left: 50%;
+        transform: translateX(-50%)
+    }
+
     .main-navigation ul.menu ul.sub-menu {
         background-color: var(--clr-dark);
         width: 200px;
-        padding-left: var(--spacer);
-        padding-right: var(--spacer);
     }
     
     .main-navigation ul.menu ul li.focus,
@@ -368,7 +377,7 @@ Responsive - Début
     .main-navigation ul ul li,
     .secondary-navigation ul ul li {
         text-align: center;
-        border-bottom: 1px solid var(--clr-primary-3);
+        border-bottom: 1px solid rgba(var(--clr-primary-3-explosed), .4);
     }
     
     .main-navigation ul.menu ul li:hover a,
@@ -386,7 +395,7 @@ Responsive - Début
         display: flex;
         align-items: center;
         gap: var(--grid-gutter);
-        margin-bottom: auto;;
+        margin-bottom: auto;
     }
 
     .mel-secondary-navigation a {
