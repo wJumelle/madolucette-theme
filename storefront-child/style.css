@@ -773,6 +773,7 @@ Responsive - Début
         border: 2px solid var(--clr-primary-1);
         background: none !important;
         color: var(--clr-primary-1) !important;
+        outline: 2px solid transparent;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     }
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:active,
@@ -844,6 +845,7 @@ Responsive - Début
         border: 2px solid var(--clr-primary-2);
         background: none !important;
         color: var(--clr-primary-1) !important;
+        outline: 2px solid transparent;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     }
 
@@ -865,7 +867,7 @@ Responsive - Début
         width: 187px;
         padding: var(--spacer) 0;
         justify-content: center;
-        font-size: 1.4rem !important;
+        font-size: 1.6rem !important;
     }
 
     .hentry .entry-content .wp-block-button {
@@ -892,7 +894,7 @@ Responsive - Début
     }
 
     .mel-catalogue--featured-products .wc-block-featured-product__background-image {
-        border-radius: 20px;
+        border-radius: 0;
     }
 
     .wc-block-featured-product .wc-block-featured-product__title {
@@ -900,8 +902,6 @@ Responsive - Début
         bottom: 0;
         padding: calc(var(--spacer) * 3) calc(var(--spacer) * 2);
         margin-bottom: 0 !important;
-        border-bottom-right-radius: 20px;
-        border-bottom-left-radius: 20px;
         overflow: hidden;
         text-align: left;
         font-family: 'Poppins', sans-serif;
@@ -918,8 +918,8 @@ Responsive - Début
         right: 0;
         display: block;
         z-index: -1;
-        background: linear-gradient(360deg, rgba(45, 58, 56, 0.8) 0%, rgba(27, 35, 34, 0) 153.57%);
-        backdrop-filter: blur(10px);
+        background-color: var(--clr-dark);
+        color: var(--clr-white);
     }
 
     .wc-block-featured-product__link {
@@ -927,6 +927,10 @@ Responsive - Début
         padding: 0;
         bottom: 0;
         transform: translateY(100%);
+    }
+
+    .mel-catalogue--featured-products {
+        margin-bottom: calc(var(--spacer) * 10);
     }
 
     .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product .wp-block-button {
@@ -967,6 +971,12 @@ Responsive - Début
 
     .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product__link .wp-block-button .wp-block-button__link {
         font-size: 1.4rem !important;
+    }
+
+    .hentry .entry-content .mel-catalogue--button-goTo.wp-block-button a.wp-block-button__link {
+        font-size: 1.6rem !important;
+        line-height: 1.5em !important;
+        padding: var(--spacer) calc(var(--spacer) * 2);
     }
 
     /* Notre équipe */
@@ -1265,6 +1275,7 @@ Responsive - Début
         align-items: stretch;
     }
     
+    .hentry .entry-content .wp-block-button.mel-catalogue--button-goTo .wp-block-button__link,
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button {
         display: flex;
         flex-direction: row;
@@ -1276,31 +1287,44 @@ Responsive - Début
         line-height: 36px;
         border: 2px solid var(--clr-dark);
         border-radius: 50px;
-        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        outline: 2px solid transparent;
+        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
+    }
+
+    .hentry .entry-content .wp-block-button.mel-catalogue--button-goTo .wp-block-button__link:active,
+    .hentry .entry-content .wp-block-button.mel-catalogue--button-goTo .wp-block-button__link:hover:active,
+    .woocommerce .mel-product--quantity-container .add-request-quote-button.button:active,
+    .woocommerce .mel-product--quantity-container .add-request-quote-button.button:hover:active {
+        outline: 2px solid var(--clr-dark);
     }
     
+    .hentry .entry-content .wp-block-button.mel-catalogue--button-goTo .wp-block-button__link:hover,
+    .hentry .entry-content .wp-block-button.mel-catalogue--button-goTo .wp-block-button__link:focus,
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button:hover,
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button:focus {
-        background-color: var(--clr-light) !important;
+        background: none !important;
         color: var(--clr-dark) !important;
     }
     
+    .mel-catalogue--button-goTo a::after,
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button::after {
         content: '';
         display: inline-block;
         margin-left: calc(var(--spacer) * 2);
         width: 32px;
-        height: 36px;
+        height: 24px;
         background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
-        transition: filter var(--anim-duration) var(--anim-fillMode);
+        transition: background-image var(--anim-duration) var(--anim-fillMode);
     }    
     
+    .mel-catalogue--button-goTo a:hover::after,
+    .mel-catalogue--button-goTo a:focus::after,
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button:hover::after,
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button:focus::after {
-        filter: invert(1);
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
     }
 
     .woocommerce .mel-product .edit-link {
