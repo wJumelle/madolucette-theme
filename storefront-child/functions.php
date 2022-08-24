@@ -75,6 +75,7 @@ if( ! function_exists( 'mel_primary_navigation' )) {
                     <li><a href='tel:06-28-07-09-96' class='mel-secondary-navigation--tel' aria-label='Nous appeler'></a></li>
                     <li><a href='mailto:madeleineetlucette@gmail.com' class='mel-secondary-navigation--mail' aria-label='Nous écrire'></a></li>
                     <li><a target='_blank' href='https://www.instagram.com/madeleineetlucette/' class='mel-secondary-navigation--instagram' aria-label='Nous rejoindre sur Instagram'></a></li>
+                    <li><a target='_blank' href='https://www.facebook.com/madeleineetlucette/' class='mel-secondary-navigation--facebook' aria-label='Nous rejoindre sur Facebook'></a></li>
                 </ul>
             </nav>
         </div> <?php

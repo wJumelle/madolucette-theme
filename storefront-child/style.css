@@ -433,6 +433,19 @@ Responsive - Début
         background-image: url("./assets/images/svg/instagram-hover--darkmod.svg");
         background-size: cover;
     }
+
+    .mel-secondary-navigation .mel-secondary-navigation--facebook {
+        background-image: url("./assets/images/svg/facebook--darkmod.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transition: background-image var(--anim-duration) var(--anim-fillMode);
+    }
+    .mel-secondary-navigation .mel-secondary-navigation--facebook:hover,
+    .mel-secondary-navigation .mel-secondary-navigation--facebook:focus {
+        background-image: url("./assets/images/svg/facebook-hover--darkmod.svg");
+        background-size: cover;
+    }
     /************
     Header - Fin
     ************/
