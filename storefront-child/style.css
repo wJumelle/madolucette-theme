@@ -841,18 +841,30 @@ Responsive - Début
     }
 
     .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link {
-        border: 2px solid var(--clr-secondary-1);
-        background-color: var(--clr-secondary-1) !important;
-        color: var(--clr-dark) !important;
-        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        border: 2px solid var(--clr-primary-2);
+        background: none !important;
+        color: var(--clr-primary-1) !important;
+        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     }
+
+    .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:active,
+    .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:hover:active {
+        background: none !important;
+        color: var(--clr-primary-1) !important;
+        outline: 2px solid var(--clr-primary-2);
+    }
+
 
     .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:hover,
     .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:focus {
-        background: none !important;
+        background-color: var(--clr-primary-2) !important;
+        color: var(--clr-light) !important;
     }
 
     .hentry .entry-content .mel-catalogue--button-list .wp-block-button .wp-block-button__link {
+        width: 187px;
+        padding: var(--spacer) 0;
+        justify-content: center;
         font-size: 1.4rem !important;
     }
 
@@ -945,7 +957,7 @@ Responsive - Début
     .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link:focus {
         background-color: transparent;
         background-size: 100% 1px;
-        color: var(--clr-secondary-1);
+        color: var(--clr-primary-1);
     }
     
     .mel-catalogue .mel-catalogue--featured-products .wc-block-featured-product .wp-block-buttons>.wp-block-button .wp-block-button__link::after {
