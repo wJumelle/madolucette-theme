@@ -748,6 +748,10 @@ Responsive - Début
         max-width: 25ch;
     }
 
+    .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 strong {
+        color: var(--clr-primary-1);
+    }
+
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container h1 + p {
         margin-bottom: calc(var(--spacer) * 8);
         font-size: 1.8rem !important;
@@ -756,27 +760,63 @@ Responsive - Début
     }
 
     .hentry .entry-content .wp-block-button .wp-block-button__link {
-        font-size: 1.8rem !important;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-size: 2.4rem !important;
+        line-height: 1.5em;
+        font-weight: 400;
     }
 
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link {
-        border: 2px solid var(--clr-primary-3);
-        background-color: var(--clr-primary-3) !important;
-        color: var(--clr-dark) !important;
-        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        border: 2px solid var(--clr-primary-1);
+        background: none !important;
+        color: var(--clr-primary-1) !important;
+        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
+    }
+    .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:active,
+    .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:active:hover {
+        outline: 2px solid var(--clr-primary-1);
+        background: none !important;
+        color: var(--clr-primary-1) !important;
     }
     .hentry .entry-content .wp-block-button .wp-block-button__link {
-        padding: 1.3rem 6.4rem;
+        padding: 1.3rem 2.4rem;
         font-size: 2.4rem;
     }
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:hover,
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container .wp-block-button__link:focus {
-        background: none !important;
-        color: var(--clr-primary-3) !important;
+        background-color: var(--clr-primary-1) !important;
+        color: var(--clr-dark) !important;
+    }
+
+    .mel-hero .mel-hero--button a::after {
+        content: '';
+        display: inline-block;
+        margin-left: calc(var(--spacer) * 2);
+        width: 64px;
+        height: 36px;
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-image var(--anim-duration) var(--anim-fillMode);
+    }
+
+    .mel-hero .mel-hero--button a:hover::after,
+    .mel-hero .mel-hero--button a:focus::after {
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow-hover.svg);
     }
 
     .mel-hero {
         margin-bottom: 10rem;
+    }
+
+    .mel-hero .mel-hero--button a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     /* Notre catalogue */
@@ -1244,7 +1284,7 @@ Responsive - Début
         background-repeat: no-repeat;
         background-position: center;
         transition: filter var(--anim-duration) var(--anim-fillMode);
-    }
+    }    
     
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button:hover::after,
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button:focus::after {
