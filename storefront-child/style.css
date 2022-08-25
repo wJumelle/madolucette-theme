@@ -63,7 +63,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mel--paragraph {
-    max-width: 70ch;
+    max-width: 80ch;
 }
 
 a:focus,
@@ -980,25 +980,31 @@ Responsive - Début
     }
 
     /* Notre équipe */
-    .mel-team--profils {
-        gap: calc(var(--spacer) * 2.5);
+    .mel-team--grid {
+        --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+        gap: var(--grid-gutter);
+        margin-bottom: calc(var(--spacer) * 6);
     }
 
-    .mel-team--profils > * {
-        margin: 0 !important;
-    }
-
-    .mel-team .wp-block-columns:last-child {
+    .home .mel-team .mel-team--grid.mel-team--grid-70-30 > .wp-block-column:first-child {
+        flex-basis: calc(calc(var(--grid-column-width) * 8) + calc(calc(var(--grid-gutter) * 7))) !important;
+        margin-right: 0 !important;
         margin-bottom: 0;
     }
 
-    .mel-team--image {
-        display: none;
+    .home .mel-team .mel-team--grid.mel-team--grid-70-30 > .wp-block-column:last-child {
+        flex-basis: calc(calc(var(--grid-column-width) * 4) + calc(calc(var(--grid-gutter) * 3))) !important;
+        padding-top: calc(var(--spacer) * 4);
+        margin-bottom: 0;
     }
 
-    .mel-team--profils.wp-block-columns:not(.is-not-stacked-on-mobile) > .wp-block-column {
-        flex-basis: calc(50% - calc(var(--spacer) * 2.5)) !important;
-        padding: 0 !important;
+    .home .mel-team .mel-team--grid.mel-team--grid-70-30 > .wp-block-column:last-child img {
+        max-width: 427px;
+        margin-left: auto;
+    }
+
+    .mel-team--instagram-feed strong {
+        font-size: 2.0rem;
     }
 
     .hentry .entry-content figure.wp-block-image,
@@ -1425,9 +1431,6 @@ Responsive - Début
     }
 
     /* Notre équipe */
-    .mel-team--image {
-        display: block;
-    }
     /***************
     Home page - Fin
     ***************/
