@@ -75,6 +75,7 @@ button:focus,
 
 input:focus,
 textarea:focus,
+input[type=text]:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
@@ -92,7 +93,17 @@ select,
 textarea {
     box-shadow: none;
     background-color: rgba(var(--clr-dark-explosed), .1);
-    color: var(--clr-dark);
+    color: rgba(var(--clr-dark-explosed), .5);
+    outline: 2px solid transparent;
+    transition: color var(--anim-duration) var(--anim-fillMode), font-weight var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+select:focus,
+textarea:focus {
+    color: rgba(var(--clr-dark-explosed), 1);
+    font-weight: 600;
 }
 
 input[type=number] {
@@ -1368,14 +1379,28 @@ Responsive - Début
     Contact - Début
     ***************/
     #wpcf7-f154-p17-o1 form {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
         font-size: 1.6rem;
+    }
+
+    .wpcf7-form-control-wrap {
+        margin-top: var(--spacer);
+        display: flex;
+        flex-direction: column;
+        max-width: 316px;
+    }
+
+    .wpcf7-form-control-wrap[data-name="your-message"] {
+        max-width: calc(316px * 2);
     }
 
     #wpcf7-f154-p17-o1 label > span > input,
     #wpcf7-f154-p17-o1 label > span > select,
     #wpcf7-f154-p17-o1 label > span > textarea {
-        margin-top: var(--spacer);
         padding: 0 calc(var(--spacer) * 2);
+        border-radius: 5px;
     }
 
     #wpcf7-f154-p17-o1 label > span > textarea {
@@ -1436,6 +1461,27 @@ Responsive - Début
     form input[type=submit]:hover::after,
     form input[type=submit]:focus::after {
         background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
+    }
+
+    input.wpcf7-not-valid,
+    textarea.wpcf7-not-valid,
+    .wpcf7-not-valid::-webkit-input-placeholder {
+        color: var(--clr-primary-1);
+    }
+
+    input.wpcf7-not-valid,
+    textarea.wpcf7-not-valid {
+        border: 1px solid var(--clr-primary-1);
+    }
+
+    .wpcf7-not-valid-tip {
+        color: var(--clr-primary-1);
+        font-size: 1.4rem;
+        text-align: right;
+    }
+
+    .wpcf7-response-output {
+        order: -1;
     }
     /*************
     Contact - Fin
