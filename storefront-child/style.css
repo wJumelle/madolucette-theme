@@ -1430,7 +1430,18 @@ Responsive - Début
         margin-bottom: calc(var(--spacer) * 4);
     }
 
-    form input[type=submit] {
+    .mel-contact-form--submit-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .mel-contact-form--submit-container input[type=submit] {
+        display: none;
+    }
+
+    .mel-contact-form-submit-button {
+        order: -1;
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
@@ -1446,20 +1457,20 @@ Responsive - Début
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     }
 
-    form input[type=submit]:hover,
-    form input[type=submit]:focus {
+    .mel-contact-form-submit-button:hover,
+    .mel-contact-form-submit-button:focus {
         background: none !important;
         border: 2px solid var(--clr-dark);
         color: var(--clr-dark) !important;
     }
 
-    form input[type=submit]:active,
-    form input[type=submit]:hover:active,
-    form input[type=submit]:focus {
+    .mel-contact-form-submit-button:active,
+    .mel-contact-form-submit-button:hover:active,
+    .mel-contact-form-submit-button:focus {
         outline: 2px solid var(--clr-dark);
     }
 
-    form input[type=submit]::after {
+    .mel-contact-form-submit-button::after {
         content: '';
         display: inline-block;
         margin-left: calc(var(--spacer) * 2);
@@ -1472,8 +1483,8 @@ Responsive - Début
         transition: background-image var(--anim-duration) var(--anim-fillMode);
     }    
     
-    form input[type=submit]:hover::after,
-    form input[type=submit]:focus::after {
+    .mel-contact-form-submit-button:hover::after,
+    .mel-contact-form-submit-button:focus::after {
         background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
     }
 
