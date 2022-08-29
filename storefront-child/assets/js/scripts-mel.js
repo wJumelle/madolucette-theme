@@ -8,10 +8,11 @@ window.onload = () => {
         const rightSpace = document.querySelector('.mel-footer > .col-full').offsetLeft;
         const topSpace = parseInt(getComputedStyle(footer).paddingTop);
 
-        console.log({footer}, {rightSpace}, {topSpace}, footer.style.backgroundPosition);
         footer.style.backgroundPosition = `right ${rightSpace}px bottom ${topSpace}px`;
     }
-
+    // Calcul de la variable pour le calcule de la taille de la grille
+    let r = document.querySelector(':root');
+    r.style.setProperty('--grid-global-width', document.querySelector('#content > .col-full').offsetWidth + 'px');
 
     /**
      * Page produit / Page Catégories
@@ -91,9 +92,11 @@ window.addEventListener('resize', () => {
         const rightSpace = document.querySelector('.mel-footer > .col-full').offsetLeft;
         const topSpace = parseInt(getComputedStyle(footer).paddingTop);
 
-        console.log({footer}, {rightSpace}, {topSpace}, footer.style.backgroundPosition);
         footer.style.backgroundPosition = `right ${rightSpace}px bottom ${topSpace}px`;
-    }
+    };
+    // Calcul de la variable pour le calcule de la taille de la grille
+    let r = document.querySelector(':root');
+    r.style.setProperty('--grid-global-width', document.querySelector('#content > .col-full').offsetWidth + 'px');
 })
 
 // Fonction de gestion des états des boutons de type number
