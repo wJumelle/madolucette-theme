@@ -1434,6 +1434,22 @@ Responsive - Début
     /***************
     Contact - Début
     ***************/
+    .page-template-default.right-sidebar .content-area {
+        width: 100%;
+    }
+
+    .mel-contact--introduction {
+        margin-bottom: calc(var(--spacer) * 6);
+    }
+
+    .mel-contact--introduction p {
+        margin-bottom: calc(var(--spacer) * 2);
+    }
+
+    #wpcf7-f154-p17-o1 {
+        width: 100%;
+    }
+
     #wpcf7-f154-p17-o1 form {
         display: flex;
         flex-direction: column;
@@ -1448,7 +1464,39 @@ Responsive - Début
     }
 
     .wpcf7-form-control-wrap[data-name="your-message"] {
-        max-width: calc(316px * 2);
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mel-contact--outer-container {
+        display: flex; 
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: var(--grid-gutter);
+        margin-bottom: calc(var(--spacer) * 2);
+    }
+
+    .mel-contact--outer-container > * {
+        flex: 1 1 auto;
+    }
+
+    .mel-contact--left-container label {
+        display: block;
+        margin-bottom: calc(var(--spacer) * 4);
+    }
+
+    .mel-contact--left-container label:last-child {
+        margin-bottom: 0;
+    }
+
+    .mel-contact--right-container label {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .mel-contact--right-container label span {
+        flex: 1 1 auto;
     }
 
     #wpcf7-f154-p17-o1 label > span > input,
@@ -1456,10 +1504,13 @@ Responsive - Début
     #wpcf7-f154-p17-o1 label > span > textarea {
         padding: 0 calc(var(--spacer) * 2);
         border-radius: 5px;
+        width: 100%;
+        max-width: 100%;
     }
 
     #wpcf7-f154-p17-o1 label > span > textarea {
         padding-top: calc(var(--spacer) / 2);
+        height: 300px;
     }
 
     #wpcf7-f154-p17-o1 label > span > input,
@@ -1554,6 +1605,15 @@ Responsive - Début
 
     .wpcf7 form .wpcf7-response-output {
         order: -1;
+        margin: 0;
+        margin-bottom: calc(var(--spacer) * 3);
+        padding: var(--spacer) calc(var(--spacer) * 2);
+        border: none;
+        background-color: var(--clr-primary-2);
+    }
+
+    .wpcf7 form .wpcf7-response-output.is-sended {
+        background-color: var(--clr-primary-4);
     }
     /*************
     Contact - Fin
