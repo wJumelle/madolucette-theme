@@ -63,6 +63,14 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--clr-dark);
 }
 
+p:empty {
+    display: none;
+}
+
+p:last-child {
+    margin-bottom: 0px !important;
+}
+
 .mel--paragraph {
     max-width: 80ch;
 }
@@ -80,6 +88,7 @@ input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus,
 input[type="email"]:focus,
+input[type="date"]:focus,
 input[type="tel"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
@@ -89,6 +98,7 @@ input[type="search"]:focus {
 
 input[type=text],
 input[type=email],
+input[type=date],
 select,
 textarea {
     box-shadow: none;
@@ -100,6 +110,7 @@ textarea {
 
 input[type=text]:focus,
 input[type=email]:focus,
+input[type=date]:focus,
 select:focus,
 textarea:focus {
     color: rgba(var(--clr-dark-explosed), 1);
@@ -115,6 +126,10 @@ input[type=number] {
     box-shadow: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 400;
+}
+
+input[type=date] {
+    border: 1px solid var(--clr-dark);
 }
 
 /* Masquage des flèches des types number */
@@ -297,7 +312,8 @@ Responsive - Début
 
     .product-template-default,
     .archive,
-    .error404 {
+    .error404,
+    .page-template-default {
         --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
     }
 
@@ -1392,6 +1408,22 @@ Responsive - Début
     /***************
     Contact - Début
     ***************/
+    .page-template-default.right-sidebar .content-area {
+        width: 100%;
+    }
+
+    .mel-contact--introduction {
+        margin-bottom: calc(var(--spacer) * 6);
+    }
+
+    .mel-contact--introduction p {
+        margin-bottom: calc(var(--spacer) * 2);
+    }
+
+    #wpcf7-f154-p17-o1 {
+        width: 100%;
+    }
+
     #wpcf7-f154-p17-o1 form {
         display: flex;
         flex-direction: column;
@@ -1403,11 +1435,42 @@ Responsive - Début
         margin-top: var(--spacer);
         display: flex;
         flex-direction: column;
-        max-width: 316px;
     }
 
     .wpcf7-form-control-wrap[data-name="your-message"] {
-        max-width: calc(316px * 2);
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .mel-contact--outer-container {
+        display: flex; 
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: var(--grid-gutter);
+        margin-bottom: calc(var(--spacer) * 2);
+    }
+
+    .mel-contact--outer-container > * {
+        flex: 1 1 auto;
+    }
+
+    .mel-contact--left-container label {
+        display: block;
+        margin-bottom: calc(var(--spacer) * 4);
+    }
+
+    .mel-contact--left-container label:last-child {
+        margin-bottom: 0;
+    }
+
+    .mel-contact--right-container label {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .mel-contact--right-container label span {
+        flex: 1 1 auto;
     }
 
     #wpcf7-f154-p17-o1 label > span > input,
@@ -1415,10 +1478,13 @@ Responsive - Début
     #wpcf7-f154-p17-o1 label > span > textarea {
         padding: 0 calc(var(--spacer) * 2);
         border-radius: 5px;
+        width: 100%;
+        max-width: 100%;
     }
 
     #wpcf7-f154-p17-o1 label > span > textarea {
         padding-top: calc(var(--spacer) / 2);
+        height: 300px;
     }
 
     #wpcf7-f154-p17-o1 label > span > input,
@@ -1434,6 +1500,11 @@ Responsive - Début
         display: flex;
         flex-direction: row;
         align-items: center;
+        justify-content: flex-end;
+    }
+
+    .mel-contact-form--submit-container .wpcf7-spinner {
+        order: -1;
     }
 
     .mel-contact-form--submit-container input[type=submit] {
@@ -1500,13 +1571,23 @@ Responsive - Début
     }
 
     .wpcf7-not-valid-tip {
+        padding-top: calc(var(--spacer) / 2);
         color: var(--clr-primary-1);
         font-size: 1.4rem;
         text-align: right;
     }
 
-    .wpcf7-response-output {
+    .wpcf7 form .wpcf7-response-output {
         order: -1;
+        margin: 0;
+        margin-bottom: calc(var(--spacer) * 3);
+        padding: var(--spacer) calc(var(--spacer) * 2);
+        border: none;
+        background-color: var(--clr-primary-2);
+    }
+
+    .wpcf7 form .wpcf7-response-output.is-sended {
+        background-color: var(--clr-primary-4);
     }
     /*************
     Contact - Fin
@@ -1608,6 +1689,18 @@ Responsive - Début
     /***************
     Home page - Fin
     ***************/
+
+    /***************
+    Contact - Début
+    ***************/
+    #wpcf7-f154-p17-o1 label > span > input,
+    #wpcf7-f154-p17-o1 label > span > select,
+    #wpcf7-f154-p17-o1 label > span > textarea {
+        max-width: 450px;
+    }
+    /***************
+    Contact - Fin
+    ***************/
 }
 @media (min-width: 1024px) {
     :root {}
@@ -1664,6 +1757,28 @@ Responsive - Début
     /****************
     Catégories - Fin
     ****************/
+
+    /***************
+    Contact - Début
+    ***************/
+    #wpcf7-f154-p17-o1 {
+        width: calc(calc(var(--grid-column-width) * 10) + calc(var(--grid-gutter) * 9));
+    }
+    
+    .mel-contact--outer-container {
+        flex-direction: row;
+    }
+    
+    .mel-contact--outer-container > * {
+        flex: 1 1 calc(calc(var(--grid-column-width) * 3) + calc(var(--grid-gutter) * 2));
+    }
+    
+    #wpcf7-f154-p17-o1 label > span > textarea {
+        height: 100%;
+    }
+    /***************
+    Contact - Fin
+    ***************/
 }
 @media (min-width: 1280px) {
     :root {}
@@ -1719,6 +1834,16 @@ Responsive - Début
     /****************
     Catégories - Fin
     ****************/
+
+    /***************
+    Contact - Début
+    ***************/
+    #wpcf7-f154-p17-o1 {
+        width: calc(calc(var(--grid-column-width) * 8) + calc(var(--grid-gutter) * 7));
+    }
+    /***************
+    Contact - Fin
+    ***************/
 }
 @media (min-width: 1536px) {
     :root {
@@ -1751,6 +1876,16 @@ Responsive - Début
 
     /***************
     Home page - Fin
+    ***************/
+
+    /***************
+    Contact - Début
+    ***************/
+    #wpcf7-f154-p17-o1 {
+        width: calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5));
+    }
+    /***************
+    Contact - Fin
     ***************/
 }
 

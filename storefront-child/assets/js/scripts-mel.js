@@ -64,9 +64,24 @@ window.onload = () => {
 
         summary.style.height = firstGalleryImg.offsetHeight + 'px';
     }
+
+    /**
+     * Page contact
+     */
+    // Ajout d'un écouteur d'événement afin de faire apparaitre le message de confirmation d'envoi du formulaire charté
+    if(document.querySelector('.wpcf7') !== null) {
+        const form = document.querySelector('.wpcf7');
+
+        // On supprime les éléments du formulaire qui n'ont plus lieu d'être et on ajoute la classe valid au msg d'erreur
+        form.addEventListener('wpcf7mailsent', () => {
+            if(document.querySelector('.wpcf7-response-output') !== null) document.querySelector('.wpcf7-response-output').classList.add('is-sended');
+            if(document.querySelector('.mel-contact--outer-container') !== null) document.querySelector('.mel-contact--outer-container').remove();
+            if(document.querySelector('.mel-contact-form--submit-container') !== null) document.querySelector('.mel-contact-form--submit-container').remove();
+        });
+    }
 }
 
-windonw.addEventListener('resize', () => {
+window.addEventListener('resize', () => {
     /** 
      * Global
      */
