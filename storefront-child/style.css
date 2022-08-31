@@ -1360,7 +1360,8 @@ Responsive - Début
         padding: var(--spacer) calc(var(--spacer) * 3);
         background-color: rgba(218, 164, 154, .2);
     }
-    .woocommerce-Price-currencySymbol::after {
+    .mel-category--products-list .woocommerce-Price-currencySymbol::after,
+    .mel-product--summary .woocommerce-Price-currencySymbol::after {
         content: 'pièce';
         margin-left: var(--spacer);
         font-family: 'Poppins', sans-serif;
@@ -1462,6 +1463,75 @@ Responsive - Début
     /*************
     Produit - Fin
     *************/
+
+
+    /*************
+    Devis - Début
+    *************/
+    .ywraq-form-table-wrapper.wide {
+        gap: var(--grid-gutter);
+    }
+    
+    .ywraq-form-table-wrapper.wide form#yith-ywraq-form {
+        flex-basis: calc(calc(var(--grid-column-width) * 9) + calc(var(--grid-gutter) * 8));
+    }
+    
+    .ywraq-form-table-wrapper.wide .yith-ywraq-mail-form-wrapper {
+        flex-basis: calc(calc(var(--grid-column-width) * 3) + calc(var(--grid-gutter) * 2));
+        margin-left: 0;
+        padding: 0;
+    }
+
+    #yith-ywraq-form table {
+        border: 1px solid rgba(var(--clr-primary-2-explosed), .2);
+    }
+
+    #yith-ywraq-form table:not( .has-background ) tbody td {
+        border-right: 1px solid rgba(var(--clr-primary-2-explosed), .2);
+    }
+
+    #yith-ywraq-form table:not( .has-background ) tbody td:last-child {
+        border-right: 0;
+    }
+    
+    #yith-ywraq-form table:not( .has-background ) th {
+        background-color: rgba(var(--clr-primary-2-explosed), .2);
+        text-align: center;
+    }
+
+    #yith-ywraq-form table:not( .has-background ) tbody td,
+    #yith-ywraq-form table:not( .has-background ) tbody tr:nth-child(2n) td,
+    #yith-ywraq-form fieldset,
+    #yith-ywraq-form fieldset legend {
+        background: none;
+    }
+
+    .product-thumbnail.product-name {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--grid-gutter);
+    }
+
+    .mel-devis-page--quantity-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: var(--grid-gutter);
+    }
+
+    .cart_item .product-quantity,
+    .cart_item .product-subtotal {
+        vertical-align: middle;
+    }
+
+    .cart_item .product-subtotal {
+        text-align: center;
+    }
+    
+    /***********
+    Devis - Fin
+    ***********/
 
 
     /***************************
