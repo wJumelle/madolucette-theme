@@ -91,7 +91,11 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			$content .= "<p class='mel-devis--total'>Prix total : <span>" . $total . "</span></p>";
 
 			// On affiche le bouton de mise à jour du devis
-			$content .= "<input type='submit' class='button mel-devis--submit' name='update_raq' value='" . esc_attr( get_option( 'ywraq_update_list_label', __( 'Update List', 'yith-woocommerce-request-a-quote' ) ) ) . "'><input type='hidden' id='update_raq_wpnonce' name='update_raq_wpnonce' value='" . esc_attr( wp_create_nonce( 'update-request-quote-quantity' ) ) . "'>";
+			$content .= "<div class='mel-devis--functions'>";
+			$content .= "<button class='mel-devis--submit' name='update_raq'>Actualiser le devis</button>";
+			//$content .= "<input type='submit' class='button mel-devis--submit' name='update_raq' value='" . esc_attr( get_option( 'ywraq_update_list_label', __( 'Update List', 'yith-woocommerce-request-a-quote' ) ) ) . "'><input type='hidden' id='update_raq_wpnonce' name='update_raq_wpnonce' value='" . esc_attr( wp_create_nonce( 'update-request-quote-quantity' ) ) . "'>";
+			$content .= "<a href='https://gwendoline-jumelle.ovh/wp/devis/' class='mel-link-button'>Voir le devis</a>";
+			$content .= "</div>";
 
 			// On ferme le formulaire 
 			$content .= "</form>";
