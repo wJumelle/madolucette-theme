@@ -10,6 +10,8 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
+
+$melTotalSidebarQuote = 0;
 ?>
 
 <div id="secondary" class="widget-area mel-sidebar" role="complementary">
@@ -77,6 +79,10 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 				$content .= "</div>";
 				// ----------------- Mise à jour du produit --- fin
 
+				// ----------------- Calcul du total du panier --- début
+				$melTotalSidebarQuote += $_product->get_price() * $raq['quantity'];
+				// ----------------- Calcul du total du panier --- fin
+
 				// On ferme la balise div qui encadre la partie droite du récap
 				$content .= "</div>";
 
@@ -87,7 +93,7 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 			$content .= ($nbProduitsDevis > 1) ? "</ul>" : "";
 
 			// On affiche le prix total du devis
-			$total = wp_kses_post( apply_filters( 'yith_ywraq_hide_price_template', wp_kses_post( WC()->cart->get_product_subtotal( $_product, $raq['quantity'] ) ), $product_id ) );
+			$total = number_format($melTotalSidebarQuote, 2, ',', ' ') . " " . get_woocommerce_currency_symbol();
 			$content .= "<p class='mel-devis--total'>Prix total : <span>" . $total . "</span></p>";
 
 			// On affiche le bouton de mise à jour du devis
