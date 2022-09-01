@@ -82,6 +82,10 @@ button:focus,
     outline: none;
 }
 
+.hentry .entry-content a {
+    text-decoration: none;
+}
+
 input:focus,
 textarea:focus,
 input[type=text]:focus,
@@ -627,9 +631,10 @@ Responsive - Début
         line-height: 1.5em;
     }
 
-    .mel-devis--product .mel-devis--product-title a {
+    .mel-devis--product .mel-devis--product-title a,
+    table.cart .cart_item .product-thumbnail.product-name a {
         transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
-        background-image: linear-gradient(var(--clr-secondary-1), var(--clr-secondary-1));
+        background-image: linear-gradient(var(--clr-primary-1), var(--clr-primary-1));
         background-repeat: no-repeat;
         background-position: bottom left;
         background-size: 0 1px;
@@ -642,9 +647,11 @@ Responsive - Début
     .mel-devis--product a:hover + div > .mel-devis--product-title a,
     .mel-devis--product a:focus + div > .mel-devis--product-title a,
     .mel-devis--product .mel-devis--product-title a:hover,
-    .mel-devis--product .mel-devis--product-title a:focus {
+    .mel-devis--product .mel-devis--product-title a:focus,
+    table.cart .cart_item .product-thumbnail.product-name a:hover,
+    table.cart .cart_item .product-thumbnail.product-name a:focus {
         background-size: 100% 1px;
-        color: var(--clr-secondary-1) !important;
+        color: var(--clr-primary-1) !important;
     }
 
     .mel-devis--product-update {
@@ -703,7 +710,8 @@ Responsive - Début
         outline: none;
     }
 
-    .mel-devis--product-quantity input[type=number] {
+    .mel-devis--product-quantity input[type=number],
+    .mel-devis-page--quantity-container input[type=number] {
         width: 60px;
         height: 20px;
         padding: var(--spacer) calc(var(--spacer) * 1.25);
@@ -713,7 +721,8 @@ Responsive - Début
         font-size: 1.2rem;
     }
 
-    .mel-devis--product-quantity .mel-gui--qty {
+    .mel-devis--product-quantity .mel-gui--qty,
+    .mel-devis-page--quantity-container .mel-gui--qty {
         width: 20px;
         height: 20px;
         line-height: 16px;
@@ -721,16 +730,20 @@ Responsive - Début
     }
 
     .mel-devis--product-quantity .mel-gui--qty-remove,
-    .mel-devis--product-quantity .mel-gui--qty-add {
+    .mel-devis--product-quantity .mel-gui--qty-add,
+    .mel-devis-page--quantity-container .mel-gui--qty-remove,
+    .mel-devis-page--quantity-container .mel-gui--qty-add {
         transform: none;
     }
 
-    .remove.mel-devis--remove-product {
+    .remove.mel-devis--remove-product,
+    .yith-ywraq-item-remove.remove {
         width: 20px;
         height: 20px;
     }
 
-    .remove.mel-devis--remove-product::before {
+    .remove.mel-devis--remove-product::before,
+    .yith-ywraq-item-remove.remove::before {
         content: '';
         width: 20px;
         height: 20px;
@@ -740,7 +753,9 @@ Responsive - Début
     }
 
     .remove.mel-devis--remove-product:hover::before,
-    .remove.mel-devis--remove-product:focus::before {
+    .remove.mel-devis--remove-product:focus::before,
+    .yith-ywraq-item-remove.remove:hover::before,
+    .yith-ywraq-item-remove.remove:focus::before {
         background-image: url("./assets/images/svg/remove-product-hover.svg");
     }
 
@@ -749,13 +764,15 @@ Responsive - Début
         margin-bottom: calc(var(--spacer) * 4);
     }
 
-    .mel-devis--total {
+    .mel-devis--total,
+    .mel-devis-page--actions p {
         margin-bottom: calc(var(--spacer) * 3);
         font-size: 1.6rem;
         text-align: right;
     }
 
-    .mel-devis--total span {
+    .mel-devis--total span,
+    .mel-devis-page--actions p span {
         font-size: 2.4rem;
     }
 
@@ -1484,6 +1501,7 @@ Responsive - Début
 
     #yith-ywraq-form table {
         border: 1px solid rgba(var(--clr-primary-2-explosed), .2);
+        margin-bottom: calc(var(--spacer) * 3);
     }
 
     #yith-ywraq-form table:not( .has-background ) tbody td {
@@ -1506,11 +1524,20 @@ Responsive - Début
         background: none;
     }
 
-    .product-thumbnail.product-name {
+    table.cart .product-thumbnail.product-name {
         display: flex;
         align-items: center;
         justify-content: center;
         gap: var(--grid-gutter);
+        font-family: 'Libre Baskerville', serif;
+        font-weight: 700;
+        font-size: 1.6rem;
+        line-height: 1.5em;
+        text-decoration: none;
+    }
+
+    table.cart .product-thumbnail.product-name img {
+        max-width: calc(var(--spacer) * 11);
     }
 
     .mel-devis-page--quantity-container {
@@ -1526,9 +1553,20 @@ Responsive - Début
     }
 
     .cart_item .product-subtotal {
+        font-size: 2.4rem;
         text-align: center;
+    }    
+
+    .mel-devis-page--actions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: calc(var(--spacer) * 3);
     }
-    
+
+    .mel-devis-page--actions p {
+        margin-bottom: 0;
+    }
     /***********
     Devis - Fin
     ***********/
