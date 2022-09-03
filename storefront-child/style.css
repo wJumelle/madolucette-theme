@@ -267,6 +267,18 @@ Helpers - Debut
 Helpers - Fin
 **************/
 
+.mel-loader {
+    width: 32px;
+    height: 32px;
+    border: 5px solid #D08B86;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: loaderRotation 1s linear infinite;
+}
 
 /*****************
 Responsive - Début
@@ -1134,6 +1146,10 @@ Responsive - Début
     .home .mel-team .mel-team--grid.mel-team--grid-70-30 > .wp-block-column:last-child img {
         max-width: 427px;
         margin-left: auto;
+    }
+
+    .mel-team--instagram-feed .wp-block-group__inner-container {
+        margin-bottom: var(--grid-gutter);
     }
 
     .mel-team--instagram-feed strong {
@@ -2103,4 +2119,19 @@ Responsive - Début
 }
 /****************
 Responsive - Fin
+****************/
+
+/*****************
+Keyframes - Début
+*****************/
+@keyframes loaderRotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
+/***************
+Keyframes - Fin
 ****************/

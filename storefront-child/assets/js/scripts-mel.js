@@ -24,6 +24,16 @@ window.onload = () => {
         bkg.style.backgroundPosition = `bottom right ${posRight}px`;
     }
 
+    // Instagram Feed
+    if(document.querySelector('.mel-team--instagram-feed') !== null) {
+        const feedContainer = document.querySelector('.mel-team--instagram-feed');
+        feedContainer.innerHTML += `<span class="mel-loader" aria-label="En cours de chargement"></span>`;
+
+        /**
+         * ToDo Chargement du feed instagram
+         */
+    }
+
     /**
      * Page produit / Page Catégories
      */
