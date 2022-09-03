@@ -88,6 +88,7 @@ button:focus,
 
 input:focus,
 textarea:focus,
+textarea.input-text:focus,
 input[type=text]:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -105,19 +106,22 @@ input[type=text],
 input[type=email],
 input[type=date],
 select,
-textarea {
+textarea,
+textarea.input-text {
     box-shadow: none;
     background-color: rgba(var(--clr-dark-explosed), .1);
     color: rgba(var(--clr-dark-explosed), .5);
     outline: 2px solid transparent;
     transition: color var(--anim-duration) var(--anim-fillMode), font-weight var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
+    box-shadow: none;
 }
 
 input[type=text]:focus,
 input[type=email]:focus,
 input[type=date]:focus,
 select:focus,
-textarea:focus {
+textarea:focus,
+textarea.input-text:focus {
     color: rgba(var(--clr-dark-explosed), 1);
     font-weight: 600;
 }
@@ -291,6 +295,11 @@ Responsive - Début
 
     h1, h2, h3, h4, h5, h6 {
         margin-bottom: calc(var(--spacer) * 3) !important;
+    }
+
+    .page-template-default h1 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3.2rem;
     }
 
     p {
@@ -1491,6 +1500,10 @@ Responsive - Début
         background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
     }
 
+    .add-request-quote-button.button + .mel-loader {
+        margin-left: var(--spacer);
+    }
+
     .woocommerce .mel-product .edit-link {
         position: absolute;
         bottom: 0;
@@ -1506,6 +1519,7 @@ Responsive - Début
     *************/
     .ywraq-form-table-wrapper.wide {
         gap: var(--grid-gutter);
+        align-items: flex-start;
     }
     
     .ywraq-form-table-wrapper.wide form#yith-ywraq-form {
@@ -1585,6 +1599,78 @@ Responsive - Début
 
     .mel-devis-page--actions p {
         margin-bottom: 0;
+    }
+
+    .mel-devis-form--container h3 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3.2rem;
+    }
+
+    #yith-ywraq-mail-form {
+        font-size: 1.6rem;
+    }
+
+    #yith-ywraq-mail-form p {
+        margin-bottom: calc(var(--spacer) * 4);
+    }
+
+    #yith-ywraq-mail-form p label {
+        margin-bottom: var(--spacer);
+    }
+
+    #yith-ywraq-mail-form textarea {
+        height: 128px;
+    }
+
+    .mel-devis-form--submit button {
+        margin-left: auto;
+    }
+
+    .mel-devis-form-submit-button {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        padding: 0 calc(var(--spacer) * 2);
+        background-color: var(--clr-dark) !important;
+        border: 2px solid var(--clr-dark);
+        border-radius: 50px;
+        color: var(--clr-light) !important;
+        font-size: 1.6rem !important;
+        line-height: 40px !important;
+        outline: 2px solid transparent;
+        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
+    }
+
+    .mel-devis-form-submit-button:hover,
+    .mel-devis-form-submit-button:focus {
+        background: none !important;
+        border: 2px solid var(--clr-dark);
+        color: var(--clr-dark) !important;
+    }
+
+    .mel-devis-form-submit-button:active,
+    .mel-devis-form-submit-button:hover:active,
+    .mel-devis-form-submit-button:focus {
+        outline: 2px solid var(--clr-dark);
+    }
+
+    .mel-devis-form-submit-button::after {
+        content: '';
+        display: inline-block;
+        margin-left: calc(var(--spacer) * 2);
+        width: 32px;
+        height: 24px;
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: background-image var(--anim-duration) var(--anim-fillMode);
+    }    
+    
+    .mel-devis-form-submit-button:hover::after,
+    .mel-devis-form-submit-button:focus::after {
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
     }
     /***********
     Devis - Fin
@@ -1672,24 +1758,33 @@ Responsive - Début
 
     #wpcf7-f154-p17-o1 label > span > input,
     #wpcf7-f154-p17-o1 label > span > select,
-    #wpcf7-f154-p17-o1 label > span > textarea {
+    #wpcf7-f154-p17-o1 label > span > textarea,
+    form label + input,
+    form label + input[type=text],
+    form label + input[type=email],
+    form label + select,
+    form label + textarea  {
         padding: 0 calc(var(--spacer) * 2);
         border-radius: 5px;
         width: 100%;
         max-width: 100%;
     }
 
-    #wpcf7-f154-p17-o1 label > span > textarea {
+    #wpcf7-f154-p17-o1 label > span > textarea,
+    form label + textarea {
         padding-top: calc(var(--spacer) / 2);
         height: 300px;
     }
 
     #wpcf7-f154-p17-o1 label > span > input,
-    #wpcf7-f154-p17-o1 label > span > select {
+    #wpcf7-f154-p17-o1 label > span > select,
+    form label + input,
+    form label + select {
         line-height: 32px;
     }
 
-    #wpcf7-f154-p17-o1 form > p {
+    #wpcf7-f154-p17-o1 form > p,
+    form > p {
         margin-bottom: calc(var(--spacer) * 4);
     }
 
