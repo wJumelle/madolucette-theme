@@ -305,7 +305,6 @@ Responsive - Début
         max-width: var(--site-width);
         margin-left: auto;
         margin-right: auto;
-        overflow-x: hidden;
     }
 
     .archive .site-content > .col-full,
@@ -938,6 +937,10 @@ Responsive - Début
     .mel-hero .mel-hero--button a:hover::after,
     .mel-hero .mel-hero--button a:focus::after {
         background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow-hover.svg);
+    }
+
+    .mel-hero .mel-hero--button a:hover:active::after {
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow.svg);
     }
 
     .mel-hero {
@@ -1979,6 +1982,13 @@ Responsive - Début
         flex-wrap: nowrap !important;
     }
 
+    .page-template-template-homepage .entry-content > .mel-hero .wp-block-cover__background {
+        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/banner.svg);
+        background-repeat: no-repeat;
+        background-size: 29.296875% auto;
+        background-position: bottom right;
+    }
+
     /***************
     Home page - Fin
     ***************/
@@ -2054,8 +2064,20 @@ Responsive - Début
 
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container,
     .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
-        padding-top: 24.3rem;
-        padding-bottom: 27rem;
+        padding: 0;
+        min-height: calc(100vh - 82px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .admin-bar .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container,
+    .admin-bar .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
+        min-height: calc(100vh - calc(82px + 32px));
+    }
+
+    .page-template-template-homepage .entry-content > .mel-hero .wp-block-cover__background {
+        background-size: 580px auto;
     }
 
     /***************

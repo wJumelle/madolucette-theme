@@ -15,6 +15,16 @@ window.onload = () => {
     r.style.setProperty('--grid-global-width', document.querySelector('#content > .col-full').offsetWidth + 'px');
 
     /**
+     * Home
+     */
+    // Positionnemenet de l'image dans la hero banner
+    if(document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__background') !== null) {
+        const bkg = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__background');
+        const posRight = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__inner-container').offsetLeft;
+        bkg.style.backgroundPosition = `bottom right ${posRight}px`;
+    }
+
+    /**
      * Page produit / Page Catégories
      */
     // Ajout des boutons + et - autour des inputs number woocommerce
@@ -97,6 +107,16 @@ window.addEventListener('resize', () => {
     // Calcul de la variable pour le calcule de la taille de la grille
     let r = document.querySelector(':root');
     r.style.setProperty('--grid-global-width', document.querySelector('#content > .col-full').offsetWidth + 'px');
+
+    /**
+     * Home
+     */
+    // Positionnemenet de l'image dans la hero banner
+    if(document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__background') !== null) {
+        const bkg = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__background');
+        const posRight = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__inner-container').offsetLeft;
+        bkg.style.backgroundPosition = `bottom right ${posRight}px`;
+    }
 })
 
 // Fonction de gestion des états des boutons de type number
