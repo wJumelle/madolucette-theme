@@ -27,6 +27,9 @@ $melTotalSidebarQuote = 0;
 		if ( $nbProduitsDevis === 0 ) { ?>
 			<h3 class='mel-devis--title'>Votre devis</h3>
 			<p>Ho-ho il n’y a rien pour l’instant ☹</p>
+			<div class="mel-devis--catalog-button-container">
+				<a href="https://gwendoline-jumelle.ovh/wp/catalogue/" class="mel-link-button">Aller au catalogue</a>
+			</div>
 		<?php } else { 
 			// On prépare la variable à afficher
 			$content = "<h3 class='mel-devis--title'>Votre devis</h3>";
