@@ -625,6 +625,15 @@ Responsive - Début
         font-size: 3.2rem;
     }
 
+    .mel-devis--catalog-button-container {
+        display: flex;
+        margin-top: calc(var(--spacer) * 12);
+    }
+
+    .mel-devis--catalog-button-container > * {
+        margin-left: auto;
+    }
+
     .mel-devis--products-list {
         margin-left: 0;
         list-style-type: none;
