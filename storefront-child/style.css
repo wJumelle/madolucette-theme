@@ -825,7 +825,8 @@ Responsive - Début
         background-color: var(--clr-dark) !important;
         font-size: 1.6rem;
         line-height: 1.5em;
-        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
+        outline: 2px solid transparent;
+        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     }
 
     button.mel-devis--submit::before {
@@ -842,6 +843,10 @@ Responsive - Début
     button.mel-devis--submit:focus {
         background: none !important;
         color: var(--clr-secondary-3) !important;
+    }
+
+    button.mel-devis--submit:hover:active {
+        outline: 2px solid var(--clr-dark);
     }
 
     button.mel-devis--submit:hover::before,
