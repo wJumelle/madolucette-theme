@@ -322,14 +322,16 @@ Responsive - Début
     .page-template-template-homepage .entry-content > *,
     .storefront-breadcrumb > .col-full,
     .archive .site-content > .col-full,
-    .product-template-default .site-content > .col-full {
+    .product-template-default .site-content > .col-full,
+    .page-id-25 .site-content > .col-full {
         max-width: var(--site-width);
         margin-left: auto;
         margin-right: auto;
     }
 
     .archive .site-content > .col-full,
-    .product-template-default .site-content > .col-full {
+    .product-template-default .site-content > .col-full,
+    .page-id-25 .site-content > .col-full {
         display: flex;
         flex-direction: column;
         gap: var(--grid-gutter);
@@ -339,17 +341,21 @@ Responsive - Début
     .right-sidebar.archive .site-content > .col-full > .content-area, 
     .right-sidebar.archive .site-content > .col-full > .widget-area,
     .right-sidebar.product-template-default .site-content > .col-full > .content-area, 
-    .right-sidebar.product-template-default .site-content > .col-full > .widget-area {
+    .right-sidebar.product-template-default .site-content > .col-full > .widget-area
+    .right-sidebar.page-id-25 .site-content > .col-full > .content-area, 
+    .right-sidebar.page-id-25 .site-content > .col-full > .widget-area {
         float: none;
     }
 
     .right-sidebar.archive .site-content > .col-full > .widget-area,
-    .right-sidebar.product-template-default .site-content > .col-full > .widget-area {
+    .right-sidebar.product-template-default .site-content > .col-full > .widget-area,
+    .right-sidebar.page-id-25 .site-content > .col-full > .widget-area {
         margin-bottom: calc(var(--spacer) * 8) !important;
     }
 
     .right-sidebar.archive .site-content > .col-full > .woocommerce:empty,
-    .right-sidebar.product-template-default .site-content > .col-full > .woocommerce:empty {
+    .right-sidebar.product-template-default .site-content > .col-full > .woocommerce:empty,
+    .right-sidebar.page-id-25 .site-content > .col-full > .woocommerce:empty {
         display: none;
     }
 
@@ -375,7 +381,8 @@ Responsive - Début
     }
 
     .product-template-default .widget-area,
-    .archive .widget-area {
+    .archive .widget-area,
+    .page-id-25 .widget-area {
         width: 100%;
         padding-top: var(--grid-gutter);
         border-top: 1px solid var(--clr-primary-1);
@@ -1186,6 +1193,60 @@ Responsive - Début
     /***************
     Home page - Fin
     ***************/
+
+    /*****************
+    Catalogue - Debut
+    *****************/
+    .page-id-25 .mel-category--products-list.is-not-current {
+        display: none;
+    }
+
+    .page-id-25 .mel-catalogue--navigation {
+        display: flex;
+        flex-direction: row;
+        gap: calc(var(--grid-gutter) / 2);
+        margin-top: var(--grid-gutter);
+    }
+
+    .page-id-25 .mel-catalogue--navigation button {
+        padding: var(--spacer) calc(var(--spacer) * 2);
+        background-color: var(--clr-dark);
+        color: var(--clr-light);
+        border: 2px solid var(--clr-dark);
+        outline: 2px solid transparent;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
+    }
+
+    .page-id-25 .mel-catalogue--navigation button:hover,
+    .page-id-25 .mel-catalogue--navigation button:focus {
+        background: none;
+        color: var(--clr-dark);
+    }
+
+    .page-id-25 .mel-catalogue--navigation button:active,
+    .page-id-25 .mel-catalogue--navigation button:hover:active,
+    .page-id-25 .mel-catalogue--navigation button:focus:active {
+        outline: 2px solid var(--clr-dark);
+    }
+
+    .page-id-25 .mel-catalogue--navigation button.is-current {
+        background-color: rgba(var(--clr-dark-explosed), .2);
+        color: var(--clr-light);
+        border: 2px solid rgba(var(--clr-dark-explosed), .2);
+        cursor: not-allowed;
+    }
+
+    .page-id-25 .mel-catalogue--navigation button.is-current:active,
+    .page-id-25 .mel-catalogue--navigation button.is-current:hover:active,
+    .page-id-25 .mel-catalogue--navigation button.is-current:focus:active {
+        outline: 2px solid transparent;
+    }
+
+    /*****************
+    Catalogue - Fin
+    *****************/
 
     /*****************
     Catégories - Debut
@@ -2123,7 +2184,8 @@ Responsive - Début
     *****************/
     /* Page produit & page catégorie grille */
     .archive .site-content > .col-full,
-    .product-template-default .site-content > .col-full {
+    .product-template-default .site-content > .col-full,
+    .page-id-25 .site-content > .col-full  {
         flex-direction: row;
     }
 
@@ -2138,7 +2200,8 @@ Responsive - Début
     }
 
     .product-template-default .widget-area,
-    .archive .widget-area {
+    .archive .widget-area, 
+    .page-id-25 .widget-area {
         width: calc(calc(var(--grid-column-width) * 3) + calc(calc(var(--grid-gutter) * 2)));
         padding-left: var(--grid-gutter);
         padding-top: 0;

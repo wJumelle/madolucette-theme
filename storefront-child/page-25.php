@@ -9,61 +9,62 @@ get_header(''); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main mel-template-catalogue" role="main">
+			<header class="woocommerce-products-header mel-header--archive-product">
+				<h1 class="woocommerce-products-header__title page-title"><?php wp_title('', true, ''); ?></h1>
+			</header>
 
 			<?php
-			// On sécurise la suite du code
-			if(!function_exists('wc_get_products')) {
-				return;
-			}
-
-			// On récupère l'ensemble des produits publié
-			// On désire afficher 8 produits / pages
-			// avec paginate on obtient 1 objects avec 3 propriétés : products / total / max_num_pages
-			// Doc : https://github.com/woocommerce/woocommerce/wiki/wc_get_products-and-WC_Product_Query#general
-			$nb_limit = 8;
-			$actual_page = 1;
-			$args = array(
-				'status' => 'publish',
-				'limit' => '8',
-				'paginate' => true,
-			);
-			$results = wc_get_products( $args );
-
-			echo 'Actuellement je cherche comment récupérer les produits de la nième page (après la première)<br/>';
-
-			echo $results->total . ' produits trouvés '. "<br/>";
-
-			var_dump($results->products);
-
-			for($j = 0; $j < $results->max_num_pages; $j++) {
-				for($i = 0; $i < $nb_limit; $i++) {
-					$index = ($j === 0) ? $i * $actual_page : ($j * $nb_limit);
-					echo 'Index : ' . $index . '<br/>';
-					$product_id   = $results->products[$index]->get_id();
-					$product_name = $results->products[$index]->get_name();
-	
-					// Output product ID and name
-					echo 'Product ID: ' . $product_id . ' is "' . $product_name . '"<br>';
+				// On sécurise la suite du code
+				if(!function_exists('wc_get_products')) {
+					return;
 				}
-				
-				echo '----<br/>';
 
-				$actual_page++;
-			}
+				// On récupère l'ensemble des produits publié
+				// On désire afficher 8 produits / pages
+				$nb_limit = 8;
+				$actual_page = 1;
+				$args = array(
+					'status' => 'publish',
+					'limit' => '-1',
+				);
+				$results = wc_get_products( $args );
 
-			echo 'Page 1 sur ' . $results->max_num_pages . "<br/>";
+				$nbProducts = count($results);
+				$nbPages = ceil($nbProducts / $nb_limit);
 
-			// foreach( $products as $product ) {
+				$content = '';
+				$pagination = '<ul class="mel-catalogue--navigation">';
 
-			// 	// Collect product variables
-			// 	$product_id   = $product->get_id();
-			// 	$product_name = $product->get_name();
+				for($j = 0; $j < $nbPages; $j++) {
+					($j === 0) ? 
+						$isCurrentClass = 'is-current' : 
+						$isCurrentClass = 'is-not-current';
+					$content .= '<ul class="products mel-category--products-list grid ' . $isCurrentClass . '" data-page="' . ($j + 1) . '">';
+					$pagination .= '<li><button class="mel-catalogue--navigation-button ' . $isCurrentClass . '" data-targetedpage="' . ($j + 1) . '">' . ($j + 1) . '</button></li>';
+					for($i = 0; $i < $nb_limit; $i++) {
+						$index = ($j === 0) ? $i * $actual_page : ($j * $nb_limit + $i);
+						if($index !== $nbProducts) {
+							$product_id = $results[$index]->get_id();
+							$product_name = $results[$index]->get_name();
+							$product_thumb = $results[$index]->get_image();
+							$product_link = $results[$index]->get_permalink();
+							$product_price = $results[$index]->get_price_html();
 			
-			// 	// Output product ID and name
-			// 	echo 'Product ID: ' . $product_id . ' is "' . $product_name . '"<br>';
-			// }
-			?>
+							$content .= '<li class="product"><a href="' . $product_link . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
+							$content .= $product_thumb;
+							$content .= '<h2 class="woocommerce-loop-product__title">' . $product_name . '</h2>';
+							$content .= '<span class="price">' . $product_price . '</span>';
+							$content .= '</a></li>';
+						}
+					}
+					$content .= '</ul>';
+					if($j == ($nbPages - 1)) $pagination .= '</ul>';
 
+					$actual_page++;
+				}
+				echo $content;
+				echo $pagination;
+			?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 <?php
