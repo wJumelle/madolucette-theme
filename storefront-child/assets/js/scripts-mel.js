@@ -87,6 +87,39 @@ window.onload = () => {
     }
 
     /**
+     * Page Catalogue
+     */
+    if(document.querySelector('.mel-catalogue--navigation') !== null) {
+        const navigation_buttons = document.querySelectorAll('.mel-catalogue--navigation button');
+
+        navigation_buttons.forEach((e) => {
+            e.addEventListener('click', (ev) => {
+                // On vérifie si le bouton n'est pas celui de la page courrante
+                if(!ev.target.classList.contains('is-current')) {
+                    // On affiche la bonne page
+                    const nbPageToTarget = ev.target.dataset['targetedpage'];
+                    const pageToTarget = document.querySelector(`.mel-category--products-list[data-page="${nbPageToTarget}"]`);
+                    const actualPage = document.querySelector('.mel-category--products-list.is-current');
+                    actualPage.classList.remove('is-current');
+                    actualPage.classList.add('is-not-current');
+                    pageToTarget.classList.remove('is-not-current');
+                    pageToTarget.classList.add('is-current');
+
+                    // On met à jour la navigation
+                    const actualButton = document.querySelector('.mel-catalogue--navigation button.is-current');
+                    actualButton.classList.remove('is-current')
+                    actualButton.classList.add('is-not-current');
+                    ev.target.classList.remove('is-not-current');
+                    ev.target.classList.add('is-current');
+
+                    // On met le focus sur le premier article
+                    document.querySelector('.mel-category--products-list.is-current a').focus();
+                }
+            });
+        });
+    }
+
+    /**
      * Page contact
      */
     // Ajout d'un écouteur d'événement afin de faire apparaitre le message de confirmation d'envoi du formulaire charté
