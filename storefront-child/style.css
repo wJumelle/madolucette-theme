@@ -46,6 +46,8 @@ Reset - Debut
 *************/
 html {
     font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 82px;
 }
 
 body {
@@ -448,7 +450,9 @@ Responsive - Début
     }
 
     .main-navigation .primary-navigation > ul > li > a:hover,
-    .main-navigation .primary-navigation > ul > li > a:focus {
+    .main-navigation .primary-navigation > ul > li > a:focus,
+    .main-navigation ul.menu > li:nth-child(2) > a:hover,
+    .main-navigation ul.menu > li:nth-child(2) > a:focus {
         background-color: transparent;
         background-size: 100% 1px;
         color: var(--clr-primary-1);
@@ -461,6 +465,10 @@ Responsive - Début
     .main-navigation ul.menu li.current-menu-item > a,
     .site-header ul.menu li.current-menu-item > a {
         color: var(--clr-primary-1);
+    }
+
+    .main-navigation ul.menu > li:nth-child(2) > a {
+        color: var(--clr-light);
     }
     
     .main-navigation ul.menu ul li a,
