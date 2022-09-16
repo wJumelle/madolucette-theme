@@ -148,7 +148,12 @@ function remove_actions_from_storefront_categories() {
     remove_action( 'woocommerce_after_shop_loop','woocommerce_catalog_ordering', 10);
     remove_action( 'woocommerce_after_shop_loop', 'woocommerce_result_count', 20 );
 }
-
+// Changement du nombre de produit par page de catégorie
+add_filter( 'loop_shop_per_page', 'lw_loop_shop_per_page', 30 );
+function lw_loop_shop_per_page( $products ) {
+    $products = 8;
+    return $products;
+}
 
 
 /**
