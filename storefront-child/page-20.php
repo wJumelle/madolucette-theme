@@ -43,7 +43,7 @@ get_header(''); ?>
 					$pagination .= '<li><button class="mel-catalogue--navigation-button ' . $isCurrentClass . '" data-targetedpage="' . ($j + 1) . '">' . ($j + 1) . '</button></li>';
 					for($i = 0; $i < $nb_limit; $i++) {
 						$index = ($j === 0) ? $i * $actual_page : ($j * $nb_limit + $i);
-						if($index !== $nbProducts) {
+						if($index < $nbProducts) {
 							$product_id = $results[$index]->get_id();
 							$product_name = $results[$index]->get_name();
 							$product_thumb = $results[$index]->get_image();
