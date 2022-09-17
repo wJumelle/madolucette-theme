@@ -63,6 +63,12 @@ function storefront_primary_navigation() {
 					'container_class' => 'primary-navigation',
 				)
 			);
+            wp_nav_menu(
+				array(
+					'theme_location'  => 'handheld',
+					'container_class' => 'handheld-navigation',
+				)
+			);
 			?>
 		</nav><!-- #site-navigation -->
 		<?php
@@ -181,16 +187,6 @@ function remove_actions_from_storefront_product() {
 
     // Suppression de la navigation storefront entre les produits 
     remove_action( 'woocommerce_after_single_product_summary', 'storefront_single_product_pagination', 30 );
-}
-if( ! function_exists( 'woocommerce_product_description_tab' )) {
-    /**
-	 * Output the description tab content.
-	 */
-	function woocommerce_product_description_tab() {
-        echo '<div class="mel-product--description">';
-		wc_get_template( 'single-product/tabs/description.php' );
-        echo '</div>';
-	}
 }
 if ( ! function_exists( 'woocommerce_template_single_stock' ) ) {
     /**
