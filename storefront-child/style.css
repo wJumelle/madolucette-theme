@@ -81,6 +81,13 @@ p:last-child {
     transition: none;
 }
 
+.handheld-navigation {
+    display: none;
+}
+.main-navigation.toggled .handheld-navigation {
+    display: block;
+}
+
 .mel--paragraph {
     max-width: 80ch;
 }
@@ -241,7 +248,11 @@ ul.menu li a,
     background: var(--clr-dark);
 }
 
-.main-navigation.toggled #menu-mobile li {
+#menu-mobile .sub-menu {
+    margin-left: 0;
+}
+
+.main-navigation.toggled #menu-mobile > li {
     width: 80%;
     margin: 0 auto;
 }
@@ -423,6 +434,8 @@ Responsive - Début
     Header - Debut
     **************/
     .site-header.mel-header {
+        display: flex;
+        align-items: center;
         position: sticky;
         top: 0;
         left: 0;
@@ -611,14 +624,9 @@ Responsive - Début
     }
     .mel-footer {
         background-color: var(--clr-dark);
-        background-image: url(./assets/images/svg/footer-decoration.svg);
-        background-position: right bottom;
-        background-repeat: no-repeat;
-        background-size: 248px;
         font-size: 1.6rem;
     }
     .site-footer > .col-full {
-        
         width: 100%;
         max-width: var(--site-width);
         margin: 0 auto;
@@ -977,7 +985,7 @@ Responsive - Début
         align-items: center;
         flex-direction: row;
         flex-wrap: nowrap;
-        font-size: 2.4rem !important;
+        font-size: 1.6rem !important;
         line-height: 1.5em;
         font-weight: 400;
     }
@@ -1042,7 +1050,7 @@ Responsive - Début
         margin-bottom: calc(var(--spacer) * 12);
     }
 
-    .mel-catalogue--button-list {
+    .mel-catalogue .mel-catalogue--button-list {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
@@ -1051,7 +1059,7 @@ Responsive - Début
     }
 
     .mel-catalogue--button-list > * {
-        flex: 0 1 calc(50% - 20px);
+        flex: 0 1 calc(50% - calc(calc(var(--spacer) * 2.5) / 2));
     }
 
     .mel-catalogue--button-list > * > a {
@@ -1081,7 +1089,7 @@ Responsive - Début
     }
 
     .hentry .entry-content .mel-catalogue--button-list .wp-block-button .wp-block-button__link {
-        width: 187px;
+        width: 100%;
         padding: var(--spacer) 0;
         justify-content: center;
         font-size: 1.6rem !important;
@@ -1091,7 +1099,7 @@ Responsive - Début
         margin-bottom: 0;
     }
 
-    .mel-catalogue--featured-products {
+    .mel-catalogue .mel-catalogue--featured-products {
         gap: calc(var(--spacer) * 6.5);
     }
     
@@ -1197,6 +1205,10 @@ Responsive - Début
     }
 
     /* Notre équipe */
+    .mel-team .mel-team--grid {
+        flex-direction: column;
+    }
+
     .mel-team--grid {
         --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
         gap: var(--grid-gutter);
@@ -1215,9 +1227,13 @@ Responsive - Début
         margin-bottom: 0;
     }
 
+    .home .mel-team .mel-team--grid.mel-team--grid-70-30 > .wp-block-column:last-child {
+        order: -1;
+    }
+
     .home .mel-team .mel-team--grid.mel-team--grid-70-30 > .wp-block-column:last-child img {
         max-width: 100%;
-        margin-left: auto;
+        margin: 0 auto;
     }
 
     .mel-team--instagram-feed .wp-block-group__inner-container {
@@ -2128,6 +2144,14 @@ Responsive - Début
         --site-width: calc(100% - calc(var(--spacer) * 12));
     }
 
+    /* Footer */
+    .mel-footer {
+        background-image: url(./assets/images/svg/footer-decoration.svg);
+        background-position: right bottom;
+        background-repeat: no-repeat;
+        background-size: 248px;
+    }
+
     /*****************
     Home page - Debut
     *****************/
@@ -2149,6 +2173,10 @@ Responsive - Début
     /* Notre catalogue */
     .mel-catalogue--button-list > * {
         flex: 0 1 auto;
+    }
+
+    .hentry .entry-content .mel-catalogue--button-list .wp-block-button .wp-block-button__link {
+        min-width: 187px;
     }
 
     .mel-catalogue .mel-catalogue--featured-products.wp-block-columns {
@@ -2223,12 +2251,34 @@ Responsive - Début
         font-size: 2.0rem !important;
     }
 
+    .hentry .entry-content .wp-block-button .wp-block-button__link {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        font-size: 2.4rem !important;
+        line-height: 1.5em;
+        font-weight: 400;
+    }
+
     /* Notre catalogue */
     .mel-catalogue {
         margin-bottom: calc(var(--spacer) * 18);
     }
 
     /* Notre équipe */
+    .mel-team .mel-team--grid {
+        flex-direction: row;
+    }
+
+    .home .mel-team .mel-team--grid.mel-team--grid-70-30 > .wp-block-column:last-child {
+        order: initial;
+    }
+
+    .home .mel-team .mel-team--grid.mel-team--grid-70-30 > .wp-block-column:last-child img {
+        max-width: 100%;
+        margin: 0 0 0 auto;
+    }
     /***************
     Home page - Fin
     ***************/
