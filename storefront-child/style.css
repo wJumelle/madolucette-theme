@@ -1438,8 +1438,11 @@ Responsive - Début
         color: var(--clr-dark);
     }
     /* Pagination */
+    .pagination,
     .woocommerce-pagination {
         float: none !important;
+        padding: 0;
+        border: 0;
         text-align: left !important;
     }
     .pagination .page-numbers li .page-numbers,
