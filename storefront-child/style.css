@@ -1262,6 +1262,7 @@ Responsive - Début
     .page-id-20 .mel-catalogue--navigation {
         display: flex;
         flex-direction: row;
+        flex-wrap: wrap;
         gap: calc(var(--grid-gutter) / 2);
         margin-top: var(--grid-gutter);
     }
