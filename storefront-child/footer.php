@@ -27,8 +27,8 @@
 			<div class="grid-4 mel-footer--more-about">
 				<h3>+ d’informations&nbsp;?</h3>
 				<ul>
-					<li><a href="#">A faire - Les mentions légales</a></li>
-					<li><a href="#">A faire - La politique de confidentialité</a></li>
+				<li><a href="https://madeleineetlucette.fr/mentions-legales/">Les mentions légales</a></li>
+					<li><a href="https://madeleineetlucette.fr/politique-de-confidentialite/">La politique de confidentialité</a></li>
 				</ul>
 			</div>
 			<div class="grid-4 grid-empty" aria-hidden="true"></div>
@@ -36,7 +36,7 @@
 				<h3>NOUS CONTACTER&nbsp;?</h3>
 				<ul>
 					<li><a href="mailto:madeleineetlucette@gmail.com">madeleineetlucette(at)gmail.com</a></li>
-					<li><a href="tel:06-28-07-09-96">06 28 07 09 96</a></li>
+					<li><a href="tel:06-28-07-09-96">+33 6 28 07 09 96</a></li>
 				</ul>
 			</div>
 			<div class="grid-4 mel-footer--copyright">
