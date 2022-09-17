@@ -7,8 +7,14 @@ window.onload = () => {
         const footer = document.querySelector('.mel-footer');
         const rightSpace = document.querySelector('.mel-footer > .col-full').offsetLeft;
         const topSpace = parseInt(getComputedStyle(footer).paddingTop);
+        const backgroundSize = parseInt(window.getComputedStyle(footer, null).getPropertyValue('background-size'));
 
-        footer.style.backgroundPosition = `right ${rightSpace}px bottom ${topSpace}px`;
+        if(backgroundSize > (footer.offsetHeight - topSpace)) {
+            footer.style.backgroundSize = `${footer.offsetHeight - topSpace}px`;
+            footer.style.backgroundPosition = `right ${rightSpace}px center`;
+        } else {
+            footer.style.backgroundPosition = `right ${rightSpace}px center`;
+        }
     }
     // Calcul de la variable pour le calcule de la taille de la grille
     let r = document.querySelector(':root');
@@ -108,9 +114,11 @@ window.onload = () => {
                     // On met à jour la navigation
                     const actualButton = document.querySelector('.mel-catalogue--navigation button.is-current');
                     actualButton.classList.remove('is-current')
+                    actualButton.removeAttribute('aria-current');
                     actualButton.classList.add('is-not-current');
                     ev.target.classList.remove('is-not-current');
                     ev.target.classList.add('is-current');
+                    ev.target.setAttribute('aria-current', 'page');
 
                     // On met le focus sur le premier article
                     document.querySelector('.mel-category--products-list.is-current a').focus();
