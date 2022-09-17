@@ -1339,7 +1339,7 @@ Responsive - Début
     }
     .woocommerce-breadcrumb a {
         transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
-        background-image: linear-gradient(var(--clr-dark), var(--clr-dark));
+        background-image: linear-gradient(var(--clr-primary-1), var(--clr-primary-1));
         background-repeat: no-repeat;
         background-position: bottom left;
         background-size: 0 1px;
@@ -1357,6 +1357,7 @@ Responsive - Début
     .woocommerce-breadcrumb a:hover, 
     .woocommerce-breadcrumb a:focus {
         background-size: 100% 1px;
+        color: var(--clr-primary-1);
     }
     .woocommerce-breadcrumb .breadcrumb-separator {
         padding: 0;
