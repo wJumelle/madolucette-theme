@@ -25,7 +25,7 @@ $heading = apply_filters( 'woocommerce_product_description_heading', __( 'Descri
 //var_dump($product->get_description());
 
 ?>
-<div class="mel-product--description yolo 2">
+<div class="mel-product--description">
     <?php if ( $heading ) : ?>
         <h2><?php echo esc_html( $heading ); ?></h2>
     <?php endif; ?>
