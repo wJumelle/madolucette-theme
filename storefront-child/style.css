@@ -1908,11 +1908,13 @@ Responsive - Début
         margin-bottom: calc(var(--spacer) * 2);
     }
 
-    #wpcf7-f154-p17-o1 {
+    #wpcf7-f154-p17-o1,
+    #wpcf7-f12-p22-o1 {
         width: 100%;
     }
 
-    #wpcf7-f154-p17-o1 form {
+    #wpcf7-f154-p17-o1 form,
+    #wpcf7-f12-p22-o1 form {
         display: flex;
         flex-direction: column;
         flex-wrap: nowrap;
@@ -1964,6 +1966,9 @@ Responsive - Début
     #wpcf7-f154-p17-o1 label > span > input,
     #wpcf7-f154-p17-o1 label > span > select,
     #wpcf7-f154-p17-o1 label > span > textarea,
+    #wpcf7-f12-p22-o1 label > span > input,
+    #wpcf7-f12-p22-o1 label > span > select,
+    #wpcf7-f12-p22-o1 label > span > textarea,
     form label + input,
     form label + input[type=text],
     form label + input[type=email],
@@ -1976,6 +1981,7 @@ Responsive - Début
     }
 
     #wpcf7-f154-p17-o1 label > span > textarea,
+    #wpcf7-f12-p22-o1 label > span > textarea,
     form label + textarea {
         padding-top: calc(var(--spacer) / 2);
         height: 300px;
@@ -1983,12 +1989,15 @@ Responsive - Début
 
     #wpcf7-f154-p17-o1 label > span > input,
     #wpcf7-f154-p17-o1 label > span > select,
+    #wpcf7-f12-p22-o1 label > span > input,
+    #wpcf7-f12-p22-o1 label > span > select,
     form label + input,
     form label + select {
         line-height: 32px;
     }
 
     #wpcf7-f154-p17-o1 form > p,
+    #wpcf7-f12-p22-o1 form > p,
     form > p {
         margin-bottom: calc(var(--spacer) * 4);
     }
@@ -2204,7 +2213,10 @@ Responsive - Début
     ***************/
     #wpcf7-f154-p17-o1 label > span > input,
     #wpcf7-f154-p17-o1 label > span > select,
-    #wpcf7-f154-p17-o1 label > span > textarea {
+    #wpcf7-f154-p17-o1 label > span > textarea,
+    #wpcf7-f12-p22-o1 label > span > input,
+    #wpcf7-f12-p22-o1 label > span > select,
+    #wpcf7-f12-p22-o1 label > span > textarea {
         max-width: 450px;
     }
     /***************
@@ -2298,7 +2310,8 @@ Responsive - Début
     /***************
     Contact - Début
     ***************/
-    #wpcf7-f154-p17-o1 {
+    #wpcf7-f154-p17-o1,
+    #wpcf7-f12-p22-o1 {
         width: calc(calc(var(--grid-column-width) * 10) + calc(var(--grid-gutter) * 9));
     }
     
@@ -2310,7 +2323,8 @@ Responsive - Début
         flex: 1 1 calc(calc(var(--grid-column-width) * 3) + calc(var(--grid-gutter) * 2));
     }
     
-    #wpcf7-f154-p17-o1 label > span > textarea {
+    #wpcf7-f154-p17-o1 label > span > textarea,
+    #wpcf7-f12-p22-o1 label > span > textarea {
         height: 100%;
     }
     /***************
@@ -2389,7 +2403,8 @@ Responsive - Début
     /***************
     Contact - Début
     ***************/
-    #wpcf7-f154-p17-o1 {
+    #wpcf7-f154-p17-o1,
+    #wpcf7-f12-p22-o1 {
         width: calc(calc(var(--grid-column-width) * 8) + calc(var(--grid-gutter) * 7));
     }
     /***************
@@ -2444,7 +2459,8 @@ Responsive - Début
     /***************
     Contact - Début
     ***************/
-    #wpcf7-f154-p17-o1 {
+    #wpcf7-f154-p17-o1,
+    #wpcf7-f12-p22-o1 {
         width: calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5));
     }
     /***************
