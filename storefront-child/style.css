@@ -1509,20 +1509,24 @@ Responsive - Début
     .woocommerce .mel-product {
         position: relative;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         gap: var(--grid-gutter);
+    }
+
+    .single-product .content-area,
+    .single-product .site-main {
+        margin-bottom: 0;
     }
 
     /* Gallery */
     .single-product .product.mel-product .woocommerce-product-gallery {
         margin-bottom: 0;
         margin-right: 0;
-        width: calc(calc(var(--grid-column-width) * 4) + calc(calc(var(--grid-gutter) * 3)));
+        width: 435px;
         max-width: 435px;
     }
     .mel-product .woocommerce-product-gallery__image img {
         width: 435px;
-        max-height: 435px;
         object-fit: cover;
         object-position: center;
         border-radius: 0;
@@ -2153,6 +2157,28 @@ Responsive - Début
     404 - Fin
     **********/
 }
+@media (max-width: 640px) {
+    /***************
+    Produit - Début
+    ***************/
+    /* Gallery */
+    .single-product .product.mel-product .woocommerce-product-gallery {
+        width: 100%;
+        max-width: 100%;
+    }
+    .mel-product .woocommerce-product-gallery__image img {
+        width: 100%;
+    }
+    ol.flex-control-nav.flex-control-thumbs > li {
+        flex: 0 1 calc(calc(100% - calc(var(--grid-gutter) * 3)) / 4);
+    }
+    .single-product div.product .summary.mel-product--summary {
+        width: 100%;
+    }
+    /***************
+    Produit - Fin
+    ***************/
+}
 @media (min-width: 768px) {
     :root {
         --site-width: calc(100% - calc(var(--spacer) * 12));
@@ -2310,6 +2336,25 @@ Responsive - Début
     }
     /****************
     Catégories - Fin
+    ****************/
+
+    /*****************
+    Produit - Debut
+    *****************/
+    .single-product .content-area,
+    .single-product .site-main {
+        margin-bottom: 0;
+    }
+
+    .single-product .site-main {
+        margin-bottom: calc(var(--spacer) * 10);
+    }
+
+    .woocommerce .mel-product {
+        flex-direction: row;
+    }
+    /****************
+    Produit - Fin
     ****************/
 
     /***************

@@ -85,7 +85,7 @@ window.onload = () => {
     }
 
     // Positionnement des boutons en fonction de la hauteur de l'image
-    if(document.querySelector('.single-product .woocommerce-product-gallery__wrapper img') !== null) {
+    if(document.querySelector('.single-product .woocommerce-product-gallery__wrapper img') !== null && window.innerWidth >= 1024) {
         const firstGalleryImg = document.querySelector('.woocommerce-product-gallery__wrapper img');
         const summary = document.querySelector('.mel-product--summary');
 
