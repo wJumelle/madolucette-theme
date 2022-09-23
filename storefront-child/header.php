@@ -32,6 +32,16 @@
 <script src="/wp-content/themes/storefront-child/assets/js/scripts-mel.js"></script>
 </head>
 
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PEX50BXEPJ"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PEX50BXEPJ');
+</script>
+
 <body <?php body_class(); ?>>
 
 <?php wp_body_open(); ?>
