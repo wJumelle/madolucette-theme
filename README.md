@@ -9,3 +9,4 @@
 25/09/2022 - Création du sous-domaine de preprod afin de pouvoir continuer à travailler tout en ayant le site en prod + sécurisation du nom de domaine
 27/09/2022 - Débrief avec l'équipe pour l'orientation de la DA + approfondissement du test de l'API Basic Display - blocage au niveau de la récupération du token. 
     Erreur 400 - This authorization code has been used
+29/09/2022 - Recréation d'une app - mais pas d'avancée... boring.
