@@ -28,7 +28,7 @@ $melTotalSidebarQuote = 0;
 			<h3 class='mel-devis--title'>Votre devis</h3>
 			<p>Ho-ho il n’y a rien pour l’instant ☹</p>
 			<div class="mel-devis--catalog-button-container">
-				<a href="https://gwendoline-jumelle.ovh/wp/catalogue/" class="mel-link-button">Aller au catalogue</a>
+				<a href="/catalogue/" class="mel-link-button">Aller au catalogue</a>
 			</div>
 		<?php } else { 
 			// On prépare la variable à afficher
@@ -103,7 +103,7 @@ $melTotalSidebarQuote = 0;
 			$content .= "<div class='mel-devis--functions'>";
 			$content .= "<button class='mel-devis--submit' name='update_raq'>Actualiser le devis</button>";
 			//$content .= "<input type='submit' class='button mel-devis--submit' name='update_raq' value='" . esc_attr( get_option( 'ywraq_update_list_label', __( 'Update List', 'yith-woocommerce-request-a-quote' ) ) ) . "'><input type='hidden' id='update_raq_wpnonce' name='update_raq_wpnonce' value='" . esc_attr( wp_create_nonce( 'update-request-quote-quantity' ) ) . "'>";
-			$content .= "<a href='https://gwendoline-jumelle.ovh/wp/devis/' class='mel-link-button'>Voir le devis</a>";
+			$content .= "<a href='/devis/' class='mel-link-button'>Voir le devis</a>";
 			$content .= "</div>";
 
 			// On ferme le formulaire 
