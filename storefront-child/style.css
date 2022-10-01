@@ -906,7 +906,7 @@ Responsive - Début
         content: '';
         width: 16px;
         height: 16px;
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/sidebar-devis-actualisation.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/sidebar-devis-actualisation.svg);
         background-repeat: no-repeat;
         background-size: cover;
         transition: background-image var(--anim-duration) var(--anim-fillMode);
@@ -924,7 +924,7 @@ Responsive - Début
 
     button.mel-devis--submit:hover::before,
     button.mel-devis--submit:focus::before {
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/sidebar-devis-actualisation-hover.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/sidebar-devis-actualisation-hover.svg);
     }
 
     .mel-devis--functions .mel-link-button {
@@ -1035,7 +1035,7 @@ Responsive - Début
         margin-left: calc(var(--spacer) * 2);
         width: 64px;
         height: 36px;
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -1044,11 +1044,11 @@ Responsive - Début
 
     .mel-hero .mel-hero--button a:hover::after,
     .mel-hero .mel-hero--button a:focus::after {
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow-hover.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow-hover.svg);
     }
 
     .mel-hero .mel-hero--button a:hover:active::after {
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/hero-button-arrow.svg);
     }
 
     .mel-hero {
@@ -1573,7 +1573,7 @@ Responsive - Début
         top: var(--grid-gutter);
         right: var(--grid-gutter);
         background-color: transparent !important;
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/product-gallery-zoom.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/product-gallery-zoom.svg);
         background-size: cover;
         background-repeat: no-repeat;
         transition: filter var(--anim-duration) var(--anim-fillMode);
@@ -1716,7 +1716,7 @@ Responsive - Début
         margin-left: calc(var(--spacer) * 2);
         width: 32px;
         height: 24px;
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -1729,7 +1729,7 @@ Responsive - Début
     .woocommerce .mel-product--quantity-container .add-request-quote-button.button:focus::after,
     .site .mel-link-button:hover::after,
     .site .mel-link-button:focus::after {
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
     }
 
     .add-request-quote-button.button + .mel-loader {
@@ -1893,7 +1893,7 @@ Responsive - Début
         margin-left: calc(var(--spacer) * 2);
         width: 32px;
         height: 24px;
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -1902,7 +1902,7 @@ Responsive - Début
     
     .mel-devis-form-submit-button:hover::after,
     .mel-devis-form-submit-button:focus::after {
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
     }
     /***********
     Devis - Fin
@@ -2080,7 +2080,7 @@ Responsive - Début
         margin-left: calc(var(--spacer) * 2);
         width: 32px;
         height: 24px;
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
@@ -2089,7 +2089,7 @@ Responsive - Début
     
     .mel-contact-form-submit-button:hover::after,
     .mel-contact-form-submit-button:focus::after {
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
     }
 
     input.wpcf7-not-valid,
@@ -2420,7 +2420,7 @@ Responsive - Début
     }
 
     .page-template-template-homepage .entry-content > .mel-hero .wp-block-cover__background {
-        background-image: url(https://gwendoline-jumelle.ovh/wp/wp-content/themes/storefront-child/assets/images/svg/banner.svg);
+        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/banner.svg);
         background-repeat: no-repeat;
         background-size: 29.296875% auto;
         background-position: bottom right;
