@@ -35,7 +35,7 @@ $melTotalSidebarQuote = 0;
 			$content = "<h3 class='mel-devis--title'>Votre devis</h3>";
 
 			// On encapsule à l'intérieur d'un formulaire pour pouvoir update les produits
-			$content .= "<form id='yith-ywraq-form' name='yith-ywraq-form' action='" . esc_url( YITH_Request_Quote()->get_raq_page_url( 'update' ) ) . " method='post'>";
+			$content .= "<form id='yith-ywraq-form' name='yith-ywraq-form' action='" . esc_url( YITH_Request_Quote()->get_raq_page_url( 'update' ) ) . "' method='post'>";
 
 			$content .= ($nbProduitsDevis > 1) ? "<ul class='mel-devis--products-list'>" : "";
 
