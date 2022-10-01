@@ -54,9 +54,9 @@ window.onload = () => {
             btnRemove.classList.add('mel-gui--qty', 'mel-gui--qty-remove');
             btnRemove.innerText = '-';
 
-            btnAdd.addEventListener('click', (e) => {
-                e.preventDefault();
-                const button = e.target;
+            btnAdd.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                const button = ev.target;
                 const input = button.parentElement.querySelector('.qty');
                 const value = parseInt(input.value);
                 if(value + 1 <= parseInt(input.max)) input.value = value + 1;
@@ -65,9 +65,9 @@ window.onload = () => {
                 checkBtnsStateInputNumber(button.parentElement);
             });
 
-            btnRemove.addEventListener('click', (e) => {
-                e.preventDefault();
-                const button = e.target;
+            btnRemove.addEventListener('click', (ev) => {
+                ev.preventDefault();
+                const button = ev.target;
                 const input = button.parentElement.querySelector('.qty');
                 const value = parseInt(input.value);
                 if(value - 1 >= parseInt(input.min)) input.value = value - 1;
@@ -81,6 +81,12 @@ window.onload = () => {
 
             // On initialise l'état des boutons
             checkBtnsStateInputNumber(parent);
+
+            // On ajoute l'écouteur d'événement pour éviter la saisie de nombre > max dans l'input
+            e.addEventListener('change', (ev) => {
+                if(ev.target.valueAsNumber > parseInt(ev.target.max)) ev.target.value = ev.target.max;
+                if(ev.target.valueAsNumber < parseInt(ev.target.min)) ev.target.value = ev.target.min;
+            });
         });
     }
 
@@ -178,4 +184,6 @@ function checkBtnsStateInputNumber(btnsContainer) {
 
     (input.value === input.max) ? btnAdd.classList.add('mel-gui--disabled') : btnAdd.classList.remove('mel-gui--disabled');
     (input.value === input.min) ? btnRemove.parentElement.querySelector('.mel-gui--qty-remove').classList.add('mel-gui--disabled') : btnRemove.parentElement.querySelector('.mel-gui--qty-remove').classList.remove('mel-gui--disabled');
+
+    if (input.value === input.max && input.value === input.min) btnsContainer.classList.add('mel-gui--disabled');
 }

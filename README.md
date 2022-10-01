@@ -10,3 +10,4 @@
 27/09/2022 - Débrief avec l'équipe pour l'orientation de la DA + approfondissement du test de l'API Basic Display - blocage au niveau de la récupération du token. 
     Erreur 400 - This authorization code has been used
 29/09/2022 - Recréation d'une app - mais pas d'avancée... boring.
+01/10/2022 - [HOTFIX] Champ quantité : correction de l'affichage et de fonctionnalité

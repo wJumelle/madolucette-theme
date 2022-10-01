@@ -783,6 +783,17 @@ Responsive - Début
         transform: translateX(50%);
     }
 
+    .mel-gui--disabled,
+    .mel-gui--qty.mel-gui--disabled:hover,
+    .mel-gui--qty.mel-gui--disabled:focus {
+        color: rgba(var(--clr-dark-explosed), .6);
+        cursor: not-allowed;
+    }
+
+    .quantity.mel-gui--disabled .mel-gui--qty {
+        border-color: rgba(var(--clr-dark-explosed), .6);
+    }
+
     input[type=number].qty {
         width: 80px;
         height: 40px;
@@ -790,6 +801,11 @@ Responsive - Début
         font-size: 2rem;
         text-align: center;
         line-height: 40px;
+    }
+
+    .quantity.mel-gui--disabled input[type=number].qty {
+        background-color: rgba(var(--clr-dark-explosed), .6);
+        color: var(--clr-primary-4);
     }
 
     input[type=number].qty:focus {
@@ -1607,7 +1623,7 @@ Responsive - Début
         width: fit-content;
         width: -moz-fit-content;
         margin-top: auto;
-        margin-bottom: calc(var(--spacer) * 2.5);
+        margin-bottom: 0;
         padding: var(--spacer) calc(var(--spacer) * 3);
         background-color: rgba(218, 164, 154, .2);
     }
@@ -1626,9 +1642,11 @@ Responsive - Début
         color: var(--clr-dark);
         font-size: 1.6rem;
     }
+    .mel-product--summary .mel-product--quantity-container {
+        margin-top : calc(var(--spacer) * 2.5);
+    }
     .mel-product--quantity-container {
         display: flex;
-        display: none; /* A remove */
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;

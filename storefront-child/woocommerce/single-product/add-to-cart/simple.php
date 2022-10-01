@@ -53,5 +53,10 @@ if ( $product->is_in_stock() ) : ?>
 	</form>
 
 	<?php do_action( 'woocommerce_after_add_to_cart_form' ); ?>
-
+<?php else : ?>
+	<form action="#" class="cart fake-cart">
+		<div class="quantity">
+			<input type="number" class="qty" min="0" max="0" step="1" value="0" />
+		</div>
+	</form>
 <?php endif; ?>
