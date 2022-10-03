@@ -13,3 +13,4 @@
 01/10/2022 - [HOTFIX] Champ quantité : correction de l'affichage et de fonctionnalité
 01/10/2022 - [HOTFIX] Correction du bouton "Actualiser le devis" dans la sidebar
 01/10/2022 - Création du template gallery pour la mise en place de masonry
+03/10/2022 - Repos. Pb de transports + journée de 10h.
