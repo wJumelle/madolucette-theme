@@ -1264,6 +1264,40 @@ Responsive - Début
     .editor-styles-wrapper figure.wp-block-image {
         margin-bottom: 0;
     }
+    
+    /* Carrousel */
+    .mel-carrousel {
+        --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+    }
+
+    .mel-carrousel > div {
+        position: relative;
+    }
+
+    .mel-carrousel .ms-container .ms-view,
+    .mel-carrousel .ms-container .ms-slide-container,
+    .mel-carrousel .ms-container .ms-slide-container > .ms-slide {
+        height: auto;
+        min-height: calc(100vh - calc(82px + 32px)) !important;
+    }
+
+    .mel-carrousel > div > .ms-slide-info {
+        position: absolute !important;
+        margin-top: 0 !important;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(90deg, rgba(208,139,134,0.4) 0%, rgba(208,139,134,0.28) 50%, rgba(255,255,255,0) 100%);
+        display: flex;
+        align-items: center;
+    }
+
+    .mel-carrousel > div > .ms-slide-info > .ms-info {
+        width: calc(calc(var(--grid-column-width) * 7) + calc(calc(var(--grid-gutter) * 6)));
+        margin-left: var(--space-left, 0);
+    }
+
     /***************
     Home page - Fin
     ***************/

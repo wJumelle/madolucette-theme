@@ -20,6 +20,11 @@ window.onload = () => {
     let r = document.querySelector(':root');
     r.style.setProperty('--grid-global-width', document.querySelector('#content > .col-full').offsetWidth + 'px');
 
+    // Positionnement du texte du carrousel
+    if(document.querySelector('.mel-carrousel') !== null) {
+        r.style.setProperty('--space-left', document.querySelector('.mel-header > .col-full').offsetLeft + 'px');
+    }
+
     /**
      * Home
      */
