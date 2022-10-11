@@ -1647,6 +1647,7 @@ Responsive - Début
         font-weight: 700;
     }
     .mel-product--description p {
+        margin-bottom: calc(var(--spacer) * 2);
         font-size: 1.2rem;
     }
     .mel-product--description p:last-child {
