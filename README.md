@@ -16,3 +16,4 @@
 03/10/2022 - Repos. Pb de transports + journée de 10h.
 04/10/2022 - Sortie d'Overwatch 2
 09/10/2022 - Recherche d'un carrousel pour la home - installation de Master Slider + customization de l'affichage
+11/10/2022 - Contribution des descriptions
