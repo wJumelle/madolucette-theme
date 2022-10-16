@@ -2161,6 +2161,34 @@ Responsive - Début
     Contact - Fin
     **************/
 
+
+    /***************
+    Galerie - Début
+    ****************/
+    .page-template-template-gallery .site-content > .col-full {
+        max-width: var(--site-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .page-template-template-gallery.right-sidebar .content-area {
+        width: 100%;
+    }
+
+    .page-template-template-gallery .mel-gallery--masonry {
+        --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+        gap: var(--grid-gutter) !important;
+    }
+
+    .page-template-template-gallery .mel-gallery--masonry .wp-block-image {
+        width: calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)) !important;
+        margin-bottom: var(--grid-gutter) !important;
+    }
+    /*************
+    Galerie - Fin
+    **************/
+
+
     /***********
     404 - Début
     ***********/

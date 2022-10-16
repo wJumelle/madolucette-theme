@@ -1,3 +1,6 @@
+let gridGlobalWidth = 0;
+let gridGutter = 0;
+
 window.onload = () => {
     /** 
      * Global
@@ -152,6 +155,23 @@ window.onload = () => {
             if(document.querySelector('.mel-contact-form--submit-container') !== null) document.querySelector('.mel-contact-form--submit-container').remove();
         });
     }
+
+    /**
+     * Page Galerie
+     */
+    if(document.querySelector('.page-template-template-gallery') !== null) {
+        // On calcul la taille des colonnes
+        gridGutter = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid-gutter'));
+        const msnryColumnWidth = (gridGlobalWidth - (gridGutter * 2)) / 3;
+
+        // On récupère le container et initialise masonry
+        const gridContainer = document.querySelector('.mel-gallery--masonry');
+        const msnry = new Masonry( gridContainer, {
+            itemSelector: '.wp-block-image',
+            columnWidth: msnryColumnWidth,
+            gutter: gridGutter
+        });
+    }
 }
 
 window.addEventListener('resize', () => {
@@ -178,6 +198,24 @@ window.addEventListener('resize', () => {
         const bkg = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__background');
         const posRight = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__inner-container').offsetLeft;
         bkg.style.backgroundPosition = `bottom right ${posRight}px`;
+    }
+
+    /**
+     * Page Galerie
+     */
+    if(document.querySelector('.page-template-template-gallery') !== null) {
+        // On calcul la taille des colonnes
+        gridGutter = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid-gutter'));
+        const msnryColumnWidth = (gridGlobalWidth - (gridGutter * 2)) / 3;
+
+        // On récupère le container et initialise masonry
+        const gridContainer = document.querySelector('.mel-gallery--masonry');
+        msnry.destroy();
+        msnry = new Masonry( gridContainer, {
+            itemSelector: '.wp-block-image',
+            columnWidth: msnryColumnWidth,
+            gutter: gridGutter
+        });
     }
 })
 

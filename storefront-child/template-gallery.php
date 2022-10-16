@@ -2,10 +2,10 @@
 /**
  * The template for displaying the gallery page.
  *
- * Template name: Gallery
+ * Template name: Galerie
  */
 
-get_header(); ?>
+get_header('gallery'); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main mel-template-gallery" role="main">
