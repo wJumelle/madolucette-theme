@@ -40,7 +40,7 @@ remove_action('woocommerce_single_product_summary', 'woocommerce_template_single
  * Chemin des fonctions : /wordpress/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php et 
  * /wordpress/wp-content/themes/storefront/inc/storefront-template-functions.php
  */
-function storefront_product_search() {}
+// function storefront_product_search() {}
 function storefront_header_cart() {}
 function storefront_header_container() {
     echo '<div class="col-full flex flex-row flex-align-center flex-justify-spaceBetween">';
@@ -73,10 +73,15 @@ function storefront_primary_navigation() {
 		</nav><!-- #site-navigation -->
 		<?php
 }
-// On ajoute le menu de contact
+// On déplace le champ de recherche et on ajoute le menu de contact
 add_action('init', 'add_action_storefront_header');
 function add_action_storefront_header() {
-    add_action( 'storefront_header', 'mel_primary_navigation', 69);
+    // Déplacement du champ de recherche 
+    remove_action( 'storefront_header', 'storefront_product_search', 40 );
+    add_action( 'storefront_header', 'storefront_product_search', 69);
+
+    // On ajoute le menu de contact
+    add_action( 'storefront_header', 'mel_primary_navigation', 70);
 }
 if( ! function_exists( 'mel_primary_navigation' )) {
     /**
