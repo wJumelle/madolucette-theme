@@ -21,6 +21,7 @@ Version:      	0.0.1
     --clr-primary-2: #daa49a;
     --clr-primary-3: #e5cfbf;
     --clr-primary-4: #f7ebe9;
+    --clr-cream: #F0E6E3;
     --clr-primary-1-explosed: 208, 139, 134;
     --clr-primary-2-explosed: 218, 164, 154;
     --clr-primary-3-explosed: 229, 207, 191;
@@ -2215,6 +2216,26 @@ Responsive - Début
     /*************
     Galerie - Fin
     **************/
+
+    /*************************
+    Foire au question - Début
+    **************************/
+    .mel-faq-elem {
+        border-color: var(--clr-cream);
+    }
+    .mel-faq-elem--question {
+        background-color: var(--clr-cream);
+        font-size: 2rem;
+    }
+    .mel-faq-elem--question:after {
+        background-image: url(./assets/images/svg/faq-icon-mel.svg);
+    }
+    .mel-faq-elem--reponse {
+        font-size: 1.6rem;
+    }
+    /***********************
+    Foire au question - Fin
+    ************************/
 
 
     /***********
