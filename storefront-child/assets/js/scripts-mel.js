@@ -172,6 +172,23 @@ window.onload = () => {
             gutter: gridGutter
         });
     }
+
+    /**
+     * Page FAQ
+     */
+     if(document.querySelector('.mel-faq-elem') !== null) {
+        function handleQuestionClick(e) {
+            const q = e.target;
+            const r = e.target.nextElementSibling;
+
+            // On inverse la valeur de l'aria-expanded
+            q.setAttribute('aria-expanded', (q.getAttribute('aria-expanded') == 'false') ? 'true' : 'false');
+        }
+    
+        document.querySelectorAll(".mel-faq-elem--question").forEach((elem) => {
+            elem.addEventListener("click", handleQuestionClick);
+        });
+    }
 }
 
 window.addEventListener('resize', () => {
