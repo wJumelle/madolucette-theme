@@ -575,13 +575,67 @@ Responsive - Début
     /* Barrre de contact */
     .mel-secondary-navigation {
         display: none;
+        height: 56px;
+    }
+
+    .mel-secondary-navigation .mel-secondary-navigation--button {
+        position: relative;
+        background: none;
+        border: none;
+        width: 56px;
+        height: 56px;
+        padding: 0;
+        background-image: url(./assets/images/svg/mel-share.svg);
+        background-size: cover;
+        z-index: 15;
+    }
+
+    .mel-secondary-navigation > nav {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -100%);
+        background-color: #daa49a;
+        width: 100%;
+        padding-bottom: calc(calc(56px/2) + 10px);
+        transition: opacity var(--anim-duration) var(--anim-fillMode);
+    }
+
+    .mel-secondary-navigation .mel-secondary-navigation--button[aria-expanded="false"] + nav {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .mel-secondary-navigation .mel-secondary-navigation--button[aria-expanded="true"] + nav {
+        opacity: 1;
+        pointer-events: visible;
     }
 
     .mel-secondary-navigation > nav > ul {
         display: flex;
+        flex-direction: column;
         align-items: center;
         gap: var(--grid-gutter);
         margin-bottom: auto;
+    }
+
+    .mel-secondary-navigation > nav > ul > li:first-child::before {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 56px;
+        border-top-left-radius: 50%;
+        border-top-right-radius: 50%;
+        background: #daa49a;
+        position: absolute;
+        z-index: 5;
+        left: 0;
+        top: calc(-1 * calc(56px/2));
+    }
+
+    .mel-secondary-navigation > nav > ul > li:first-child a {
+        z-index: 10;
+        position: relative;
     }
 
     .mel-secondary-navigation a {
@@ -2395,9 +2449,9 @@ Responsive - Début
     /* Navigation */
     .mel-secondary-navigation {
         display: block;
-        position: fixed; 
-        bottom: 0;
-        right: 0;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
     }
 
     /* Footer */

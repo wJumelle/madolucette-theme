@@ -1,5 +1,6 @@
 let gridGlobalWidth = 0;
 let gridGutter = 0;
+let msnry = null;
 
 window.onload = () => {
     /** 
@@ -21,11 +22,17 @@ window.onload = () => {
     }
     // Calcul de la variable pour le calcule de la taille de la grille
     let r = document.querySelector(':root');
-    r.style.setProperty('--grid-global-width', document.querySelector('#content > .col-full').offsetWidth + 'px');
+    gridGlobalWidth = document.querySelector('#content > .col-full').offsetWidth;
+    r.style.setProperty('--grid-global-width', gridGlobalWidth + 'px');
 
-    // Positionnement du texte du carrousel
-    if(document.querySelector('.mel-carrousel') !== null) {
-        r.style.setProperty('--space-left', document.querySelector('.mel-header > .col-full').offsetLeft + 'px');
+    // Gestion du clic sur le bouton de partage
+    if(document.querySelector('.mel-secondary-navigation--button') !== null) {
+        document.querySelector('.mel-secondary-navigation--button').addEventListener('click', (e) => {
+            const socialMediaButton = e.target;
+
+            // On inverse la valeur de l'aria-expanded
+            socialMediaButton.setAttribute('aria-expanded', (socialMediaButton.getAttribute('aria-expanded') == 'false') ? 'true' : 'false');
+        })
     }
 
     /**
@@ -36,6 +43,11 @@ window.onload = () => {
         const bkg = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__background');
         const posRight = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__inner-container').offsetLeft;
         bkg.style.backgroundPosition = `bottom right ${posRight}px`;
+    }
+
+    // Positionnement du texte du carrousel
+    if(document.querySelector('.mel-carrousel') !== null) {
+        r.style.setProperty('--space-left', document.querySelector('.mel-header > .col-full').offsetLeft + 'px');
     }
 
     // Instagram Feed
@@ -62,9 +74,9 @@ window.onload = () => {
             btnRemove.classList.add('mel-gui--qty', 'mel-gui--qty-remove');
             btnRemove.innerText = '-';
 
-            btnAdd.addEventListener('click', (ev) => {
-                ev.preventDefault();
-                const button = ev.target;
+            btnAdd.addEventListener('click', (e) => {
+                e.preventDefault();
+                const button = e.target;
                 const input = button.parentElement.querySelector('.qty');
                 const value = parseInt(input.value);
                 if(value + 1 <= parseInt(input.max)) input.value = value + 1;
@@ -73,9 +85,9 @@ window.onload = () => {
                 checkBtnsStateInputNumber(button.parentElement);
             });
 
-            btnRemove.addEventListener('click', (ev) => {
-                ev.preventDefault();
-                const button = ev.target;
+            btnRemove.addEventListener('click', (e) => {
+                e.preventDefault();
+                const button = e.target;
                 const input = button.parentElement.querySelector('.qty');
                 const value = parseInt(input.value);
                 if(value - 1 >= parseInt(input.min)) input.value = value - 1;
@@ -163,10 +175,11 @@ window.onload = () => {
         // On calcul la taille des colonnes
         gridGutter = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid-gutter'));
         const msnryColumnWidth = (gridGlobalWidth - (gridGutter * 2)) / 3;
+        console.log(msnryColumnWidth);
 
         // On récupère le container et initialise masonry
         const gridContainer = document.querySelector('.mel-gallery--masonry');
-        const msnry = new Masonry( gridContainer, {
+        msnry = new Masonry( gridContainer, {
             itemSelector: '.wp-block-image',
             columnWidth: msnryColumnWidth,
             gutter: gridGutter
@@ -176,10 +189,9 @@ window.onload = () => {
     /**
      * Page FAQ
      */
-     if(document.querySelector('.mel-faq-elem') !== null) {
+    if(document.querySelector('.mel-faq-elem') !== null) {
         function handleQuestionClick(e) {
             const q = e.target;
-            const r = e.target.nextElementSibling;
 
             // On inverse la valeur de l'aria-expanded
             q.setAttribute('aria-expanded', (q.getAttribute('aria-expanded') == 'false') ? 'true' : 'false');
@@ -205,7 +217,8 @@ window.addEventListener('resize', () => {
     };
     // Calcul de la variable pour le calcule de la taille de la grille
     let r = document.querySelector(':root');
-    r.style.setProperty('--grid-global-width', document.querySelector('#content > .col-full').offsetWidth + 'px');
+    gridGlobalWidth = document.querySelector('#content > .col-full').offsetWidth;
+    r.style.setProperty('--grid-global-width', gridGlobalWidth + 'px');
 
     /**
      * Home
@@ -244,6 +257,6 @@ function checkBtnsStateInputNumber(btnsContainer) {
 
     (input.value === input.max) ? btnAdd.classList.add('mel-gui--disabled') : btnAdd.classList.remove('mel-gui--disabled');
     (input.value === input.min) ? btnRemove.parentElement.querySelector('.mel-gui--qty-remove').classList.add('mel-gui--disabled') : btnRemove.parentElement.querySelector('.mel-gui--qty-remove').classList.remove('mel-gui--disabled');
-
+    
     if (input.value === input.max && input.value === input.min) btnsContainer.classList.add('mel-gui--disabled');
 }
