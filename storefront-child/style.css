@@ -1145,6 +1145,75 @@ Responsive - Début
         align-items: center;
     }
 
+    /* Slider */
+    .mel-carrousel--container {
+        position: relative;
+    }
+
+    .mel-carrousel .ms-skin-default .ms-bullet {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background-color: var(--clr-primary-1);
+        background-image: none;
+        margin: 0 !important;
+        transition: background-color var(--anim-duration) var(--anim-fillMode);
+        z-index: 10;
+    }
+    
+    .mel-carrousel .ms-skin-default .ms-bullet:hover,
+    .mel-carrousel .ms-skin-default .ms-bullet:focus {
+        background-color: var(--clr-primary-4);
+    }
+
+    .mel-carrousel .ms-bullet-selected {
+        background-color: var(--clr-primary-4);
+    }
+    
+    .mel-carrousel .ms-bullets {
+        transform: translateY(-50%);
+        right: var(--space-left, 10px) !important;
+        margin-top: 0 !important;
+    }
+    
+    .mel-carrousel .ms-bullets-count {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .mel-carrousel .ms-bullets-count::before {
+        content: '';
+        width: 1px;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--clr-lighter);
+        z-index: 5;
+    }
+    
+    .mel-carrousel .ms-skin-default .ms-bullet:not(:first-child) {
+        margin-top: calc(var(--spacer) * 16) !important;
+    }
+
+    .mel-carrousel--text {
+        --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(calc(var(--grid-column-width) * 9) + calc(var(--grid-gutter) * 8));
+    }
+
+    .mel-carrousel--text-inner-container {
+        border-left: 2px solid #FFF;
+        padding-left: calc(var(--spacer) * 4);
+        margin-bottom: calc(var(--spacer) * 6);
+    }
+
     /* Notre catalogue */
     .mel-catalogue {
         margin-bottom: calc(var(--spacer) * 12);
