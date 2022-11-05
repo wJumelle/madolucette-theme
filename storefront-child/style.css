@@ -1509,39 +1509,78 @@ Responsive - Début
         margin-top: var(--grid-gutter);
     }
 
-    .page-id-20 .mel-catalogue--navigation button {
+    .page-id-20 .mel-catalogue--navigation button,
+    .woocommerce-pagination .page-numbers li a.page-numbers,
+    .woocommerce-pagination .page-numbers li span.page-numbers {
         padding: var(--spacer) calc(var(--spacer) * 2);
-        background-color: var(--clr-dark);
+        background-color: var(--clr-primary-1);
         color: var(--clr-light);
-        border: 2px solid var(--clr-dark);
+        border: 2px solid var(--clr-primary-1);
         outline: 2px solid transparent;
         border-radius: 5px;
         cursor: pointer;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     }
 
+    .woocommerce-pagination .page-numbers li .page-numbers:not(.current) {
+        color: var(--clr-light);
+    }
+
+    .woocommerce-pagination .page-numbers li .page-numbers.prev,
+    .woocommerce-pagination .page-numbers li .page-numbers.next {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        border-radius: 50%;
+    }
+
+    .woocommerce-pagination .page-numbers li .page-numbers.prev::after {
+        content: '<';
+        font-family: "Poppins", sans-serif;
+    }
+
+    .woocommerce-pagination .page-numbers li .page-numbers.next::after {
+        content: '>';
+        font-family: "Poppins", sans-serif;
+    }
+
     .page-id-20 .mel-catalogue--navigation button:hover,
-    .page-id-20 .mel-catalogue--navigation button:focus {
-        background: none;
-        color: var(--clr-dark);
+    .page-id-20 .mel-catalogue--navigation button:focus,
+    .woocommerce-pagination .page-numbers li a.page-numbers:hover,
+    .woocommerce-pagination .page-numbers li span.page-numbers:hover,
+    .woocommerce-pagination .page-numbers li a.page-numbers:focus,
+    .woocommerce-pagination .page-numbers li span.page-numbers:focus {
+        background-color: var(--clr-primary-1);
+        color: var(--clr-light);
+        border: 2px solid rgba(var(--clr-primary-4-explosed), .4);
     }
 
     .page-id-20 .mel-catalogue--navigation button:active,
     .page-id-20 .mel-catalogue--navigation button:hover:active,
-    .page-id-20 .mel-catalogue--navigation button:focus:active {
-        outline: 2px solid var(--clr-dark);
+    .page-id-20 .mel-catalogue--navigation button:focus:active,
+    .woocommerce-pagination .page-numbers li a.page-numbers:active,
+    .woocommerce-pagination .page-numbers li span.page-numbers:active,
+    .woocommerce-pagination .page-numbers li a.page-numbers:hover:active,
+    .woocommerce-pagination .page-numbers li span.page-numbers:hover:active,
+    .woocommerce-pagination .page-numbers li a.page-numbers:focus:active,
+    .woocommerce-pagination .page-numbers li span.page-numbers:focus:active {
+        outline: 2px solid rgba(var(--clr-primary-4-explosed), .4);
     }
 
-    .page-id-20 .mel-catalogue--navigation button.is-current {
-        background-color: rgba(var(--clr-dark-explosed), .2);
-        color: var(--clr-light);
-        border: 2px solid rgba(var(--clr-dark-explosed), .2);
+    .page-id-20 .mel-catalogue--navigation button.is-current,
+    .storefront-sorting .woocommerce-pagination .page-numbers li span.current {
+        background-color: var(--clr-cream);
+        color: var(--clr-primary-1);
+        border: 2px solid var(--clr-primary-1);
         cursor: not-allowed;
     }
 
     .page-id-20 .mel-catalogue--navigation button.is-current:active,
     .page-id-20 .mel-catalogue--navigation button.is-current:hover:active,
-    .page-id-20 .mel-catalogue--navigation button.is-current:focus:active {
+    .page-id-20 .mel-catalogue--navigation button.is-current:focus:active,
+    .storefront-sorting .woocommerce-pagination .page-numbers li span.current:active,
+    .storefront-sorting .woocommerce-pagination .page-numbers li span.current:hover:active,
+    .storefront-sorting .woocommerce-pagination .page-numbers li span.current:focus:active {
         outline: 2px solid transparent;
     }
 
@@ -1694,45 +1733,9 @@ Responsive - Début
     .woocommerce-pagination .page-numbers {
         display: flex;
         flex-direction: row;
+        align-items: center;
         gap: calc(var(--grid-gutter) / 2);
         margin-top: var(--grid-gutter);
-    }
-    .woocommerce-pagination .page-numbers li a.page-numbers,
-    .woocommerce-pagination .page-numbers li span.page-numbers {
-        padding: var(--spacer) calc(var(--spacer) * 2);
-        background-color: var(--clr-dark);
-        color: var(--clr-light);
-        border: 2px solid var(--clr-dark);
-        outline: 2px solid transparent;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
-    }
-    .wc-block-grid__product-onsale, .onsale,
-    .woocommerce-pagination .page-numbers li .page-numbers:not(.current) {
-        color: var(--clr-light);
-    }
-    .woocommerce-pagination .page-numbers li a.page-numbers:hover,
-    .woocommerce-pagination .page-numbers li a.page-numbers:focus {
-        background: none;
-        color: var(--clr-dark);
-    }
-    .woocommerce-pagination .page-numbers li a.page-numbers:active,
-    .woocommerce-pagination .page-numbers li a.page-numbers:hover:active,
-    .woocommerce-pagination .page-numbers li a.page-numbers:focus:active {
-        outline: 2px solid var(--clr-dark);
-    }
-    .storefront-sorting .woocommerce-pagination .page-numbers li span.current {
-        background-color: rgba(var(--clr-dark-explosed), .2);
-        color: var(--clr-light);
-        border: 2px solid rgba(var(--clr-dark-explosed), .2);
-        border-color: rgba(var(--clr-dark-explosed), .2);
-        cursor: not-allowed;
-    }
-    .woocommerce-pagination .page-numbers li span.current:active,
-    .woocommerce-pagination .page-numbers li span.current:hover:active,
-    .woocommerce-pagination .page-numbers li span.current:focus:active {
-        outline: 2px solid transparent;
     }
     .pagination ul.page-numbers::before,
     .pagination ul.page-numbers::after,
