@@ -428,6 +428,10 @@ Responsive - Début
         padding-top: var(--grid-gutter);
         border-top: 1px solid var(--clr-primary-1);
     }
+
+    .page-id-20.right-sidebar .content-area {
+        margin-right: 0;
+    }
     /**************************
     Gestion de la grille - Fin
     **************************/
@@ -2760,6 +2764,7 @@ Responsive - Début
     }
 
     .product-template-default .content-area,
+    .page-id-20.right-sidebar .content-area,
     .archive .content-area {
         width: calc(calc(var(--grid-column-width) * 9) + calc(calc(var(--grid-gutter) * 9)));
         margin-right: 0;
