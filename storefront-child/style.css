@@ -1074,10 +1074,6 @@ Responsive - Début
         font-size: 2.4rem;
     }
 
-    .mel-hero {
-        margin-bottom: 10rem;
-    }
-
     .mel-hero .mel-hero--button a {
         display: flex;
         flex-direction: row;
@@ -1204,6 +1200,23 @@ Responsive - Début
     .mel-hero .mel-hero--button a:focus::after {
         margin-left: calc(var(--spacer) * 2);
         width: 64px;
+    }
+
+    /* Livraison */
+    .entry-content .mel-delivery--container {
+        background: var(--clr-cream);
+        width: 100%;
+        max-width: none;
+        margin-bottom: calc(var(--spacer) * 12);
+    }
+
+    .mel-delivery--container > .wp-block-group__inner-container {
+        max-width: var(--site-width);
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        gap: var(--grid-gutter);
+        padding: calc(var(--spacer) * 4) 0;
     }
 
     /* Notre catalogue */
@@ -2728,10 +2741,6 @@ Responsive - Début
     }
 
     /* Hero */
-    .mel-hero {
-        margin-bottom: calc(var(--spacer) * 18);
-    }
-
     .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container,
     .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
         padding: 0;
