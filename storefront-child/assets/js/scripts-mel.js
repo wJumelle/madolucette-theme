@@ -20,6 +20,7 @@ window.onload = () => {
             footer.style.backgroundPosition = `right ${rightSpace}px center`;
         }
     }
+
     // Calcul de la variable pour le calcule de la taille de la grille
     let r = document.querySelector(':root');
     gridGlobalWidth = document.querySelector('#content > .col-full').offsetWidth;
@@ -142,6 +143,32 @@ window.onload = () => {
         const summary = document.querySelector('.mel-product--summary');
 
         summary.style.height = firstGalleryImg.offsetHeight + 'px';
+    }
+
+    // Hover sur les liens des produits favoris
+    if(document.querySelector('.mel-category--products-list .woocommerce-loop-product__link') !== null) {
+        document.querySelectorAll('.mel-category--products-list .woocommerce-loop-product__link').forEach((product) => {
+            product.addEventListener('mouseover', (e) => {
+                const link = e.target;
+                const container = link.parentElement;
+                container.classList.add('is-hover');
+            });
+            product.addEventListener('focus', (e) => {
+                const link = e.target;
+                const container = link.parentElement;
+                container.classList.add('is-hover');
+            });
+            product.addEventListener('mouseout', (e) => {
+                const link = e.target;
+                const container = link.parentElement;
+                container.classList.remove('is-hover');
+            });
+            product.addEventListener('blur', (e) => {
+                const link = e.target;
+                const container = link.parentElement;
+                container.classList.remove('is-hover');
+            });
+        });
     }
 
     /**

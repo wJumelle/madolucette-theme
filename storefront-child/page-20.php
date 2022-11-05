@@ -52,8 +52,8 @@ get_header(''); ?>
 			
 							$content .= '<li class="product"><a href="' . $product_link . '" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">';
 							$content .= $product_thumb;
-							$content .= '<h2 class="woocommerce-loop-product__title">' . $product_name . '</h2>';
-							$content .= '<span class="price">' . $product_price . '</span>';
+							$content .= '<div class="woocommerce-loop-product__text-container"><div class="woocommerce-loop-product__text-inner-container"><h2 class="woocommerce-loop-product__title">' . $product_name . '</h2>';
+							$content .= '<span class="price">' . $product_price . '</span></div></div>';
 							$content .= '</a></li>';
 						}
 					}

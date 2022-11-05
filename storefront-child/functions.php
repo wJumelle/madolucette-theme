@@ -36,6 +36,16 @@ remove_action('woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add
 remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart', 20);
 
 /**
+ * Ajout des widgets plier / déplier et Instagram
+ */
+
+// require_once dirname( __FILE__ ) . '/includes/widgets/class-mel-widget-fold-unfold.php';
+// function mel_register_widgets() {
+//     register_widget( 'MEL_FoldUnfold_Container_Widget' );
+// }
+// add_action( 'widgets_init', 'mel_register_widgets' );
+
+/**
  * Surcharge des fonctions du header
  * Chemin des fonctions : /wordpress/wp-content/themes/storefront/inc/woocommerce/storefront-woocommerce-template-functions.php et 
  * /wordpress/wp-content/themes/storefront/inc/storefront-template-functions.php
@@ -163,6 +173,15 @@ add_filter( 'loop_shop_per_page', 'lw_loop_shop_per_page', 30 );
 function lw_loop_shop_per_page( $products ) {
     $products = 8;
     return $products;
+}
+
+// Changement pour ajouter des div dans les templates des pages catégories
+function woocommerce_template_loop_product_title() {
+    echo '<div class="woocommerce-loop-product__text-container"><div class="woocommerce-loop-product__text-inner-container"><h2 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h2>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+function woocommerce_template_loop_price() {
+    wc_get_template( 'loop/price.php' );
+    echo '</div></div>';
 }
 
 
