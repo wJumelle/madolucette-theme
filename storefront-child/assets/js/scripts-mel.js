@@ -14,7 +14,7 @@ window.onload = () => {
         const backgroundSize = parseInt(window.getComputedStyle(footer, null).getPropertyValue('background-size'));
 
         if(backgroundSize > (footer.offsetHeight - topSpace)) {
-            footer.style.backgroundSize = `${footer.offsetHeight - topSpace}px`;
+            //footer.style.backgroundSize = `${footer.offsetHeight - topSpace}px`;
             footer.style.backgroundPosition = `right ${rightSpace}px center`;
         } else {
             footer.style.backgroundPosition = `right ${rightSpace}px center`;
