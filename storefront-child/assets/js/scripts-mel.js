@@ -50,6 +50,32 @@ window.onload = () => {
         r.style.setProperty('--space-left', document.querySelector('.mel-header > .col-full').offsetLeft + 'px');
     }
 
+    // Hover sur les liens des produits favoris
+    if(document.querySelector('.mel-catalogue--featured-products .wp-block-button__link') !== null) {
+        document.querySelectorAll('.mel-catalogue--featured-products .wp-block-button__link').forEach((product) => {
+            product.addEventListener('mouseover', (e) => {
+                const link = e.target;
+                const container = link.parentElement.parentElement.parentElement.parentElement.parentElement;
+                container.classList.add('is-hover');
+            });
+            product.addEventListener('focus', (e) => {
+                const link = e.target;
+                const container = link.parentElement.parentElement.parentElement.parentElement.parentElement;
+                container.classList.add('is-hover');
+            });
+            product.addEventListener('mouseout', (e) => {
+                const link = e.target;
+                const container = link.parentElement.parentElement.parentElement.parentElement.parentElement;
+                container.classList.remove('is-hover');
+            });
+            product.addEventListener('blur', (e) => {
+                const link = e.target;
+                const container = link.parentElement.parentElement.parentElement.parentElement.parentElement;
+                container.classList.remove('is-hover');
+            });
+        });
+    }
+
     // Instagram Feed
     if(document.querySelector('.mel-team--instagram-feed') !== null) {
         const feedContainer = document.querySelector('.mel-team--instagram-feed');
