@@ -22,7 +22,6 @@ Version:      	0.0.1
     --clr-primary-3: #e5cfbf;
     --clr-primary-4: #f7ebe9;
     --clr-cream: #F0E6E3;
-    --clr-dark-cream: #DDD3D1;
     --clr-dark: #302C2C;
     --clr-dark-explosed: 48, 44, 44;
     --clr-light: #F7EBE9;
@@ -230,7 +229,7 @@ ul.menu li a,
 .site-branding h1 a,
 .handheld-navigation .dropdown-toggle,
 .main-navigation ul li:hover > a {
-    color: var(--clr-dark);
+    color: var(--clr-light);
 }
 
 .main-navigation ul.menu, .main-navigation ul.nav-menu {
@@ -443,8 +442,8 @@ Responsive - Début
         top: 0;
         left: 0;
         padding: var(--spacer) 0;
-        background-color: var(--clr-cream);
-        color: var(--clr-dark);
+        background-color: var(--clr-dark);
+        color: var(--clr-light);
     }
 
     .site-header > .col-full {
@@ -461,9 +460,8 @@ Responsive - Début
     }
 
     .main-navigation ul.menu ul.sub-menu:not(.toggled-on) {
-        background-color: transparent;
+        background-color: var(--clr-dark);
         width: 200px;
-        padding-top: var(--spacer);
     }
 
     .main-navigation ul.menu ul.sub-menu.toggled-on {
@@ -473,7 +471,7 @@ Responsive - Début
     
     .main-navigation ul.menu ul li.focus,
     .main-navigation ul.nav-menu ul li.focus {
-        background-color: var(--clr-dark-cream);
+        background: none;
     }
 
     .main-navigation .primary-navigation > ul {
@@ -512,12 +510,10 @@ Responsive - Début
     .main-navigation ul.menu li.current-menu-item > a,
     .site-header ul.menu li.current-menu-item > a {
         color: var(--clr-primary-1);
-        font-weight: bold;
     }
 
     .main-navigation ul.menu > li:nth-child(2) > a {
-        color: var(--clr-dark);
-        font-weight: normal;
+        color: var(--clr-light);
     }
     
     .main-navigation ul.menu ul li a,
@@ -534,7 +530,6 @@ Responsive - Début
     
     .main-navigation ul ul li,
     .secondary-navigation ul ul li {
-        background-color: var(--clr-dark-cream);
         text-align: center;
         border-bottom: 1px solid rgba(var(--clr-primary-3-explosed), .4);
     }
@@ -557,7 +552,6 @@ Responsive - Début
     }
 
     .widget_product_search form:not(.wp-block-search).mel-product-search input[type=search] {
-        background-color: var(--clr-dark-cream);
         padding: calc(var(--spacer) * .75) calc(var(--spacer) * 8) calc(var(--spacer) * .75) calc(var(--spacer) * 2);
     }
 
