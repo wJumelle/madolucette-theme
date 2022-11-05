@@ -171,7 +171,7 @@ function remove_actions_from_storefront_categories() {
 // Changement du nombre de produit par page de catégorie
 add_filter( 'loop_shop_per_page', 'lw_loop_shop_per_page', 30 );
 function lw_loop_shop_per_page( $products ) {
-    $products = 8;
+    $products = 9;
     return $products;
 }
 

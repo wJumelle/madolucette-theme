@@ -21,7 +21,7 @@ get_header(''); ?>
 
 				// On récupère l'ensemble des produits publié
 				// On désire afficher 8 produits / pages
-				$nb_limit = 8;
+				$nb_limit = 9;
 				$actual_page = 1;
 				$args = array(
 					'status' => 'publish',
