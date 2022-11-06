@@ -128,8 +128,8 @@ select,
 textarea,
 textarea.input-text {
     box-shadow: none;
-    background-color: rgba(var(--clr-dark-explosed), .1);
-    color: rgba(var(--clr-dark-explosed), .5);
+    background-color: var(--clr-dark-cream);
+    color: rgba(var(--clr-dark-explosed), .6);
     outline: 2px solid transparent;
     transition: color var(--anim-duration) var(--anim-fillMode), font-weight var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     box-shadow: none;
@@ -1139,6 +1139,18 @@ Responsive - Début
         z-index: 5;
     }
 
+    .ms-slide-container::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(90deg, rgba(99, 43, 39, 0.4) 0%, rgba(99, 43, 39, 0.2836) 52.36%, rgba(208, 139, 134, 0) 103.64%);
+        z-index: 20;
+    }
+
     .hentry .entry-content figure.wp-block-image.mel-carrousel--logo {
         margin-bottom: calc(var(--spacer) * 4);
     }
@@ -1474,6 +1486,12 @@ Responsive - Début
     .mel-carrousel .ms-container .ms-view,
     .mel-carrousel .ms-container .ms-slide-container,
     .mel-carrousel .ms-container .ms-slide-container > .ms-slide {
+        height: auto;
+        min-height: calc(100vh - 82px) !important;
+    }
+    .admin-bar .mel-carrousel .ms-container .ms-view,
+    .admin-bar .mel-carrousel .ms-container .ms-slide-container,
+    .admin-bar .mel-carrousel .ms-container .ms-slide-container > .ms-slide {
         height: auto;
         min-height: calc(100vh - calc(82px + 32px)) !important;
     }
@@ -2318,11 +2336,11 @@ Responsive - Début
         flex-wrap: nowrap;
         align-items: center;
         padding: 0 calc(var(--spacer) * 2);
-        background-color: var(--clr-dark) !important;
-        border: 2px solid var(--clr-dark);
+        background-color: var(--clr-primary-1) !important;
+        border: 2px solid var(--clr-primary-1);
         border-radius: 50px;
-        color: var(--clr-light) !important;
-        font-size: 1.6rem !important;
+        color: var(--clr-white) !important;
+        font-size: 2rem !important;
         line-height: 40px !important;
         outline: 2px solid transparent;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
@@ -2331,17 +2349,17 @@ Responsive - Début
     .mel-contact-form-submit-button:hover,
     .mel-contact-form-submit-button:focus {
         background: none !important;
-        border: 2px solid var(--clr-dark);
-        color: var(--clr-dark) !important;
+        border: 2px solid var(--clr-primary-1);
+        color: var(--clr-primary-1) !important;
     }
 
     .mel-contact-form-submit-button:active,
     .mel-contact-form-submit-button:hover:active,
     .mel-contact-form-submit-button:focus {
-        outline: 2px solid var(--clr-dark);
+        outline: 2px solid var(--clr-primary-1);
     }
 
-    .mel-contact-form-submit-button::after {
+    /* .mel-contact-form-submit-button::after {
         content: '';
         display: inline-block;
         margin-left: calc(var(--spacer) * 2);
@@ -2357,7 +2375,7 @@ Responsive - Début
     .mel-contact-form-submit-button:hover::after,
     .mel-contact-form-submit-button:focus::after {
         background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
-    }
+    } */
 
     input.wpcf7-not-valid,
     textarea.wpcf7-not-valid,
@@ -2827,10 +2845,10 @@ Responsive - Début
         justify-content: center;
     }
 
-    .admin-bar .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container,
+    /* .admin-bar .hentry .entry-content .wp-block-cover .wp-block-cover__inner-container,
     .admin-bar .editor-styles-wrapper .wp-block-cover .wp-block-cover__inner-container {
         min-height: calc(100vh - calc(82px + 32px));
-    }
+    } */
 
     .page-template-template-homepage .entry-content > .mel-hero .wp-block-cover__background {
         background-size: 580px auto;
