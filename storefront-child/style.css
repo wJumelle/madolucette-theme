@@ -2448,7 +2448,7 @@ Responsive - Début
         background-color: var(--clr-cream);
         font-size: 2rem;
     }
-    .mel-faq-elem--question:after {
+    .mel-faq-elem--question::after {
         background-image: url(./assets/images/svg/faq-icon-mel.svg);
     }
     .mel-faq-elem--reponse {
