@@ -1265,10 +1265,11 @@ Responsive - Début
     }
 
     .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:active,
-    .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:hover:active {
-        background: var(--clr-primary-1) !important;
-        color: var(--clr-whiter) !important;
-        outline: 2px solid var(--clr-primary-3);
+    .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:hover:active,
+    .hentry .entry-content .mel-catalogue--button-list .wp-block-button__link:focus:active {
+        background: none !important;
+        color: var(--clr-primary-1) !important;
+        outline: 2px solid var(--clr-primary-1);
     }
 
 
@@ -1519,6 +1520,49 @@ Responsive - Début
     /*****************
     Catalogue - Debut
     *****************/
+    .mel-categories--list {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: calc(var(--spacer) * 2.5);
+    }
+    
+    .mel-categories--list .mel-category--link {
+        min-width: 187px;
+        width: 100%;
+        padding: var(--spacer) calc(var(--spacer) * 2);
+        border: 2px solid var(--clr-primary-1);
+        border-radius: 50px;
+        background: var(--clr-primary-1) !important;
+        color: var(--clr-whiter) !important;
+        font-size: 2rem !important;
+        line-height: 1.5em;
+        font-weight: 400;
+        outline: 2px solid transparent;
+        transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
+    }
+
+    .mel-categories--list .mel-category--link-current {
+        background: none !important;
+        color: var(--clr-primary-1) !important;
+    }
+    
+    .mel-categories--list a.mel-category--link:hover,
+    .mel-categories--list a.mel-category--link:focus {
+        background: none !important;
+        color: var(--clr-primary-1) !important;
+        text-decoration: underline;
+    }
+    
+    .mel-categories--list a.mel-category--link:active,
+    .mel-categories--list a.mel-category--link:active:hover,
+    .mel-categories--list a.mel-category--link:active:focus {
+        background: none !important;
+        color: var(--clr-primary-1) !important;
+        outline: 2px solid var(--clr-primary-1);
+    }
+
     .page-id-20 .mel-category--products-list.is-not-current {
         display: none;
     }

@@ -19,6 +19,26 @@ get_header(''); ?>
 					return;
 				}
 
+				// On effectue la query pour récupérer l'ensemble des catégories
+				$product_categories = get_terms( 'product_cat', array( 'orderby' => 'name', 'order' => 'asc', 'hide_empty' => true ) );
+
+				// On affiche les catégories qui ne possèdent pas de catégorie parent
+				$categories_content = '<ul class="mel-categories--list">';
+				if( !empty($product_categories) ){
+					foreach ($product_categories as $key => $category) {
+						if($category->parent == '0') {
+							$categories_content .= '<li class="mel-category">';
+							$categories_content .= '<a class="mel-category--link" href="'.get_term_link($category).'" >';
+							$categories_content .= $category->name;
+							$categories_content .= '</a>';
+							$categories_content .= '</li>';
+						}
+						
+					}
+					$categories_content .= '</ul>';
+				}
+				echo $categories_content;
+
 				// On récupère l'ensemble des produits publié
 				// On désire afficher 8 produits / pages
 				$nb_limit = 9;
