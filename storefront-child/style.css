@@ -893,6 +893,7 @@ Responsive - Début
         width: 80px;
         height: 40px;
         background-color: var(--clr-primary-1);
+        color: var(--clr-whiter);
         font-size: 2rem;
         text-align: center;
         line-height: 40px;
@@ -1928,17 +1929,17 @@ Responsive - Début
         font-family: 'Libre Baskerville', serif;
         font-size: 3.2rem;
     }
-    .mel-product--availabilty {
-        margin-bottom: calc(var(--spacer) * 4);
-    }
     .stock.in-stock::before {
         content: none;
     }
     .stock.in-stock {
         margin-bottom: 0;
-        font-size: 1.2rem;
-        font-weight: 300;
+        font-size: 1.6rem;
         color: var(--clr-dark);
+    }
+    .mel-product--description {
+        padding-left: calc(var(--spacer) * 2);
+        border-left: 2px solid var(--clr-primary-1);
     }
     .mel-product--description h2 {
         margin-bottom: var(--spacer) !important;
@@ -1948,19 +1949,23 @@ Responsive - Début
     }
     .mel-product--description p {
         margin-bottom: calc(var(--spacer) * 2);
-        font-size: 1.2rem;
+        font-size: 1.6rem;
     }
     .mel-product--description p:last-child {
         margin-bottom: 0px;
     }
+    .mel-product--price-availabilty-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: var(--grid-gutter);
+        margin-bottom: calc(var(--spacer) * 3);
+    }
     .single-product .mel-product.product p.price {
         display: inline-block;
-        width: fit-content;
-        width: -moz-fit-content;
-        margin-top: auto;
+        margin-top: 0;
         margin-bottom: 0;
-        padding: var(--spacer) calc(var(--spacer) * 3);
-        background-color: rgba(218, 164, 154, .2);
+        font-size: 2.4rem;
     }
     .single-product .mel-product.product p.price:empty {
         display: none;
@@ -1976,6 +1981,10 @@ Responsive - Début
         font-family: 'Poppins', sans-serif;
         color: var(--clr-dark);
         font-size: 1.6rem;
+    }
+    .mel-product--availabilty {
+        padding-left: var(--grid-gutter);
+        border-left: 1px solid var(--clr-primary-1);
     }
     .mel-product--summary .mel-product--quantity-container {
         margin-top : calc(var(--spacer) * 2.5);

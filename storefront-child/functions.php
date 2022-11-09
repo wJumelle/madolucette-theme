@@ -197,9 +197,9 @@ function remove_actions_from_storefront_product() {
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
     remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_sharing', 50 );
-    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_stock', 10 );
-    add_action( 'woocommerce_single_product_summary', 'woocommerce_product_description_tab', 20 );
-    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 25 );
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_stock', 20 );
+    add_action( 'woocommerce_single_product_summary', 'woocommerce_product_description_tab', 25 );
     add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart_before', 29 );
     add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_add_to_cart_after', 39 );
 
@@ -211,6 +211,15 @@ function remove_actions_from_storefront_product() {
     // Suppression de la navigation storefront entre les produits 
     remove_action( 'woocommerce_after_single_product_summary', 'storefront_single_product_pagination', 30 );
 }
+if ( ! function_exists( 'woocommerce_template_single_price' ) ) {
+	/**
+	 * Output the product price.
+	 */
+	function woocommerce_template_single_price() {
+        echo '<div class="mel-product--price-availabilty-container">';
+		wc_get_template( 'single-product/price.php' );
+	}
+}
 if ( ! function_exists( 'woocommerce_template_single_stock' ) ) {
     /**
      * Output the stock
@@ -218,7 +227,7 @@ if ( ! function_exists( 'woocommerce_template_single_stock' ) ) {
     function woocommerce_template_single_stock() {
         global $product;
         $htmlAvailability = wc_get_stock_html($product);
-        echo '<div class="mel-product--availabilty">' . $htmlAvailability . '</div>';
+        echo '<div class="mel-product--availabilty">' . $htmlAvailability . '</div></div>';
     }
 }
 if ( ! function_exists( 'woocommerce_template_single_add_to_cart_before' ) ) {
