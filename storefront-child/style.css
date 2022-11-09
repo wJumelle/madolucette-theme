@@ -748,7 +748,7 @@ Responsive - Début
     }
     .mel-footer a {
         transition: background-size var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode);
-        background-image: linear-gradient(var(--clr-light), var(--clr-light));
+        background-image: linear-gradient(var(--clr-dark), var(--clr-dark));
         background-repeat: no-repeat;
         background-position: bottom left;
         background-size: 0 1px;
