@@ -1529,6 +1529,7 @@ Responsive - Début
     }
     
     .mel-categories--list .mel-category--link {
+        display: inline-block;
         min-width: 187px;
         width: 100%;
         padding: var(--spacer) calc(var(--spacer) * 2);
@@ -1539,6 +1540,7 @@ Responsive - Début
         font-size: 2rem !important;
         line-height: 1.5em;
         font-weight: 400;
+        text-align: center;
         outline: 2px solid transparent;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     }
@@ -1546,6 +1548,7 @@ Responsive - Début
     .mel-categories--list .mel-category--link-current {
         background: none !important;
         color: var(--clr-primary-1) !important;
+        cursor: default;
     }
     
     .mel-categories--list a.mel-category--link:hover,
