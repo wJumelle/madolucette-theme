@@ -1987,7 +1987,7 @@ Responsive - Début
         border-left: 1px solid var(--clr-primary-1);
     }
     .mel-product--summary .mel-product--quantity-container {
-        margin-top : calc(var(--spacer) * 2.5);
+        margin-top : auto;
     }
     .mel-product--quantity-container {
         display: flex;
@@ -2023,14 +2023,21 @@ Responsive - Début
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        padding: 0 calc(var(--spacer) * 2);
+        padding: calc(var(--spacer) * .375) calc(var(--spacer) * 2);
         background-color: var(--clr-primary-1) !important;
         color: var(--clr-white) !important;
         line-height: 36px;
         border: 2px solid var(--clr-primary-1);
         border-radius: 50px;
+        font-size: 2rem !important;
+        line-height: 1.5em;
+        font-weight: 400;
         outline: 2px solid transparent;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
+    }
+
+    .woocommerce.single-product .product .mel-product--quantity-container .yith-ywraq-add-to-quote {
+        height: 100%;
     }
 
     .hentry .entry-content .wp-block-button.mel-catalogue--button-goTo .wp-block-button__link:active,
@@ -2050,27 +2057,6 @@ Responsive - Début
     .site .mel-link-button:focus {
         background: none !important;
         color: var(--clr-primary-1) !important;
-    }
-    
-    .woocommerce .mel-product--quantity-container .add-request-quote-button.button::after,
-    .site .mel-link-button::after {
-        content: '';
-        display: inline-block;
-        margin-left: calc(var(--spacer) * 2);
-        width: 32px;
-        height: 24px;
-        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        transition: background-image var(--anim-duration) var(--anim-fillMode);
-    }    
-    
-    .woocommerce .mel-product--quantity-container .add-request-quote-button.button:hover::after,
-    .woocommerce .mel-product--quantity-container .add-request-quote-button.button:focus::after,
-    .site .mel-link-button:hover::after,
-    .site .mel-link-button:focus::after {
-        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
     }
 
     .add-request-quote-button.button + .mel-loader {
