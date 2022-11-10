@@ -18,7 +18,6 @@ $melTotalSidebarQuote = 0;
 	<?php 
 		// On récupère les données du plugin YITH que l'on stocke dans une variable
 		$raqSidebar = YITH_Request_Quote()->get_raq_return();
-		//var_dump($raqSidebar);
 
 		$nbProduitsDevis = count($raqSidebar);
 
@@ -26,7 +25,10 @@ $melTotalSidebarQuote = 0;
 		// Sinon on affiche les éléments qui compose le devis
 		if ( $nbProduitsDevis === 0 ) { ?>
 			<h3 class='mel-devis--title'>Votre devis</h3>
-			<p>Ho-ho il n’y a rien pour l’instant ☹</p>
+			<p>
+				Ho-ho il n’y a rien pour l’instant ☹<br/>
+				La fonctionnalité arrive bientôt !
+			</p>
 			<div class="mel-devis--catalog-button-container">
 				<a href="/catalogue/" class="mel-link-button">Aller au catalogue</a>
 			</div>
@@ -51,13 +53,15 @@ $melTotalSidebarQuote = 0;
 				$content .= ($nbProduitsDevis > 1) ? "<li data-productId=" . $product_id . " class='mel-devis--product'>" : "<div data-productId=" . $product_id . " class='mel-devis--product'>";
 
 				// ----------------- Affichage du produit --- début
-				// On récupère l'image et le nom du produit
+				// On récupère l'image, le nom et le prix à l'unité du produit
 				$thumbnail = $_product->get_image();
 				$product_title = $_product->get_title();
 				if ( $_product->get_sku() !== '' && get_option( 'ywraq_show_sku' ) === 'yes' ) {
 					$product_title .= ' ' . apply_filters( 'ywraq_sku_label', __( ' SKU:', 'yith-woocommerce-request-a-quote' ) ) . $_product->get_sku();
 				}
+				$product_price = $_product->get_price_html();
 				$content .= "<a href=" . esc_url( $_product->get_permalink() ) . ">" . $thumbnail . "</a><div><h4 class='mel-devis--product-title'><a href=" . esc_url( $_product->get_permalink() ) . ">" . wp_kses_post( $product_title ) . "</a></h4>";
+				$content .= "<p class='mel-devis--product-price'>" . $product_price . "</p>";
 				// ----------------- Affichage du produit --- fin
 				
 				// ----------------- Mise à jour du produit --- début
