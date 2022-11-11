@@ -36,6 +36,16 @@ window.onload = () => {
         })
     }
 
+    // Gestion de la position du footer si la hauteur du body est inférieur à la 
+    // hauteur de l'espace disponible
+    if(document.querySelector('body').offsetHeight < window.screen.availHeight) {
+        const footer = document.querySelector('.mel-footer');
+        footer.style.position = 'fixed';
+        footer.style.bottom = '0';
+        footer.style.left = '0';
+        footer.style.width = '100%';
+    }
+
     /**
      * Home
      */
