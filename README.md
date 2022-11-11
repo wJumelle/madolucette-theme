@@ -27,3 +27,4 @@ LiteSpeed Cache > Cache > Exclure > Ne pas mettre en cache les URI
 ^/categories/
 ^/devis/$
 ```
+11/11/2022 - Màj de la page devis en fonction du nouveau template

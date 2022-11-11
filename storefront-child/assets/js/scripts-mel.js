@@ -207,6 +207,17 @@ window.onload = () => {
     }
 
     /**
+     * Page Devis
+     */
+    if(document.querySelector('body.yith-request-a-quote-page') !== null) {
+        // Récupération de la taille du header + margin du header
+        const header = document.querySelector('main > article > header.entry-header h1');
+        const headerGlobalHeight = header.offsetHeight + parseInt(getComputedStyle(header).getPropertyValue('margin-bottom'));
+
+        r.style.setProperty('--yith-header-height', `${headerGlobalHeight}px`);
+    }
+
+    /**
      * Page contact
      */
     // Ajout d'un écouteur d'événement afin de faire apparaitre le message de confirmation d'envoi du formulaire charté

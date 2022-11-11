@@ -341,6 +341,7 @@ Responsive - Début
     .page-template-default h1 {
         font-family: 'Libre Baskerville', serif;
         font-size: 3.2rem;
+        line-height: 1.5em;
     }
 
     p {
@@ -2167,9 +2168,15 @@ Responsive - Début
         margin-bottom: 0;
     }
 
+    .mel-devis-form--container {
+        position: relative;
+        top: calc(-1 * var(--yith-header-height, 0));
+    }
+
     .mel-devis-form--container h3 {
         font-family: 'Libre Baskerville', serif;
         font-size: 3.2rem;
+        line-height: 1.5em;
     }
 
     #yith-ywraq-mail-form {
@@ -2197,13 +2204,14 @@ Responsive - Début
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
-        padding: 0 calc(var(--spacer) * 2);
-        background-color: var(--clr-dark) !important;
-        border: 2px solid var(--clr-dark);
+        padding: calc(var(--spacer) * .375) calc(var(--spacer) * 2);
+        background-color: var(--clr-primary-1) !important;
+        border: 2px solid var(--clr-primary-1);
         border-radius: 50px;
-        color: var(--clr-light) !important;
-        font-size: 1.6rem !important;
-        line-height: 40px !important;
+        color: var(--clr-whiter) !important;
+        font-size: 2rem !important;
+        line-height: 1.5em;
+        font-weight: 400;
         outline: 2px solid transparent;
         transition: background-color var(--anim-duration) var(--anim-fillMode), color var(--anim-duration) var(--anim-fillMode), outline var(--anim-duration) var(--anim-fillMode);
     }
@@ -2211,32 +2219,14 @@ Responsive - Début
     .mel-devis-form-submit-button:hover,
     .mel-devis-form-submit-button:focus {
         background: none !important;
-        border: 2px solid var(--clr-dark);
-        color: var(--clr-dark) !important;
+        border-color: var(--clr-primary-1);
+        color: var(--clr-primary-1) !important;
     }
 
     .mel-devis-form-submit-button:active,
     .mel-devis-form-submit-button:hover:active,
     .mel-devis-form-submit-button:focus {
-        outline: 2px solid var(--clr-dark);
-    }
-
-    .mel-devis-form-submit-button::after {
-        content: '';
-        display: inline-block;
-        margin-left: calc(var(--spacer) * 2);
-        width: 32px;
-        height: 24px;
-        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        transition: background-image var(--anim-duration) var(--anim-fillMode);
-    }    
-    
-    .mel-devis-form-submit-button:hover::after,
-    .mel-devis-form-submit-button:focus::after {
-        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
+        outline: 2px solid var(--clr-primary-1);
     }
     /***********
     Devis - Fin
