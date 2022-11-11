@@ -18,3 +18,12 @@
 09/10/2022 - Recherche d'un carrousel pour la home - installation de Master Slider + customization de l'affichage
 11/10/2022 - Contribution des descriptions
 16/10/2022 - Ajout de la section gallerie
+11/11/2022 - Ajout de la configuration pour ne pas cacher les pages produits, catégories et devis : 
+
+```
+LiteSpeed Cache > Cache > Exclure > Ne pas mettre en cache les URI
+^/catalogue/$
+^/produit/
+^/categories/
+^/devis/$
+```
