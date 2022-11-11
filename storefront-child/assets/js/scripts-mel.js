@@ -181,6 +181,32 @@ window.onload = () => {
         });
     }
 
+    // Clic sur le bouton "Ajouter au devis"
+    if(document.querySelector('body.single-product .add-request-quote-button') !== null) {
+        const yithButton = document.querySelector('.add-request-quote-button');
+        yithButton.addEventListener('click', (e) => {
+            /** 
+             * ToDo faire le call Ajax pour récupérer la sidebar màj
+             * */
+
+            // console.log('Before Fetch');
+
+            // fetch('https://recette.madeleineetlucette.fr/wp-content/themes/storefront-child/assets/js/ajax/sidebar-content.php')
+            // .then(function(response) {
+            //     if(response.ok) {
+            //         console.log(response);
+            //     } else {
+            //         console.log('Mauvaise réponse du réseau');
+            //     }
+            // })
+            // .catch(function(error) {
+            //     console.log('Il y a eu un problème avec l\'opération fetch: ' + error.message);
+            // });
+
+            // console.log('After Fetch');
+        });
+    }
+
     /**
      * Page Catalogue
      */
