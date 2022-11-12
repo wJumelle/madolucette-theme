@@ -15,7 +15,7 @@ $hide_price             = 'yes' === get_option( 'ywraq_hide_price', 'no' );
 $melTotalQuote = 0;
 
 if ( isset( $_REQUEST['sent'] ) ) {
-	echo "<script>document.location.href='https://gwendoline-jumelle.ovh/wp/votre-devis-a-bien-ete-envoye/';</script>";
+	echo "<script>document.location.href='/votre-devis-a-bien-ete-envoye/';</script>";
 	exit();
 }
 
