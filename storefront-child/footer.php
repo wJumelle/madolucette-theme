@@ -40,7 +40,7 @@
 				</ul>
 			</div>
 			<div class="grid-4 mel-footer--copyright">
-				© 2022 Madeleine & Lucette - by the Jum’s
+				© 2022 Madeleine & Lucette
 			</div>
 		</div>
 	</footer>
