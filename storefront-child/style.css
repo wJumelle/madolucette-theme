@@ -2398,24 +2398,6 @@ Responsive - Début
         outline: 2px solid var(--clr-primary-1);
     }
 
-    /* .mel-contact-form-submit-button::after {
-        content: '';
-        display: inline-block;
-        margin-left: calc(var(--spacer) * 2);
-        width: 32px;
-        height: 24px;
-        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow.svg);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        transition: background-image var(--anim-duration) var(--anim-fillMode);
-    }    
-    
-    .mel-contact-form-submit-button:hover::after,
-    .mel-contact-form-submit-button:focus::after {
-        background-image: url(/wp-content/themes/storefront-child/assets/images/svg/yith-button-arrow-hover.svg);
-    } */
-
     input.wpcf7-not-valid,
     textarea.wpcf7-not-valid,
     .wpcf7-not-valid::-webkit-input-placeholder {
@@ -2505,31 +2487,26 @@ Responsive - Début
         display: none;
     }
 
-    .error404 #page > .site-content {
-        background-image: url(./assets/images/svg/404-illustration.svg);
-        background-repeat: no-repeat;
-        background-position: left center;
+    .error404 .site-main,
+    .page-id-25 .site-main {
+        margin-bottom: 0;
     }
 
-    .error404 #page > .site-content > .col-full {
+    .error404 #page > .site-content > .col-full,
+    .page-id-25 #page > .site-content > .col-full {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        min-height: calc(100vh - 82px);
         width: var(--site-width);
+        margin-top: calc(var(--spacer) * 8);
         margin-left: auto;
         margin-right: auto;
     }
-    .error404.admin-bar #page > .site-content > .col-full {
-        min-height: calc(100vh - calc(82px + 32px));
-    }
 
-    .error404.right-sidebar .content-area {
+    .error404.right-sidebar .content-area,
+    .page-id-25.right-sidebar .content-area {
         float: none;
-        width: calc(calc(var(--grid-column-width) * 6) + calc(calc(var(--grid-gutter) * 5)));
-        margin-right: 0;
-        margin-left: auto;
-        padding-left: var(--grid-gutter);
+        width: 100%;
     }
 
     .error404 .content-area h1 {
@@ -2539,7 +2516,8 @@ Responsive - Début
         margin-bottom: calc(var(--spacer) * 2) !important;
     }
 
-    .error404 .content-area p {
+    .error404 .content-area p,
+    .page-id-25 .content-area p {
         font-size: 2.0rem;
         margin-bottom: calc(var(--spacer) * 4);
     }
@@ -2774,6 +2752,56 @@ Responsive - Début
     /***************
     Contact - Fin
     ***************/
+
+    /***********
+    404 - Début
+    ***********/
+    .error404 #page > .site-content {
+        background-image: url(./assets/images/svg/404-illustration.svg);
+        background-repeat: no-repeat;
+        background-position: left -200px center;
+    }
+    .error404.right-sidebar .content-area,
+    .page-id-25.right-sidebar .content-area {
+        float: none;
+        width: calc(calc(var(--grid-column-width) * 7) + calc(calc(var(--grid-gutter) * 6)));
+        margin-right: 0;
+        margin-left: auto;
+        padding-left: var(--grid-gutter);
+    }
+    .error404 #page > .site-content > .col-full,
+    .page-id-25 #page > .site-content > .col-full {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: calc(100vh - 82px);
+        width: var(--site-width);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .error404.admin-bar #page > .site-content > .col-full,
+    .page-id-25.admin-bar #page > .site-content > .col-full {
+        min-height: calc(100vh - calc(82px + 32px));
+    }
+    /***********
+    404 - Fin
+    ***********/
+
+    /*********************
+    Remerciements - Début
+    *********************/
+    .page-id-25 #content {
+        background-image: url(./assets/images/svg/remerciements-illustration.svg);
+        background-repeat: no-repeat;
+        background-position: right -200px center;
+    }
+    .page-id-25.right-sidebar .content-area {
+        margin-left: 0;
+        margin-right: auto;
+    }
+    /*********************
+    Remerciements - Fin
+    *********************/
 }
 @media (min-width: 1280px) {
     :root {}
@@ -2855,6 +2883,30 @@ Responsive - Début
     /***************
     Contact - Fin
     ***************/
+
+    /***********
+    404 - Début
+    ***********/
+    .error404 #page > .site-content {
+        background-position: left center;
+    }
+    .error404.right-sidebar .content-area,
+    .page-id-25.right-sidebar .content-area {
+        width: calc(calc(var(--grid-column-width) * 6) + calc(calc(var(--grid-gutter) * 5)));
+    }
+    /***********
+    404 - Fin
+    ***********/
+
+    /*********************
+    Remerciements - Début
+    *********************/
+    .page-id-25 #content {
+        background-position: right center;
+    }
+    /*********************
+    Remerciements - Fin
+    *********************/
 }
 @media (min-width: 1536px) {
     :root {

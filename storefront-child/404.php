@@ -17,7 +17,7 @@ get_header(); ?>
 					<h1>Error 404</h1>
 					<p>Page non trouvée</p>
 					<div class="helper--disp-ib">
-						<a href="/wp/" class="mel-link-button">Retour à l'accueil</a>
+						<a href="/" class="mel-link-button">Retour à l'accueil</a>
 					</div>
 				</div><!-- .page-content -->
 			</div><!-- .error-404 -->
