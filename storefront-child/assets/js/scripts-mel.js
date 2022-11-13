@@ -49,13 +49,6 @@ window.onload = () => {
     /**
      * Home
      */
-    // Positionnemenet de l'image dans la hero banner
-    if(document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__background') !== null) {
-        const bkg = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__background');
-        const posRight = document.querySelector('.page-template-template-homepage .mel-hero .wp-block-cover__inner-container').offsetLeft;
-        bkg.style.backgroundPosition = `bottom right ${posRight}px`;
-    }
-
     // Positionnement du texte du carrousel
     if(document.querySelector('.mel-carrousel') !== null) {
         r.style.setProperty('--space-left', document.querySelector('.mel-header > .col-full').offsetLeft + 'px');
