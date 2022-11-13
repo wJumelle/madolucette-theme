@@ -73,13 +73,20 @@ function storefront_primary_navigation() {
 					'container_class' => 'primary-navigation',
 				)
 			);
-            wp_nav_menu(
-				array(
-					'theme_location'  => 'handheld',
-					'container_class' => 'handheld-navigation',
-				)
-			);
-			?>
+            ?>
+            <div class="mel-menu--secondary">
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location'  => 'handheld',
+                        'container_class' => 'handheld-navigation',
+                    )
+                );
+                ?>
+                <div class="site-search-mobile site-search">
+                    <?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
+                </div>
+            </div>
 		</nav><!-- #site-navigation -->
 		<?php
 }
