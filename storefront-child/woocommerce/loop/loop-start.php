@@ -24,25 +24,27 @@ $product_categories = get_terms( 'product_cat', array( 'orderby' => 'name', 'ord
 
 // On affiche les catégories qui ne possèdent pas de catégorie parent
 $currCategory = get_queried_object();
-$currCategory_id = $currCategory->term_id;
+if(isset($currCategory->term_id)) {
+	$currCategory_id = $currCategory->term_id;
 
-$categories_content = '<ul class="mel-categories--list">';
-if( !empty($product_categories) ){
-	foreach ($product_categories as $key => $category) {
-		if($category->parent == '0') {
-			$categories_content .= '<li class="mel-category">';
-			if($currCategory_id == $category->term_id) {
-				$categories_content .= '<span class="mel-category--link mel-category--link-current">' . $category->name . '</span>';
-			} else {
-				$categories_content .= '<a class="mel-category--link" href="'.get_term_link($category).'" >' . $category->name . '</a>';
+	$categories_content = '<ul class="mel-categories--list">';
+	if( !empty($product_categories) ){
+		foreach ($product_categories as $key => $category) {
+			if($category->parent == '0') {
+				$categories_content .= '<li class="mel-category">';
+				if($currCategory_id == $category->term_id) {
+					$categories_content .= '<span class="mel-category--link mel-category--link-current">' . $category->name . '</span>';
+				} else {
+					$categories_content .= '<a class="mel-category--link" href="'.get_term_link($category).'" >' . $category->name . '</a>';
+				}
+				$categories_content .= '</li>';
 			}
-			$categories_content .= '</li>';
+			
 		}
-		
+		$categories_content .= '</ul>';
 	}
-	$categories_content .= '</ul>';
+	echo $categories_content;
 }
-echo $categories_content;
 
 ?>
 
