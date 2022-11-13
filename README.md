@@ -29,4 +29,5 @@ LiteSpeed Cache > Cache > Exclure > Ne pas mettre en cache les URI
 ```
 11/11/2022 - Màj de la page devis en fonction du nouveau template    
 12/11/2022 - [CONFIRMATION] Changement de la redirection vers le nom de domaine en cours recette ou prod
-13/11/2022 - 
+13/11/2022 - [404 / CONFIRM] RWD + dév de la page de confirmation d'envoi de devis
+13/11/2022 - [L'EQUIPE] Dév + RWD de la page La fine équipe

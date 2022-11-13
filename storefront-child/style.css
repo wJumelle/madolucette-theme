@@ -502,9 +502,7 @@ Responsive - Début
     }
 
     .main-navigation .primary-navigation > ul > li > a:hover,
-    .main-navigation .primary-navigation > ul > li > a:focus,
-    .main-navigation ul.menu > li:nth-child(2) > a:hover,
-    .main-navigation ul.menu > li:nth-child(2) > a:focus {
+    .main-navigation .primary-navigation > ul > li > a:focus {
         background-color: transparent;
         background-size: 100% 1px;
         color: var(--clr-primary-1);
@@ -518,11 +516,6 @@ Responsive - Début
     .site-header ul.menu li.current-menu-item > a {
         color: var(--clr-primary-1);
         font-weight: bold;
-    }
-
-    .main-navigation ul.menu > li:nth-child(2) > a {
-        color: var(--clr-dark);
-        font-weight: normal;
     }
     
     .main-navigation ul.menu ul li a,
@@ -2524,6 +2517,51 @@ Responsive - Début
     /*********
     404 - Fin
     **********/
+
+    /*********************
+    La fine équie - Début
+    *********************/
+    .mel-team--list-container,
+    .mel-team--history-container {
+        margin-bottom: calc(var(--spacer) * 13);
+    }
+
+    body .mel-team--list-container {
+        display: grid;
+        grid-template-columns: repeat(2, calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5)));
+    }
+
+    .mel-team--list-container > * {
+        margin-right: 0 !important;
+        margin-bottom: 0 !important;
+    }
+
+    .mel-team--list-first {
+        background: var(--clr-cream);
+        padding: var(--grid-gutter) !important;
+    }
+
+    .hentry .entry-content .mel-team--list-container .wp-block-image {
+        margin-bottom: calc(var(--spacer) * 2);
+    }
+    
+    .mel-team--list-container .wp-block-image img {
+        width: 100%;
+    }
+
+    .mel-team--history-text h2, 
+    .mel-team--cta-container h2 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 3.2rem;
+        line-height: 1.5em;
+    }
+
+    .mel-team--cta-container {
+        text-align: center;
+    }
+    /*********************
+    La fine équie - Fin
+    *********************/
 }
 @media (max-width: 640px) {
     /***************
@@ -2622,6 +2660,21 @@ Responsive - Début
     /***************
     Contact - Fin
     ***************/
+
+    /*********************
+    La fine équie - Début
+    *********************/
+    body .mel-team--list-container {
+        grid-template-columns: repeat(3, calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)));
+    }
+
+    body .mel-team--list-container > :first-child {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    /*********************
+    La fine équie - Fin
+    *********************/
 }
 @media (min-width: 1024px) {
     :root {}
@@ -2802,6 +2855,16 @@ Responsive - Début
     /*********************
     Remerciements - Fin
     *********************/
+
+    /*********************
+    La fine équie - Début
+    *********************/
+    body .mel-team--list-container {
+        grid-template-columns: repeat(3, calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)));
+    }
+    /*********************
+    La fine équie - Fin
+    *********************/
 }
 @media (min-width: 1280px) {
     :root {}
@@ -2907,6 +2970,21 @@ Responsive - Début
     /*********************
     Remerciements - Fin
     *********************/
+
+    /*********************
+    La fine équie - Début
+    *********************/
+    body .mel-team--list-container {
+        grid-template-columns: repeat(4, calc(calc(var(--grid-column-width) * 3) + calc(var(--grid-gutter) * 2)));
+    }
+
+    body .mel-team--list-container > :first-child {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    /*********************
+    La fine équie - Fin
+    *********************/
 }
 @media (min-width: 1536px) {
     :root {
@@ -2966,6 +3044,16 @@ Responsive - Début
     .mel-category--products-list {
         grid-template-columns: 100%;
     }
+
+    /*********************
+    La fine équie - Début
+    *********************/
+    body .mel-team--list-container {
+        grid-template-columns: 100%;
+    }
+    /*********************
+    La fine équie - Fin
+    *********************/
 }
 /****************
 Responsive - Fin
