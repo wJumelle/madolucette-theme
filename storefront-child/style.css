@@ -552,6 +552,23 @@ Responsive - Début
         color: var(--clr-primary-1);
     }
 
+    button.menu-toggle {
+        background-color: var(--clr-cream);
+        border-color: var(--clr-dark);
+        color: var(--clr-dark);
+    }
+
+    button.menu-toggle:hover,
+    button.menu-toggle:focus {
+        background-color: var(--clr-white);
+    }
+
+    button.menu-toggle:after,
+    button.menu-toggle:before,
+    button.menu-toggle span:before {
+        color: var(--clr-dark);
+    }   
+
     /* SearchBar  */
     .woocommerce-active .site-header.mel-header .site-search {
         width: auto !important;
@@ -2466,12 +2483,14 @@ Responsive - Début
     }
 
     .page-template-template-gallery .mel-gallery--masonry {
-        --grid-column-width: calc(calc(var(--site-width) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+        --grid-column-width: calc(calc(var(--grid-global-width, var(--site-width)) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
+        display: grid;
+        grid-template-columns: 100%;
         gap: var(--grid-gutter) !important;
     }
 
     .page-template-template-gallery .mel-gallery--masonry .wp-block-image {
-        width: calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)) !important;
+        width: 100% !important;
         margin-bottom: var(--grid-gutter) !important;
     }
     /*************
@@ -2753,6 +2772,20 @@ Responsive - Début
     /*********************
     La fine équie - Fin
     *********************/
+
+    /***************
+    Galerie - Début
+    ***************/
+    .page-template-template-gallery .mel-gallery--masonry {
+        grid-template-columns: repeat(2, calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5)));
+    }
+
+    .page-template-template-gallery .mel-gallery--masonry .wp-block-image {
+        width: calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5)) !important;
+    }
+    /***************
+    Galerie - Début
+    ***************/
 }
 @media (min-width: 1024px) {
     :root {}
@@ -2945,6 +2978,20 @@ Responsive - Début
     /*********************
     La fine équie - Fin
     *********************/
+
+    /***************
+    Galerie - Début
+    ***************/
+    .page-template-template-gallery .mel-gallery--masonry {
+        grid-template-columns: repeat(3, calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)));
+    }
+
+    .page-template-template-gallery .mel-gallery--masonry .wp-block-image {
+        width: calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)) !important;
+    }
+    /***************
+    Galerie - Début
+    ***************/
 }
 @media (min-width: 1280px) {
     :root {}
