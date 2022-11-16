@@ -2484,13 +2484,13 @@ Responsive - Début
 
     .page-template-template-gallery .mel-gallery--masonry {
         --grid-column-width: calc(calc(var(--grid-global-width, var(--site-width)) - calc(calc(var(--grid-nbColumns) - 1) * var(--grid-gutter))) / var(--grid-nbColumns));
-        display: grid;
-        grid-template-columns: 100%;
+        display: flex;
         gap: var(--grid-gutter) !important;
     }
 
-    .page-template-template-gallery .mel-gallery--masonry .wp-block-image {
-        width: 100% !important;
+    .page-template-template-gallery #primary .mel-template-gallery .wp-block-gallery.has-nested-images.mel-gallery--masonry figure.wp-block-image {
+        flex: 1 1 100%;
+        width: 100%;
         margin-bottom: var(--grid-gutter) !important;
     }
     /*************
@@ -2780,8 +2780,9 @@ Responsive - Début
         grid-template-columns: repeat(2, calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5)));
     }
 
-    .page-template-template-gallery .mel-gallery--masonry .wp-block-image {
-        width: calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5)) !important;
+    .page-template-template-gallery #primary .mel-template-gallery .wp-block-gallery.has-nested-images.mel-gallery--masonry figure.wp-block-image {
+        flex: 1 1 calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5)) !important;
+        width: calc(calc(var(--grid-column-width) * 6) + calc(var(--grid-gutter) * 5));
     }
     /***************
     Galerie - Début
@@ -2986,8 +2987,9 @@ Responsive - Début
         grid-template-columns: repeat(3, calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)));
     }
 
-    .page-template-template-gallery .mel-gallery--masonry .wp-block-image {
-        width: calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)) !important;
+    .page-template-template-gallery #primary .mel-template-gallery .wp-block-gallery.has-nested-images.mel-gallery--masonry figure.wp-block-image {
+        flex: 1 1 calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3)) !important;
+        width: calc(calc(var(--grid-column-width) * 4) + calc(var(--grid-gutter) * 3));
     }
     /***************
     Galerie - Début

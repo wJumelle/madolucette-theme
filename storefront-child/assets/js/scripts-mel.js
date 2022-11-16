@@ -267,8 +267,14 @@ window.onload = () => {
     if(document.querySelector('.page-template-template-gallery') !== null) {
         // On calcul la taille des colonnes
         gridGutter = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid-gutter'));
-        const msnryColumnWidth = (gridGlobalWidth - (gridGutter * 2)) / 3;
-        console.log(msnryColumnWidth);
+        let msnryColumnWidth = 0;
+        if(window.innerWidth > 1024) {
+            msnryColumnWidth = (gridGlobalWidth - (gridGutter * 2)) / 3;
+        } else if (window.innerWidth > 768) {
+            msnryColumnWidth = (gridGlobalWidth - (gridGutter * 1)) / 2;
+        } else {
+            msnryColumnWidth = gridGlobalWidth;
+        }     
 
         // On récupère le container et initialise masonry
         const gridContainer = document.querySelector('.mel-gallery--masonry');
@@ -329,7 +335,14 @@ window.addEventListener('resize', () => {
     if(document.querySelector('.page-template-template-gallery') !== null) {
         // On calcul la taille des colonnes
         gridGutter = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--grid-gutter'));
-        const msnryColumnWidth = (gridGlobalWidth - (gridGutter * 2)) / 3;
+        let msnryColumnWidth = 0;
+        if(window.innerWidth > 1024) {
+            msnryColumnWidth = (gridGlobalWidth - (gridGutter * 2)) / 3;
+        } else if (window.innerWidth > 768) {
+            msnryColumnWidth = (gridGlobalWidth - (gridGutter * 1)) / 2;
+        } else {
+            msnryColumnWidth = gridGlobalWidth;
+        }    
 
         // On récupère le container et initialise masonry
         const gridContainer = document.querySelector('.mel-gallery--masonry');
