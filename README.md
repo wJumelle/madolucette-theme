@@ -33,3 +33,4 @@ LiteSpeed Cache > Cache > Exclure > Ne pas mettre en cache les URI
 13/11/2022 - [L'EQUIPE] Dév + RWD de la page La fine équipe
 13/11/2022 - [MENU] Responsive
 13/11/2022 - [HOME CARROUSEL] Responsive
+16/11/2022 - [GALERIE] Je sèche sur la grille... en cours de réflexion
