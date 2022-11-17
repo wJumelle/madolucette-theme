@@ -20,7 +20,7 @@
 				<h3>SUIVRE NOS AVENTURES&nbsp;?</h3>
 				<p>
 					C’est sur instagram&nbsp;!<br/>
-					On t’y attends avec impatience<br/>
+					On t’y attend avec impatience<br/>
 					<a href="https://www.instagram.com/madeleineetlucette/" target="_blank" title="@madeleineetlucette (nouvelle fenêtre)">@madeleineetlucette</a>
 				</p>
 			</div>
