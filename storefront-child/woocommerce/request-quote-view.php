@@ -25,13 +25,13 @@ if ( count( $raq_content ) === 0 ) :
 <?php else : ?>
 	<form id="yith-ywraq-form" name="yith-ywraq-form"
 		action="<?php echo esc_url( YITH_Request_Quote()->get_raq_page_url( 'update' ) ); ?>" method="post">
-		<table class="shop_table cart  shop_table_responsive" id="yith-ywrq-table-list" cellspacing="0">
+		<table class="shop_table cart shop_table_responsive" id="yith-ywrq-table-list" cellspacing="0">
 			<thead>
 			<tr>
 				<th class="product-name"><?php esc_html_e( 'Product', 'yith-woocommerce-request-a-quote' ); ?></th>
 				<th class="product-quantity">Ajouter / Supprimer</th>
 				<?php if ( ! $hide_price ) : ?>
-					<th class="product-subtotal"><?php esc_html_e( 'Total', 'yith-woocommerce-request-a-quote' ); ?></th>
+					<th class="product-subtotal">Total (TTC)</th>
 				<?php endif; ?>
 			</tr>
 			</thead>
@@ -164,7 +164,7 @@ if ( count( $raq_content ) === 0 ) :
 		<?php
 			if ( get_option( 'ywraq_show_update_list' ) === 'yes' ) : ?>
 			<div class="mel-devis-page--actions">
-				<p>Prix total : <span><?php echo number_format($melTotalQuote, 2, ',', ' ') . " " . get_woocommerce_currency_symbol(); ?></span></p>
+				<p>Prix total TTC : <span><?php echo number_format($melTotalQuote, 2, ',', ' ') . " " . get_woocommerce_currency_symbol(); ?></span></p>
 				<button class="mel-devis--submit" name="update_raq">Actualiser le devis</button>
 				<!-- <input type="submit" class="button" name="update_raq"
 					value="<?php /*echo esc_attr( get_option( 'ywraq_update_list_label', __( 'Update List', 'yith-woocommerce-request-a-quote' ) ) ); */ ?>"> -->

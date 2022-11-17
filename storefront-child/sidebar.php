@@ -101,7 +101,7 @@ $melTotalSidebarQuote = 0;
 
 			// On affiche le prix total du devis
 			$total = number_format($melTotalSidebarQuote, 2, ',', ' ') . " " . get_woocommerce_currency_symbol();
-			$content .= "<p class='mel-devis--total'>Prix total : <span>" . $total . "</span></p>";
+			$content .= "<p class='mel-devis--total'>Prix total TTC : <span>" . $total . "</span></p>";
 
 			// On affiche le bouton de mise à jour du devis
 			$content .= "<div class='mel-devis--functions'>";
