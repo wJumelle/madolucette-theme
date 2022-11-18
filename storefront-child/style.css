@@ -3114,7 +3114,7 @@ Responsive - Début
     La fine équie - Fin
     *********************/
 }
-@media (min-width: 1536px) {
+@media (min-width: 1612px) {
     :root {
         --site-width: 1512px;
     }
