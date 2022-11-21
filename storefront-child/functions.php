@@ -212,7 +212,6 @@ function remove_actions_from_storefront_product() {
 
     // Réorganisation pour l'affichage des données additionnels au produit
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
-    remove_action( 'woocommerce_after_single_product_summary', 'storefront_upsell_display', 15 );
     remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 
     // Suppression de la navigation storefront entre les produits 
