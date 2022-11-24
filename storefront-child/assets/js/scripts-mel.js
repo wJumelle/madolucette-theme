@@ -145,7 +145,7 @@ window.onload = () => {
         const firstGalleryImg = document.querySelector('.woocommerce-product-gallery__wrapper img');
         const summary = document.querySelector('.mel-product--summary');
 
-        summary.style.height = firstGalleryImg.offsetHeight + 'px';
+        summary.style.minHeight = firstGalleryImg.offsetHeight + 'px';
     }
 
     // Hover sur les liens des produits favoris

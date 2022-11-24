@@ -35,3 +35,4 @@ LiteSpeed Cache > Cache > Exclure > Ne pas mettre en cache les URI
 13/11/2022 - [HOME CARROUSEL] Responsive
 16/11/2022 - [GALERIE] Je sèche sur la grille... en cours de réflexion
 24/11/2022 - [SIDEBAR] Suppression de la mention La fonctionnalité arrive bientôt !
+24/11/2022 - [PRODUCTS] Correction JS autour du calcul du height de la section summary
