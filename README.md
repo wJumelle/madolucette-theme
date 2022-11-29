@@ -36,3 +36,10 @@ LiteSpeed Cache > Cache > Exclure > Ne pas mettre en cache les URI
 16/11/2022 - [GALERIE] Je sèche sur la grille... en cours de réflexion
 24/11/2022 - [SIDEBAR] Suppression de la mention La fonctionnalité arrive bientôt !
 24/11/2022 - [PRODUCTS] Correction JS autour du calcul du height de la section summary
+29/11/2022 - Ajout "GILBERTE"
+29/11/2022 - Ajout "ADELE"
+29/11/2022 - Ajout "ALBERTINE"
+29/11/2022 - Ajout "Pot à lait"
+29/11/2022 - Ajout "Caisse à pommes"
+29/11/2022 - Ajout "Bougeoirs en laiton"
+29/11/2022 - Ajout "Meuble moutarde avec téléphone"
