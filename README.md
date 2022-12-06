@@ -60,3 +60,9 @@ LiteSpeed Cache > Cache > Exclure > Ne pas mettre en cache les URI
 05/12/2022 - Ajout "Service à thé - Suzette"
 05/12/2022 - Ajout "Service à thé - Gilberte"
 05/12/2022 - Ajout "Service à thé - Albertine"
+06/12/2022 - Ajout « SUZETTE » – Plats de service
+06/12/2022 - Ajout « GILBERTE » – Plats de service
+06/12/2022 - Ajout « DIANE » – Plats de service
+06/12/2022 - Ajout « ANABELLE » – Plat de service
+06/12/2022 - Ajout « ALBERTINE » – Plats de service
+06/12/2022 - Ajout « ADELE » – Plats de service
