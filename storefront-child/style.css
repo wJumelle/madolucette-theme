@@ -1967,6 +1967,7 @@ Responsive - Début
         display: flex;
         flex-direction: column;
         width: calc(calc(var(--grid-column-width) * 5) + calc(calc(var(--grid-gutter) * 4)));
+        height: 100%;
         margin-bottom: 0;
     }
     .product_title.entry-title {
