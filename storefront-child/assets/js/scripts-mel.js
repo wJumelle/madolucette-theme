@@ -54,6 +54,13 @@ window.onload = () => {
         r.style.setProperty('--space-left', document.querySelector('.mel-header > .col-full').offsetLeft + 'px');
     }
 
+    // Vérification de la hauteur du carrousel en fonction de la hauteur du texte
+    if(document.getElementById('mel-hero') !== null) {
+        if(document.getElementById('mel-hero').offsetHeight < document.querySelector('.mel-carrousel--text').offsetHeight) {
+            document.querySelector('.mel-hero--title').style.fontSize = "4rem";
+        }
+    }
+
     // Hover sur les liens des produits favoris
     if(document.querySelector('.mel-catalogue--featured-products .wp-block-button__link') !== null) {
         document.querySelectorAll('.mel-catalogue--featured-products .wp-block-button__link').forEach((product) => {
@@ -314,6 +321,14 @@ window.addEventListener('resize', () => {
 
         footer.style.backgroundPosition = `right ${rightSpace}px bottom ${topSpace}px`;
     };
+
+    // Vérification de la hauteur du carrousel en fonction de la hauteur du texte
+    if(document.getElementById('mel-hero') !== null) {
+        if(document.getElementById('mel-hero').offsetHeight < document.querySelector('.mel-carrousel--text').offsetHeight) {
+            document.querySelector('.mel-hero--title').style.fontSize = "4rem";
+        }
+    }
+    
     // Calcul de la variable pour le calcule de la taille de la grille
     let r = document.querySelector(':root');
     gridGlobalWidth = document.querySelector('#content > .col-full').offsetWidth;
