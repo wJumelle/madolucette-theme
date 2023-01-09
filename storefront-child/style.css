@@ -1904,7 +1904,7 @@ Responsive - Début
         position: relative;
         display: flex;
         flex-direction: column;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         gap: var(--grid-gutter);
     }
 
@@ -1966,7 +1966,7 @@ Responsive - Début
     .single-product div.product .summary.mel-product--summary {
         display: flex;
         flex-direction: column;
-        width: calc(calc(var(--grid-column-width) * 5) + calc(calc(var(--grid-gutter) * 4)));
+        width: 100%;
         height: 100%;
         margin-bottom: 0;
     }
@@ -1986,6 +1986,7 @@ Responsive - Début
     .mel-product--description {
         padding-left: calc(var(--spacer) * 2);
         border-left: 2px solid var(--clr-primary-1);
+        margin-bottom: calc(var(--spacer) * 5);
     }
     .mel-product--description h2 {
         margin-bottom: var(--spacer) !important;
@@ -2909,6 +2910,10 @@ Responsive - Début
 
     .woocommerce .mel-product {
         flex-direction: row;
+    }
+
+    .single-product div.product .summary.mel-product--summary {
+        width: calc(calc(var(--grid-column-width) * 5) + calc(calc(var(--grid-gutter) * 4)));
     }
     /****************
     Produit - Fin
