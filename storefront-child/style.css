@@ -1946,6 +1946,19 @@ Responsive - Début
     .single-product div.product .woocommerce-product-gallery .flex-control-thumbs li img {
         opacity: 1;
     }
+    .single-product div.product.mel-product .onsale {
+        position: absolute;
+        top: var(--grid-gutter);
+        left: var(--grid-gutter);
+        z-index: 90;
+        background-color: #F7F7F7;
+        color: #302C2C;
+        border-radius: 5px;
+    }
+    .price del,
+    .mel-product--summary .price del .woocommerce-Price-currencySymbol::after {
+        color: #d08b86;
+    }
     .single-product div.product .woocommerce-product-gallery .woocommerce-product-gallery__trigger {
         width: 32px;
         height: 32px;
